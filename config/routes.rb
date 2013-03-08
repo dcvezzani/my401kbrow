@@ -1,4 +1,9 @@
 BrowsercmsDemo::Application.routes.draw do
+  namespace :cms do
+    resources :sites
+  end
+
+
   mount_bcms_blog
 
   # The priority is based upon order of creation:

@@ -1,5 +1,13 @@
 
-Fri Mar  8 07:15:43 PST 2013
+# ===== Fri Mar  8 07:15:43 PST 2013
+
+
+./bin/rails generate migration add_site_id_to_pages site_id:integer
+./bin/rake db:migrate db:migrate:status
+
+./bin/rails generate scaffold Cms::Site name:string domain:string the_default:boolean path:text identifier:text locale:string
+
+
 
 20130308083948
 SchemaMigration.destroy_all("version = '20130308083948'")

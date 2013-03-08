@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @cms_site.name %>
+</p>
+
+<p>
+  <b>Domain:</b>
+  <%= @cms_site.domain %>
+</p>
+
+<p>
+  <b>The default:</b>
+  <%= @cms_site.the_default %>
+</p>
+
+<p>
+  <b>Path:</b>
+  <%= @cms_site.path %>
+</p>
+
+<p>
+  <b>Identifier:</b>
+  <%= @cms_site.identifier %>
+</p>
+
+<p>
+  <b>Locale:</b>
+  <%= @cms_site.locale %>
+</p>
+
+
+<%= link_to 'Edit', edit_cms_site_path(@cms_site) %> |
+<%= link_to 'Back', cms_sites_path %>

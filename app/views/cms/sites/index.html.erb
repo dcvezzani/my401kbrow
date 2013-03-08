@@ -1,0 +1,33 @@
+<h1>Listing cms_sites</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Domain</th>
+    <th>The default</th>
+    <th>Path</th>
+    <th>Identifier</th>
+    <th>Locale</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cms_sites.each do |cms_site| %>
+  <tr>
+    <td><%= cms_site.name %></td>
+    <td><%= cms_site.domain %></td>
+    <td><%= cms_site.the_default %></td>
+    <td><%= cms_site.path %></td>
+    <td><%= cms_site.identifier %></td>
+    <td><%= cms_site.locale %></td>
+    <td><%= link_to 'Show', cms_site %></td>
+    <td><%= link_to 'Edit', edit_cms_site_path(cms_site) %></td>
+    <td><%= link_to 'Destroy', cms_site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Site', new_cms_site_path %>
