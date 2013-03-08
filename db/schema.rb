@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308075732) do
+ActiveRecord::Schema.define(:version => 20130308194504) do
 
   create_table "bcms_blog_blog_comment_versions", :force => true do |t|
     t.integer  "original_record_id"
@@ -492,6 +492,7 @@ ActiveRecord::Schema.define(:version => 20130308075732) do
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
     t.integer  "latest_version"
+    t.integer  "site_id"
   end
 
   add_index "pages", ["deleted"], :name => "index_pages_on_deleted"
@@ -567,6 +568,8 @@ ActiveRecord::Schema.define(:version => 20130308075732) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.text     "path"
+    t.text     "identifier"
+    t.string   "locale"
   end
 
   create_table "taggings", :force => true do |t|

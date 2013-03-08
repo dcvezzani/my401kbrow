@@ -14,8 +14,11 @@ class ApplicationController < ::ApplicationController
   helper Cms::RenderingHelper
   helper Cms::UiElementsHelper
 
-  #before_filter :load_cms_site
-  before_filter :current_site
+  before_filter :load_cms_site
+  #before_filter :current_site
+ 
+  # before_filter :load_cms_page,
+  #   :only => :render_page
   
   protected
     def escape_javascript(javascript)
@@ -30,11 +33,46 @@ class ApplicationController < ::ApplicationController
       end
     end
     
-    def current_site
-      # @current_site ||= Site.find_by_domain(request.host_with_port.downcase)
-      @current_site ||= Site.find_site(request.host_with_port.downcase, request.fullpath)
-      puts ">>> it worked... so far (#{@current_site.name}, #{@current_site.domain}, #{@current_site.path})"
+    # def current_site
+    #   debugger
+    #   # @current_site ||= Site.find_by_domain(request.host_with_port.downcase)
+    #   @current_site ||= Site.find_site(request.host_with_port.downcase, request.fullpath)
+    #   puts ">>> it worked... so far (#{@current_site.name}, #{@current_site.domain}, '#{@current_site.path}')"
+    # end
+
+    def load_cms_site
+      # debugger
+      @cms_site ||= if params[:site_id]
+        Cms::Site.find_by_id(params[:site_id])
+      else
+        Cms::Site.find_site(request.host_with_port.downcase, request.fullpath)
+      end
+      puts ">>> it worked... so far (#{@cms_site.name}, #{@cms_site.domain}, '#{@cms_site.path}')"
+      
+      if @cms_site
+        if params[:path].present?
+          params[:path].gsub!(/^#{@cms_site.path}/, '')
+          params[:path].to_s.gsub!(/^\//, '')
+        end
+        I18n.locale = @cms_site.locale
+      else
+        I18n.locale = I18n.default_locale
+        raise ActionController::RoutingError.new('Site Not Found')
+      end
     end
+   
+    # def load_cms_page
+    #   @cms_page = @cms_site.pages.published.find_by_full_path!("/#{params[:cms_path]}")
+    #   # return redirect_to(@cms_page.target_page.url) if @cms_page.target_page
+    #   
+    # rescue ActiveRecord::RecordNotFound
+    #   if @cms_page = @cms_site.pages.published.find_by_full_path('/404')
+    #     render_page(404)
+    #   else
+    #     raise ActionController::RoutingError.new('Page Not Found')
+    #   end
+    # end
+    
      
     def redirect_to_cms_site
       if using_cms_subdomains? && !request_is_for_cms_subdomain?

@@ -1,3 +1,24 @@
+
+Fri Mar  8 07:15:43 PST 2013
+
+20130308083948
+SchemaMigration.destroy_all("version = '20130308083948'")
+
+# ===== Thu Mar  7 23:56:25 PST 2013
+
+Started GET "/" for 127.0.0.1 at 2013-03-08 00:33:40 -0800
+Processing by Cms::ContentController#show as HTML
+
+Started GET "/downloads" for 127.0.0.1 at 2013-03-08 00:34:22 -0800
+Processing by Cms::ContentController#show as HTML
+
+
+
+
+./bin/rails generate migration add_identifier_and_locale_to_sites identifier:text locale:string
+./bin/rails generate migration add_path_to_sites path:text
+./bin/rake db:migrate db:migrate:status
+
 <%= cms_toolbar %>
 <%= container :main %>
 

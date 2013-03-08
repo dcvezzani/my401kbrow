@@ -59,4 +59,6 @@ BrowsercmsDemo::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   mount_browsercms
+
+  #get '/' => :render_html,  :as => 'cms_html',  :path => "(*cms_path)"
 end

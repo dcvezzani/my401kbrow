@@ -1,9 +1,19 @@
 module Cms
   class Site < ActiveRecord::Base
 
-    attr_accessible :name, :domain, :path
+    attr_accessible :name, :domain, :path, :identifier, :locale
 
-    validates_uniqueness_of :domain, :path
+    # -- Relationships --------------------------------------------------------
+    with_options :dependent => :destroy do |site|
+      # site.has_many :layouts
+      site.has_many :pages
+      # site.has_many :snippets
+      # site.has_many :files
+      # site.has_many :categories
+    end
+
+    validates_uniqueness_of :path
+    validates_presence_of :locale, :identifier, :domain
 
     before_validation :remove_www
 
@@ -64,6 +74,11 @@ module Cms
 protected
   
     def self.real_host_from_aliases(host)
+
+      # disable until this feature is available
+      # code came from ComfortableMexicanSofa
+      # can create equivalent of a configuration class for BrowserCms
+      #
       if false and aliases = ComfortableMexicanSofa.config.hostname_aliases
         aliases.each do |alias_host, aliases|
           return alias_host if aliases.include?(host)
