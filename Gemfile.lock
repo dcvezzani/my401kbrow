@@ -145,7 +145,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcms_blog
-  browsercms (= 3.5.5)
   coffee-rails (~> 3.2.1)
   debugger
   jquery-rails

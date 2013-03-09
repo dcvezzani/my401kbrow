@@ -1,41 +1,60 @@
+<%= content_for :html_head do %>
+  <%= stylesheet_link_tag('cms/form_layout') %>
+<% end %>
 <%= form_for(@cms_site) do |f| %>
+  <%= f.cms_error_messages %>
+  <%= render :partial => 'site_fields', :locals => {:f => f} %>
+  <div class="buttons">
+    <%= lt_button_wrapper(f.submit("Save", :class => "submit")) %>
+  </div>
+<% end %>
+
+
+
+
+<div style="display: none; ">
+
+<%#= form_for(@cms_site) do |f| %>
   <% if @cms_site.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@cms_site.errors.count, "error") %> prohibited this cms_site from being saved:</h2>
+      <h2><%#= pluralize(@cms_site.errors.count, "error") %> prohibited this cms_site from being saved:</h2>
 
       <ul>
       <% @cms_site.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%#= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%#= f.label :name %><br />
+    <%#= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :domain %><br />
-    <%= f.text_field :domain %>
+    <%#= f.label :domain %><br />
+    <%#= f.text_field :domain %>
   </div>
   <div class="field">
-    <%= f.label :the_default %><br />
-    <%= f.check_box :the_default %>
+    <%#= f.label :the_default %><br />
+    <%#= f.check_box :the_default %>
   </div>
   <div class="field">
-    <%= f.label :path %><br />
-    <%= f.text_area :path %>
+    <%#= f.label :path %><br />
+    <%#= f.text_area :path %>
   </div>
   <div class="field">
-    <%= f.label :identifier %><br />
-    <%= f.text_area :identifier %>
+    <%#= f.label :identifier %><br />
+    <%#= f.text_area :identifier %>
   </div>
   <div class="field">
-    <%= f.label :locale %><br />
-    <%= f.text_field :locale %>
+    <%#= f.label :locale %><br />
+    <%#= f.text_field :locale %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%#= f.submit %>
   </div>
-<% end %>
+<%# end %>
+
+</div>
+

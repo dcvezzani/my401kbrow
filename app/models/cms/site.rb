@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 module Cms
   class Site < ActiveRecord::Base
 

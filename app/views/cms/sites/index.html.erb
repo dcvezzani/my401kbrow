@@ -1,3 +1,109 @@
+<% page_title "Administration / Site Browser" %>
+<% @toolbar_title = "List Sites" %>
+
+<%= content_for(:html_head) do %>
+  <%= javascript_tag do %>
+    jQuery(function($){
+      $('table.data tbody tr').hover(function(){
+        $(this).addClass('hover')
+      }, function(){
+        $(this).removeClass('hover')
+      }).click(function(){
+      console.log(this);
+        var match = this.id.match(/(.*)_(\d+)/) 
+        var type = match[1];
+        var id = match[2];
+        $('table.data tbody tr').removeClass('selected');
+        $(this).addClass('selected');
+        $('#edit_button').removeClass('disabled').attr('href', '/cms/<%= Cms::Site.table_name.pluralize %>/'+id+'/edit');
+        $('#delete_button').removeClass('disabled').attr('href', '/cms/<%= Cms::Site.table_name.pluralize %>/'+id)
+        //$('#delete_button').removeClass('disabled').attr('href', '/cms/<%#= dynamic_view_type.name.demodulize.underscore.pluralize %>/'+id)
+      })
+    })
+  <% end %>
+<% end %>
+
+<%= content_for :functions do %>
+  <%= link_to(span_tag("Add Site"), new_site_path,
+    :id => "new_site_button", :class => "button") %>
+    <%#= add_button cms_new_path_for(dynamic_view_type) %>
+    <%= edit_button  %>
+    <%= delete_button :title => "Are you sure you want to delete this #{Cms::Site.table_name.singularize.titleize}?" %>
+<% end %>
+
+<div class="roundedcorners">
+  <table class="data">
+    <thead>
+      <tr>
+        <th colspan="2" class="first">
+          <div class="dividers">
+            <%= link_to "Name", sites_path(:order => determine_order(params[:order], "#{Cms::Site.table_name}.name")) %>
+          </div>
+        </th>
+        <th colspan="1" class="last"><div class="dividers">Domain</div></th>
+        <th colspan="1" class="last"><div class="dividers">Path</div></th>
+        <th colspan="1" class="last"><div class="dividers">Identifier</div></th>
+        <th colspan="1" class="last"><div class="dividers">Locale</div></th>
+        <th colspan="1" class="last"><div class="dividers">Default?</div></th>
+      </tr>
+    </thead>
+    <% section_count = Cms::Section.count %>
+    <% @cms_sites.each do |s| %>
+      <tr id="cms_site_<%= s.id %>">
+        <td class="first"></td>
+
+        <td>
+          <div class="dividers">
+            <%= link_to h(s.name), [:edit, s] %>
+          </div>
+        </td>
+
+        <td>
+          <div class="dividers">
+            <%= h(s.domain) %>
+          </div>
+        </td>
+
+        <td>
+          <div class="dividers">
+            <%= h(s.path) %>
+          </div>
+        </td>
+
+        <td>
+          <div class="dividers">
+            <%= h(s.identifier) %>
+          </div>
+        </td>
+
+        <td>
+          <div class="dividers">
+            <%= h(s.locale) %>
+          </div>
+        </td>
+
+        <td>
+          <div class="dividers">
+            <%= h(s.the_default) %>
+          </div>
+        </td>
+
+      </tr>
+    <% end %>
+  </table>
+  <div class="tl"></div>
+  <div class="tr"></div>
+  <div class="bl"></div>
+  <div class="br"></div>
+</div>
+<% if @cms_sites.total_pages > 1 %>
+  <%= render_pagination @cms_sites, Cms::Site %>
+<% end %>
+
+
+
+
+<div style="display: none; ">
 <h1>Listing cms_sites</h1>
 
 <table>
@@ -13,21 +119,24 @@
     <th></th>
   </tr>
 
-<% @cms_sites.each do |cms_site| %>
+<%# @cms_sites.each do |cms_site| %>
   <tr>
-    <td><%= cms_site.name %></td>
-    <td><%= cms_site.domain %></td>
-    <td><%= cms_site.the_default %></td>
-    <td><%= cms_site.path %></td>
-    <td><%= cms_site.identifier %></td>
-    <td><%= cms_site.locale %></td>
-    <td><%= link_to 'Show', cms_site %></td>
-    <td><%= link_to 'Edit', edit_cms_site_path(cms_site) %></td>
-    <td><%= link_to 'Destroy', cms_site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%# cms_site.name %></td>
+    <td><%# cms_site.domain %></td>
+    <td><%# cms_site.the_default %></td>
+    <td><%# cms_site.path %></td>
+    <td><%# cms_site.identifier %></td>
+    <td><%# cms_site.locale %></td>
+    <td><%# link_to 'Show', cms_site %></td>
+    <td><%# link_to 'Edit', edit_cms_site_path(cms_site) %></td>
+    <td><%# link_to 'Destroy', cms_site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
-<% end %>
+<%# end %>
 </table>
 
 <br />
 
-<%= link_to 'New Site', new_cms_site_path %>
+<%# link_to 'New Site', new_cms_site_path %>
+
+</div>
+

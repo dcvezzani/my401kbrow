@@ -39,7 +39,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "browsercms", "3.5.5"
 
 gem 'debugger'
 

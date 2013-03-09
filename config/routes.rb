@@ -1,8 +1,13 @@
-BrowsercmsDemo::Application.routes.draw do
-  namespace :cms do
-    resources :sites
+Cms::Engine.routes.draw do
+  resources :sites do
   end
+  get '/sites/:id/edit', to: 'sites#edit', as: 'edit_cms_site'
+  get '/sites/new', to: 'sites#new', as: 'new_cms_site'
+  # get '/pages/:id/version/:version', :to=>'pages#version', :as=>'version_cms_page'
+  # put '/pages/:id/revert_to/:version', :to=>'pages#revert_to', :as=>'revert_page'
+end
 
+BrowsercmsDemo::Application.routes.draw do
 
   mount_bcms_blog
 
@@ -64,6 +69,4 @@ BrowsercmsDemo::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   mount_browsercms
-
-  #get '/' => :render_html,  :as => 'cms_html',  :path => "(*cms_path)"
 end

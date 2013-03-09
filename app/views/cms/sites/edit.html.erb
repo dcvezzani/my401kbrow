@@ -1,6 +1,26 @@
+<% @page_title = @toolbar_title = "Edit Site '#{h(@cms_site.name)}'" %>
+
+<%= content_for :toolbar_links do %>
+  <%= link_to(span_tag("List All"), sites_path,
+    :id => "list_all_button", 
+    :class => "button") %>
+<% end %>
+
+<%= content_for :functions do %>
+  <%#= render(:partial => "toolbar") %>
+  <%= link_to(span_tag("List All"), sites_path, :class => "button") %>
+<% end %>
+
+<%= render :partial => 'form' %>
+
+
+
+
+<div style="display: none; ">
 <h1>Editing cms_site</h1>
 
-<%= render 'form' %>
+<%#= render 'form' %>
 
-<%= link_to 'Show', @cms_site %> |
-<%= link_to 'Back', cms_sites_path %>
+<%#= link_to 'Show', @cms_site %> |
+<%#= link_to 'Back', sites_path %>
+</div>
