@@ -52,10 +52,28 @@ me.groups.map(&:name)
 me.groups.clear
 me.save!
 
+Cms::Group.where{code.in(Cms::Authoring.SUPER_PERMISSIONS)}
 me.groups << super_admin_group
 me.save!
 
+#groups = Cms::Group.all.select{|x| %w{edit_content super_administrate administrate publish_content}.include?(x.code)}
+groups = Cms::Group.all.select{|x| %w{cms-admin cms-super-admin}.include?(x.code)}
+groups = Cms::Group.all.select{|x| %w{cms-admin}.include?(x.code)}
+groups = Cms::Group.all.select{|x| %w{content-editor}.include?(x.code)}
+groups = Cms::Group.all.select{|x| %w{content-editor cms-admin}.include?(x.code)}
+groups = Cms::Group.all.select{|x| %w{content-editor cms-admin cms-super-admin}.include?(x.code)}
+groups = Cms::Group.all.select{|x| %w{cms-super-admin}.include?(x.code)}
+Cms::Group.all.map(&:name)
+Cms::Group.all.map(&:code)
+groups.map(&:name)
+me.groups = groups
+me.save!
 
+Cms::Authoring.SUPER_PERMISSIONS
+
+
+me = Cms::User.first
+me.groups.map(&:name)
 
 http://localhost:3690/cms/sites
 

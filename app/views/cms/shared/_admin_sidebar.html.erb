@@ -23,10 +23,10 @@
 <div class="first">
 <% end %>
 
-  <h3>Users</h3>
+  <h3>Site Users</h3>
   <ul>
-    <li<%= ' class="open"' if @menu_section == 'users' %>><%= link_to "Users", cms.users_path %></li>
-    <li<%= ' class="open"' if @menu_section == 'groups' %>><%= link_to "Groups", cms.groups_path %></li>
+    <li<%= ' class="open"' if @menu_section == 'users' %>><%= link_to "Site Users", cms.users_path %></li>
+    <li<%= ' class="open"' if @menu_section == 'groups' %>><%= link_to "Site Groups", cms.groups_path %></li>
   </ul>
 </div>
 <div class="bottom_cap bottom_pad"></div>
