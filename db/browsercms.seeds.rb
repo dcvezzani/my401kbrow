@@ -15,6 +15,7 @@ Cms::User.current = create_user(:cmsadmin, :login => "cmsadmin", :first_name => 
 ].each do |type|
   create_content_type(type[0].to_sym, :name=>type[0], :group_name=>type[1])
 end
+create_permission(:super_administrate, :name => "super_administrate", :full_name => "Super Administer CMS", :description => "Allows users to administer more privileged functions in the CMS, including adding sites; does not take the place of :administrate, but adds to it.")
 create_permission(:administrate, :name => "administrate", :full_name => "Administer CMS", :description => "Allows users to administer the CMS, including adding users and groups.")
 create_permission(:edit_content, :name => "edit_content", :full_name => "Edit Content", :description => "Allows users to Add, Edit and Delete both Pages and Blocks. Can Save (but not Publish) and Assign them as well.")
 create_permission(:publish_content, :name => "publish_content", :full_name => "Publish Content", :description => "Allows users to Save and Publish, Hide and Archive both Pages and Blocks.")
@@ -28,10 +29,13 @@ group_types(:cms_user).permissions<<permissions(:publish_content)
 
 create_group(:guest, :name => 'Guest', :code => 'guest', :group_type => group_types(:guest_group_type))
 create_group(:content_admin, :name => 'Cms Administrators', :code => 'cms-admin', :group_type => group_types(:cms_user))
+create_group(:content_super_admin, :name => 'Cms Super Administrators', :code => 'cms-super-admin', :group_type => group_types(:cms_user))
 create_group(:content_editor, :name => 'Content Editors', :code => 'content-editor', :group_type => group_types(:cms_user))
+users(:cmsadmin).groups << groups(:content_super_admin)
 users(:cmsadmin).groups << groups(:content_admin)
 users(:cmsadmin).groups << groups(:content_editor)
 
+groups(:content_super_admin).permissions<<permissions(:super_administrate)
 groups(:content_admin).permissions<<permissions(:administrate)
 groups(:content_editor).permissions<<permissions(:edit_content)
 groups(:content_editor).permissions<<permissions(:publish_content)

@@ -4,7 +4,6 @@
 # added Sites for super_administrate
 # if this gets any more complex, think about breaking out into a _super_admin_sidebar.html.erb
 %>
-<% if false and current_user.able_to?(:super_administrate) %>
 <div class="first">
   <h3>Sites</h3>
   <ul>
@@ -12,17 +11,11 @@
   </ul>
 </div>
 <div class="bottom_cap bottom_pad"></div>
-<% end %>
 
 <% if current_user.able_to?(:administrate) %>
 
-<% if false and current_user.able_to?(:super_administrate) %>
 <div class="top_cap"></div>
 <div class="">
-<% else %>
-<div class="first">
-<% end %>
-
   <h3>Users</h3>
   <ul>
     <li<%= ' class="open"' if @menu_section == 'users' %>><%= link_to "Users", cms.users_path %></li>
@@ -55,5 +48,6 @@
   </ul>
 </div>
 <div class="bottom_cap"></div>
+
 <% end %>
 

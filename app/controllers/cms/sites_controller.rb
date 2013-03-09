@@ -1,8 +1,9 @@
 module Cms
 class SitesController < Cms::ResourceController
-  layout 'cms/administration'
+  #layout 'cms/administration'
+  layout 'cms/super_administration'
   
-  check_permissions :administrate
+  check_permissions :administrate, :super_administrate
   before_filter :set_menu_section
 
   

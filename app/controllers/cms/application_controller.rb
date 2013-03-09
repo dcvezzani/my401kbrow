@@ -86,7 +86,7 @@ class ApplicationController < ::ApplicationController
     end
   
     def cms_access_required
-      raise Cms::Errors::AccessDenied unless current_user.able_to?(:administrate, :edit_content, :publish_content)
+      raise Cms::Errors::AccessDenied unless current_user.able_to?(:super_administrate, :administrate, :edit_content, :publish_content)
     end
   
     def self.check_permissions(*perms)

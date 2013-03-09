@@ -9,8 +9,56 @@
 
 
 
+{"name"=>"CMS User", "guest"=>false, "cms_access"=>true}
+./bin/rails generate migration add_cms_access_all_sites_to_group_types cms_access_all_sites:boolean
+
+
+Cms::Permission
+
+super_admin_permission = Cms::Permission.create!( {"name"=>"super_administrate", "full_name"=>"Super Administer CMS", "description"=>"Allows users to administer more privileged functions in the CMS, including adding sites."} )
+
+me = Cms::User.first
+me.permissions << super_admin_permission
+me.save!
+
 20130308083948
 SchemaMigration.destroy_all("version = '20130308083948'")
+
+
+1.9.3-p194 :089 > Cms::Group.all.map(&:name)
+
+Cms::Group.all.map(&:name)
+Cms::Group.first
+
+Cms::GroupType.all.map(&:name)
+Cms::GroupType.find(3)
+
+Cms::Permission.all.map(&:name)
+super_admin_perm = Cms::Permission.all.last
+
+super_admin_group = Cms::Group.create!({"name"=>"Cms Super Administrators", "code"=>"cms-super-admin", "group_type_id"=>3})
+super_admin_group = Cms::Group.find(5)
+super_admin_group.group_type
+super_admin_group.permissions << super_admin_perm
+
+admin_group = Cms::Group.find(2)
+admin_group.group_type
+admin_group.permissions
+
+
+me = Cms::User.first
+me.permissions.map(&:name)
+me.groups.map(&:name)
+me.groups.clear
+me.save!
+
+me.groups << super_admin_group
+me.save!
+
+
+
+http://localhost:3690/cms/sites
+
 
 # ===== Thu Mar  7 23:56:25 PST 2013
 

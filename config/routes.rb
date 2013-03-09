@@ -1,4 +1,6 @@
 Cms::Engine.routes.draw do
+  match '/super_administration', :to=>"sites#index", :as=>'super_administration'
+
   resources :sites do
   end
   get '/sites/:id/edit', to: 'sites#edit', as: 'edit_cms_site'
