@@ -76,7 +76,7 @@ class Cms::Page < ActiveRecord::Base
   before_validation :append_leading_slash_to_path, :remove_trailing_slash_from_path
   before_destroy :delete_connectors
 
-  validates_presence_of :name, :path, :site_id
+  validates_presence_of :name, :path#, :site_id
 
   # Paths must be unique among undeleted records
   validates_uniqueness_of :path, :scope=>:deleted
