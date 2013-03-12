@@ -39,7 +39,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-
-gem 'debugger'
-
 gem "bcms_blog"
+
+group :development, :test do
+  gem 'nifty-generators', git: 'http://github.com/dcvezzani/nifty-generators.git'
+  gem 'debugger'
+end
+

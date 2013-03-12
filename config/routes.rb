@@ -11,6 +11,14 @@ end
 
 BrowsercmsDemo::Application.routes.draw do
 
+  get "my401k/admin/manage_profile/basic_information" => "My401k::ManageProfile#basic_information"
+  get "my401k/admin/manage_profile/admin_delegates" => "My401k::ManageProfile#admin_delegates"
+  get "my401k/admin/manage_profile/portal_branding" => "My401k::ManageProfile#portal_branding"
+  get "my401k/admin/manage_profile/participant_access_control" => "My401k::ManageProfile#participant_access_control"
+  get "my401k/admin/manage_profile/subscription_status" => "My401k::ManageProfile#subscription_status"
+  get "my401k/admin/manage_profile/sponsor_contacts" => "My401k::ManageProfile#sponsor_contacts"
+  get "my401k/admin/manage_profile/alert_preferences" => "My401k::ManageProfile#alert_preferences"
+  
   mount_bcms_blog
 
   # The priority is based upon order of creation:

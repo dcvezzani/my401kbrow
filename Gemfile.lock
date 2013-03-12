@@ -1,3 +1,9 @@
+GIT
+  remote: http://github.com/dcvezzani/nifty-generators.git
+  revision: 702eb6d0d4a2145a0c3703aadebafbde0f07f64a
+  specs:
+    nifty-generators (0.4.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -148,6 +154,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   jquery-rails
+  nifty-generators!
   pg
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
