@@ -1,2 +1,51 @@
 <h1>My401k::ManageProfile#subscription_status</h1>
-<p>Find me in app/views/my401k/manage_profile/subscription_status.html.erb</p>
+
+<div class="wrapper">
+  
+  <div class="grayDividerBar">
+    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+    <p>Subscription status</p>
+  </div><!-- /.grayDividerBar -->
+
+  <p>Want to enjoy subscriptions at a lower cost? Here are some <a href="#">ideas</a>.</p>
+  
+  <div class="sectionBox">
+    <p>Subscription Period</p>
+    <a href="#">Start date<i class="icon-calendar"></i></a>
+    <a href="#">End date<i class="icon-calendar"></i></a>
+    <label class="checkbox">
+      <input type="checkbox"> Please auto-renew my subscription every year on [END DATE]
+    </label>
+  </div><!-- /.sectionBox -->
+  
+  <div class="sectionBox">
+    <p>Extend Subscription</p>
+    
+    <label class="radio inline">
+      <input type="radio" id="oneYear" value="oneYear"> 1 Year $1,250
+    </label>
+    <label class="radio inline">
+      <input type="radio" id="threeYear" value="threeYear"> 3 Years $3,300
+    </label>
+    <label class="radio inline">
+      <input type="radio" id="fiveYear" value="fiveYear"> 5 Years $5,000
+    </label>
+    <label class="radio inline">
+      <input type="radio" id="tenYear" value="tenYear"> 10 Years $9,000
+    </label>
+    
+    <div class="btn">Extend Subscription</div>
+  </div><!-- /.sectionBox -->
+  
+  <div class="sectionBox">
+    <p>Other subscription options</p>
+    <p>Unhappy? Contact us to close your account.</p>
+    <textarea rows="11">
+      Let us know
+    </textarea>
+    <div class="btn">
+      Send Us Your Comments
+    </div>
+  </div><!-- /.sectionBox -->
+
+</div><!-- /.wrapper -->

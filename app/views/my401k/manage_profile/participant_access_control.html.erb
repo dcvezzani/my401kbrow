@@ -1,2 +1,108 @@
 <h1>My401k::ManageProfile#participant_access_control</h1>
-<p>Find me in app/views/my401k/manage_profile/participant_access_control.html.erb</p>
+
+<div class="wrapper">
+    
+  <div class="grayDividerBar">
+    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+    <p>How do you want to provide access to your plan portal</p>
+  </div><!-- /.grayDividerBar -->
+  
+  <!-- _______________________Plan participant authentication_____________________ -->
+  
+  <div class="sectionBox">
+    <p>Plan participant authentication</p>
+     <label class="checkbox">
+      <input type="checkbox"> Anyone can register anytime
+     </label>
+     <label class="checkbox">
+      <input type="checkbox"> Anyone can register for 30 day guest access, then authentication is required by admin
+     </label>
+     <label class="checkbox">
+      <input type="checkbox"> Allow anyone to request an invite
+     </label>
+     <label class="checkbox">
+      <input type="checkbox"> Anyone with specified email doman can have access
+     </label>
+     <label class="checkbox">
+      <input type="checkbox"> Enable access link
+     </label>
+     <p>Copy the following text and paste in your email:</p>
+     <textarea rows="3">
+      
+     </textarea>
+     <div class="btn"><a href="#">Copy Link</a></div>
+     <div class="btn"><a href="#">Save</a></div>
+  </div>
+  
+  <!-- __________________Plan participant access status___________________ -->
+  
+  <div class="grayDividerBar">
+    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+    <p>Plan participant access status</p>
+    <div class="input-append">
+      <input class="span2" id="appendedInputButton" type="text">
+      <button class="btn" type="button">Search</button>
+    </div><!-- /.input-append -->
+  </div><!-- /.grayDividerBar -->  
+  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Full Name</th>
+        <th>Date Registered</th>
+        <th>Number of Log-Ins</th>
+        <th>Access Granted?</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+        </td>
+        <td>Stephen Williams</td>
+        <td>11 October, 2013</td>
+        <td>15</td>
+        <td>Yes</td>
+        <td>Password Reset, Grant/Reject</td>
+      </tr>
+      <tr>
+        <td>
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+        </td>
+        <td>John Sommers</td>
+        <td>29 July, 2013</td>
+        <td>28</td>
+        <td>Yes</td>
+        <td>Password Reset, Grant/Reject</td>
+      </tr>
+      <tr>
+        <td>
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+        </td>
+        <td>Susanne Quincy</td>
+        <td>--</td>
+        <td>0</td>
+        <td>No</td>
+        <td>Password Reset, Grant/Reject</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div><!-- /.wrapper -->
