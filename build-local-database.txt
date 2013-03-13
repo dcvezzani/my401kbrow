@@ -24,6 +24,7 @@ createdb -O brwsdemo_admin brwsdemo_development -U davidvezzani
 echo -e "development:\n  adapter: postgresql\n  database: brwsdemo_development\n  username: brwsdemo_admin\n  password: pass13"'!'"#\n  encoding: utf8\n  pool: 5\n \ntest: \n  adapter: postgresql\n  database: brwsdemo_test\n  username: rails\n  password: rails.pass13"'!'"#\n  encoding: utf8\n  pool: 5" > config/database.yml
 
 mkdir db/migrate
+bundle install --binstubs
 ./bin/rake db:migrate db:migrate:status
 ./bin/rake db:seed db:seed_demo_site
 ./bin/rake db:migrate db:migrate:status db:seed db:seed_demo_site

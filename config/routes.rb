@@ -1,4 +1,5 @@
 Cms::Engine.routes.draw do
+
   match '/super_administration', :to=>"sites#index", :as=>'super_administration'
 
   resources :sites do
@@ -11,6 +12,37 @@ end
 
 BrowsercmsDemo::Application.routes.draw do
 
+  match "/my401k/admin/promote_plan_portal" => redirect("/my401k/admin/promote_plan_portal/print_material")
+  match "/my401k/admin/promote_plan_portal/index" => redirect("/my401k/admin/promote_plan_portal/print_material")
+  get "my401k/admin/promote_plan_portal/print_material" => "My401k::PromotePlanPortal#print_material"
+  get "my401k/admin/promote_plan_portal/email_templates" => "My401k::PromotePlanPortal#email_templates"
+  get "my401k/admin/promote_plan_portal/banners" => "My401k::PromotePlanPortal#banners"
+  get "my401k/admin/promote_plan_portal/letters" => "My401k::PromotePlanPortal#letters"
+  get "my401k/admin/promote_plan_portal/videos" => "My401k::PromotePlanPortal#videos"
+  get "my401k/admin/promote_plan_portal/enrollment_support" => "My401k::PromotePlanPortal#enrollment_support"
+
+  match "/my401k/admin/manage_content" => redirect("/my401k/admin/manage_content/published_content")
+  match "/my401k/admin/manage_content/index" => redirect("/my401k/admin/manage_content/published_content")
+  get "my401k/admin/manage_content/published_content" => "My401k::ManageContent#published_content"
+  get "my401k/admin/manage_content/draft_content" => "My401k::ManageContent#draft_content"
+  get "my401k/admin/manage_content/plugin_content_store" => "My401k::ManageContent#plugin_content_store"
+  get "my401k/admin/manage_content/quick_links" => "My401k::ManageContent#quick_links"
+  get "my401k/admin/manage_content/emergency_message" => "My401k::ManageContent#emergency_message"
+
+  match "/my401k/admin/professional_help" => redirect("/my401k/admin/professional_help/index")
+  get "my401k/admin/professional_help/index" => "My401k::ProfessionalHellp#index"
+
+  match "/my401k/admin/create_new_content" => redirect("/my401k/admin/create_new_content/select_section")
+  match "/my401k/admin/create_new_content/index" => redirect("/my401k/admin/create_new_content/select_section")
+  get "my401k/admin/create_new_content/select_section" => "My401k::CreateNewContent#select_section"
+  get "my401k/admin/create_new_content/select_layout" => "My401k::CreateNewContent#select_layout"
+  get "my401k/admin/create_new_content/create_title_and_body" => "My401k::CreateNewContent#create_title_and_body"
+  get "my401k/admin/create_new_content/create_tile" => "My401k::CreateNewContent#create_tile"
+  get "my401k/admin/create_new_content/optional_elections" => "My401k::CreateNewContent#optional_elections"
+  get "my401k/admin/create_new_content/point_content" => "My401k::CreateNewContent#point_content"
+
+  match "/my401k/admin/manage_profile" => redirect("/my401k/admin/manage_profile/basic_information")
+  match "/my401k/admin/manage_profile/index" => redirect("/my401k/admin/manage_profile/basic_information")
   get "my401k/admin/manage_profile/basic_information" => "My401k::ManageProfile#basic_information"
   get "my401k/admin/manage_profile/admin_delegates" => "My401k::ManageProfile#admin_delegates"
   get "my401k/admin/manage_profile/portal_branding" => "My401k::ManageProfile#portal_branding"

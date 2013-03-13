@@ -1,6 +1,4 @@
-class My401k::ManageProfileController < ApplicationController
-  layout "my401k"
-
+class My401k::ManageProfileController < My401k::AdminController
   def basic_information
   end
 
