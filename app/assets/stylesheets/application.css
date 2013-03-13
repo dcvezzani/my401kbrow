@@ -11,4 +11,5 @@
  *= require 'common/default'
  *= require_tree ./internal
  *= require 'stub'
+ *= require '../bootstrap/css/bootstrap'
 */

@@ -15,7 +15,7 @@ module Cms
     end
 
     validates_uniqueness_of :path
-    validates_presence_of :locale, :identifier, :domain
+    #validates_presence_of :locale, :identifier, :domain
 
     before_validation :remove_www
 
