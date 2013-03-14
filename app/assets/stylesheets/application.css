@@ -10,6 +10,7 @@
  *= require 'common/reset-eliot'
  *= require 'common/default'
  *= require_tree ./internal
+ *= require_tree ./my401k
  *= require 'stub'
  *= require '../bootstrap/css/bootstrap'
 */

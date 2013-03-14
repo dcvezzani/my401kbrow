@@ -1,3 +1,55 @@
 // Place all the styles related to the My401k::ManageProfile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* _______________RED SIDE MENU FORMATTING________*/
+
+.redSideButton {
+  position: relative;
+}
+
+.redButtonText {
+  position: absolute;
+  top:12px;
+  left: 15px;
+  color: #FFF;
+  text-shadow: black 2px 2px 4px;
+}
+
+
+/* _____________ GRAY BAR FORMATTING ____________*/
+
+.grayDividerBar {
+  position: relative;
+  clear: both;
+}
+
+.grayBarText {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+.grayBarSearch {
+  position: absolute;
+  top: 7px;
+  right: 15px;
+}
+
+/* ________________SECTION BOX FORMATTING _____________*/
+
+.sectionBox {
+  border: 1px solid black;
+}
+
+.tlb {
+  background-color: white;
+  position: relative;
+  top: -10px;
+  left: 15px;
+  display: inline-block;
+}
+
+.boxedText {
+  width: 420px;
+}

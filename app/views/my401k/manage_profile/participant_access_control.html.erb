@@ -1,16 +1,79 @@
-<h1>My401k::ManageProfile#participant_access_control</h1>
+<% title("Participant Access Control", true) %>
+
+<% content_for :side_menu do %>
+  <dl>
+    <dt>Manage Profile Menu</dt>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Basic Information</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Admin Delegates</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Portal Branding</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Part. Access Control</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Subscription Status</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Sponsor Contacts</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Alert Preferences</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+  </dl>
+<% end %>
 
 <div class="wrapper">
     
   <div class="grayDividerBar">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
-    <p>How do you want to provide access to your plan portal</p>
+    <p class="grayBarText">How do you want to provide access to your plan portal</p>
   </div><!-- /.grayDividerBar -->
+  <br>
   
   <!-- _______________________Plan participant authentication_____________________ -->
   
   <div class="sectionBox">
-    <p>Plan participant authentication</p>
+    <p class="tlb">Plan participant authentication</p>
      <label class="checkbox">
       <input type="checkbox"> Anyone can register anytime
      </label>
@@ -38,8 +101,8 @@
   
   <div class="grayDividerBar">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
-    <p>Plan participant access status</p>
-    <div class="input-append">
+    <p class="grayBarText">Plan participant access status</p>
+    <div class="input-append grayBarSearch">
       <input class="span2" id="appendedInputButton" type="text">
       <button class="btn" type="button">Search</button>
     </div><!-- /.input-append -->

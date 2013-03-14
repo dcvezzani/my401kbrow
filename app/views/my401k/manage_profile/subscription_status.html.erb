@@ -1,25 +1,88 @@
-<h1>My401k::ManageProfile#subscription_status</h1>
+<% title("Subscription Status", true) %>
+
+<% content_for :side_menu do %>
+  <dl>
+    <dt>Manage Profile Menu</dt>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Basic Information</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Admin Delegates</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Portal Branding</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Part. Access Control</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Subscription Status</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Sponsor Contacts</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Alert Preferences</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+  </dl>
+<% end %>
 
 <div class="wrapper">
   
   <div class="grayDividerBar">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
-    <p>Subscription status</p>
+    <p class="grayBarText">Subscription status</p>
   </div><!-- /.grayDividerBar -->
 
   <p>Want to enjoy subscriptions at a lower cost? Here are some <a href="#">ideas</a>.</p>
   
   <div class="sectionBox">
-    <p>Subscription Period</p>
+    <p class="tlb">Subscription Period</p>
     <a href="#">Start date<i class="icon-calendar"></i></a>
     <a href="#">End date<i class="icon-calendar"></i></a>
     <label class="checkbox">
       <input type="checkbox"> Please auto-renew my subscription every year on [END DATE]
     </label>
   </div><!-- /.sectionBox -->
+  <br>
   
   <div class="sectionBox">
-    <p>Extend Subscription</p>
+    <p class="tlb">Extend Subscription</p>
     
     <label class="radio inline">
       <input type="radio" id="oneYear" value="oneYear"> 1 Year $1,250
@@ -36,9 +99,10 @@
     
     <div class="btn">Extend Subscription</div>
   </div><!-- /.sectionBox -->
+  <br>
   
   <div class="sectionBox">
-    <p>Other subscription options</p>
+    <p class="tlb">Other subscription options</p>
     <p>Unhappy? Contact us to close your account.</p>
     <textarea rows="11">
       Let us know

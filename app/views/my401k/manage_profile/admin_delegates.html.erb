@@ -1,26 +1,76 @@
-<% title("Basic Information", true) %>
+<% title("Admin Delegates", true) %>
 
 <% content_for :side_menu do %>
   <dl>
     <dt>Manage Profile Menu</dt>
-      <dd><a href="#">Basic Information</a></dd>
-      <dd><a href="#">Admin Delegates</a></dd>
-      <dd><a href="#">Portal Branding</a></dd>
-      <dd><a href="#">Part. Access Control</a></dd>
-      <dd><a href="#">Subscription Status</a></dd>
-      <dd><a href="#">Sponsor Contacts</a></dd>
-      <dd><a href="#">Alert Preferences</a></dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Basic Information</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Admin Delegates</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Portal Branding</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Part. Access Control</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Subscription Status</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Sponsor Contacts</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Alert Preferences</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
   </dl>
 <% end %>
 
 <div class="wrapper">
   
-  <div class="sectionBox" id="mngAdminDelegates">
-    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
-    <p>Manage Admin Delegates</p>
-  </div><!-- /.statusBar #mngAdminDelegates -->
+  <div class="grayDividerBar">
+  <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+  <p class="grayBarText">Manage admin delegates</p>
+</div><!-- /.grayDividerBar -->
+<br>
   
-  <div id="buttons">
+  <div class="btn btn-small pull-right">
     <img src="#">
     <span id="addDelegate">Add New Admin Delegate</span>
     <a href="#"><img src="<%= asset_path 'beta/plus.png' %>"></a>
