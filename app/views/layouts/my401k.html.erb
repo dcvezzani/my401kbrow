@@ -67,7 +67,18 @@
           </div>
 
           <div id="left-side-menu">
-            <%= yield(:side_menu) if content_for?(:side_menu) %>
+            <% if content_for?(:side_menu) %>
+              <%= yield(:side_menu) %>
+
+            <% else %>
+              <ul>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+                <li>four</li>
+                <li>five</li>
+              </ul>
+            <% end %>
           </div> <!-- #left-side-menu -->
 
         </div>
