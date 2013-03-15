@@ -1,5 +1,9 @@
 Cms::Engine.routes.draw do
 
+  get "promote_plug_ins/index"
+
+  get "manage_profile/index"
+
   match '/super_administration', :to=>"sites#index", :as=>'super_administration'
 
   resources :sites do
@@ -11,6 +15,10 @@ Cms::Engine.routes.draw do
 end
 
 BrowsercmsDemo::Application.routes.draw do
+
+  get "promote_plug_ins/index"
+
+  get "manage_profile/index"
 
   match "/my401k/admin/promote_plan_portal" => redirect("/my401k/admin/promote_plan_portal/print_material")
   match "/my401k/admin/promote_plan_portal/index" => redirect("/my401k/admin/promote_plan_portal/print_material")

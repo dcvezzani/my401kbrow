@@ -1,4 +1,21 @@
 
+# ===== Fri Mar 15 06:11:21 PDT 2013
+
+./bin/rails g controller My401k::PlugInAuthor::ManageProfile index
+./bin/rails g controller My401k::PlugInAuthor::PromotePlugIns index
+
+# published/drafted bundles
+./bin/rails g controller My401k::PlugInAuthor::ManageContent::Bundle published drafted details_summaries details_summary details_bundle details_products details_product publish clone_draft move_to_draft edit destroy
+
+
+bundles_published bundles_draft bundle_show_details bundle_publish bundle
+./bin/rails g controller My401k::PlugInAuthor::Reports index
+./bin/rails g controller My401k::PlugInAuthor::ManageProfile index
+./bin/rails g controller My401k::PlugInAuthor::ManageProfile index
+
+./bin/rails g controller My401k::PlugInAuthor manage_profile promote_plugins
+
+
 # ===== Fri Mar  8 07:15:43 PST 2013
 
 
