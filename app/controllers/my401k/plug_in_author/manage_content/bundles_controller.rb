@@ -1,4 +1,4 @@
-class My401k::PlugInAuthor::ManageContent::BundlesController < My401k::PlugInAuthor::ManageContent::ProductsController
+class My401k::PlugInAuthor::ManageContent::BundlesController < My401k::PlugInAuthor::ManageContentController
   def published
   end
 

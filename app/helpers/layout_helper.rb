@@ -19,4 +19,8 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+
+  def side_menu(&blk)
+    content_for(:side_menu, &blk) unless content_for?(:side_menu)
+  end
 end

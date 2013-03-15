@@ -1,4 +1,4 @@
-class My401k::PlugInAuthor::ManageContent::ProductsController < My401k::AdminController
+class My401k::PlugInAuthor::ManageContent::ProductsController < My401k::PlugInAuthor::ManageContentController
   def move_to_bundle
   end
 
