@@ -1,4 +1,6 @@
 class My401k::PlugInAuthor::ManageContent::ProductsController < ApplicationController
+  layout 'my401k'
+
   def move_to_bundle
   end
 

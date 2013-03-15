@@ -13,27 +13,27 @@ end
 BrowsercmsDemo::Application.routes.draw do
 
   ### Manage Content Products
-  match "/my401k/plugin_author/manage_content/products" => redirect("/plan_sponsor/manage_content/products/move_to_bundle")
-  match "/my401k/plugin_author/manage_content/products/index" => redirect("/plan_sponsor/manage_content/products/move_to_bundle")
-  get "my401k/plugin_author/manage_content/products/move_to_bundle" => "My401k::PlugInAuthor::ManageContent::Products#move_to_bundle", as: "plugin_author_manage_content_products_move_to_bundle"
-  get "my401k/plugin_author/manage_content/products/destroy" => "My401k::PlugInAuthor::ManageContent::Products#destroy", as: "plugin_author_manage_content_products_destroy"
-  get "my401k/plugin_author/manage_content/products/published" => "My401k::PlugInAuthor::ManageContent::Products#published", as: "plugin_author_manage_content_products_published"
-  get "my401k/plugin_author/manage_content/products/drafted" => "My401k::PlugInAuthor::ManageContent::Products#drafted", as: "plugin_author_manage_content_products_drafted"
-  get "my401k/plugin_author/manage_content/products/product_summary_by_all_types" => "My401k::PlugInAuthor::ManageContent::Products#product_summary_by_all_types", as: "plugin_author_manage_content_products_product_summary_by_all_types"
-  get "my401k/plugin_author/manage_content/products/product_summary_by_type" => "My401k::PlugInAuthor::ManageContent::Products#product_summary_by_type", as: "plugin_author_manage_content_products_product_summary_by_type"
-  get "my401k/plugin_author/manage_content/products/product_summary_by_all_categories" => "My401k::PlugInAuthor::ManageContent::Products#product_summary_by_all_categories", as: "plugin_author_manage_content_products_product_summary_by_all_categories"
-  get "my401k/plugin_author/manage_content/products/product_summary_by_category" => "My401k::PlugInAuthor::ManageContent::Products#product_summary_by_category", as: "plugin_author_manage_content_products_product_summary_by_category"
-  get "my401k/plugin_author/manage_content/products/details_summaries" => "My401k::PlugInAuthor::ManageContent::Products#details_summaries", as: "plugin_author_manage_content_products_details_summaries"
-  get "my401k/plugin_author/manage_content/products/details_summary" => "My401k::PlugInAuthor::ManageContent::Products#details_summary", as: "plugin_author_manage_content_products_details_summary"
-  get "my401k/plugin_author/manage_content/products/details_product" => "My401k::PlugInAuthor::ManageContent::Products#details_product", as: "plugin_author_manage_content_products_details_product"
-  get "my401k/plugin_author/manage_content/products/publish" => "My401k::PlugInAuthor::ManageContent::Products#publish", as: "plugin_author_manage_content_products_publish"
-  get "my401k/plugin_author/manage_content/products/clone_draft" => "My401k::PlugInAuthor::ManageContent::Products#clone_draft", as: "plugin_author_manage_content_products_clone_draft"
-  get "my401k/plugin_author/manage_content/products/move_to_draft" => "My401k::PlugInAuthor::ManageContent::Products#move_to_draft", as: "plugin_author_manage_content_products_move_to_draft"
-  get "my401k/plugin_author/manage_content/products/edit" => "My401k::PlugInAuthor::ManageContent::Products#edit", as: "plugin_author_manage_content_products_edit"
-  get "my401k/plugin_author/manage_content/products/destroy" => "My401k::PlugInAuthor::ManageContent::Products#destroy", as: "plugin_author_manage_content_products_destroy"
-  get "my401k/plugin_author/manage_content/products/search" => "My401k::PlugInAuthor::ManageContent::Products#search", as: "plugin_author_manage_content_products_search"
-  get "my401k/plugin_author/manage_content/products/filter" => "My401k::PlugInAuthor::ManageContent::Products#filter", as: "plugin_author_manage_content_products_filter"
-  get "my401k/plugin_author/manage_content/products/help" => "My401k::PlugInAuthor::ManageContent::Products#help", as: "plugin_author_manage_content_products_help"
+  match "/my401k/plug_in_author/manage_content/products" => redirect("/my401k/plug_in_author/manage_content/products/published")
+  match "/my401k/plug_in_author/manage_content/products/index" => redirect("/my401k/plug_in_author/manage_content/products/published")
+  get "my401k/plug_in_author/manage_content/products/move_to_bundle" => "My401k::PlugInAuthor::ManageContent::Products#move_to_bundle", as: "plug_in_author_manage_content_products_move_to_bundle"
+  get "my401k/plug_in_author/manage_content/products/destroy" => "My401k::PlugInAuthor::ManageContent::Products#destroy", as: "plug_in_author_manage_content_products_destroy"
+  get "my401k/plug_in_author/manage_content/products/published" => "My401k::PlugInAuthor::ManageContent::Products#published", as: "plug_in_author_manage_content_products_published"
+  get "my401k/plug_in_author/manage_content/products/drafted" => "My401k::PlugInAuthor::ManageContent::Products#drafted", as: "plug_in_author_manage_content_products_drafted"
+  get "my401k/plug_in_author/manage_content/products/product_summary_by_all_types" => "My401k::PlugInAuthor::ManageContent::Products#product_summary_by_all_types", as: "plug_in_author_manage_content_products_product_summary_by_all_types"
+  get "my401k/plug_in_author/manage_content/products/product_summary_by_type" => "My401k::PlugInAuthor::ManageContent::Products#product_summary_by_type", as: "plug_in_author_manage_content_products_product_summary_by_type"
+  get "my401k/plug_in_author/manage_content/products/product_summary_by_all_categories" => "My401k::PlugInAuthor::ManageContent::Products#product_summary_by_all_categories", as: "plug_in_author_manage_content_products_product_summary_by_all_categories"
+  get "my401k/plug_in_author/manage_content/products/product_summary_by_category" => "My401k::PlugInAuthor::ManageContent::Products#product_summary_by_category", as: "plug_in_author_manage_content_products_product_summary_by_category"
+  get "my401k/plug_in_author/manage_content/products/details_summaries" => "My401k::PlugInAuthor::ManageContent::Products#details_summaries", as: "plug_in_author_manage_content_products_details_summaries"
+  get "my401k/plug_in_author/manage_content/products/details_summary" => "My401k::PlugInAuthor::ManageContent::Products#details_summary", as: "plug_in_author_manage_content_products_details_summary"
+  get "my401k/plug_in_author/manage_content/products/details_product" => "My401k::PlugInAuthor::ManageContent::Products#details_product", as: "plug_in_author_manage_content_products_details_product"
+  get "my401k/plug_in_author/manage_content/products/publish" => "My401k::PlugInAuthor::ManageContent::Products#publish", as: "plug_in_author_manage_content_products_publish"
+  get "my401k/plug_in_author/manage_content/products/clone_draft" => "My401k::PlugInAuthor::ManageContent::Products#clone_draft", as: "plug_in_author_manage_content_products_clone_draft"
+  get "my401k/plug_in_author/manage_content/products/move_to_draft" => "My401k::PlugInAuthor::ManageContent::Products#move_to_draft", as: "plug_in_author_manage_content_products_move_to_draft"
+  get "my401k/plug_in_author/manage_content/products/edit" => "My401k::PlugInAuthor::ManageContent::Products#edit", as: "plug_in_author_manage_content_products_edit"
+  get "my401k/plug_in_author/manage_content/products/destroy" => "My401k::PlugInAuthor::ManageContent::Products#destroy", as: "plug_in_author_manage_content_products_destroy"
+  get "my401k/plug_in_author/manage_content/products/search" => "My401k::PlugInAuthor::ManageContent::Products#search", as: "plug_in_author_manage_content_products_search"
+  get "my401k/plug_in_author/manage_content/products/filter" => "My401k::PlugInAuthor::ManageContent::Products#filter", as: "plug_in_author_manage_content_products_filter"
+  get "my401k/plug_in_author/manage_content/products/help" => "My401k::PlugInAuthor::ManageContent::Products#help", as: "plug_in_author_manage_content_products_help"
 
 
   match "/my401k/admin/promote_plan_portal" => redirect("/my401k/admin/promote_plan_portal/print_material")
