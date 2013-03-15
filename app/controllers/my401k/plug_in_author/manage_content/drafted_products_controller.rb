@@ -1,4 +1,4 @@
-class My401k::PlugInAuthor::ManageContent::DraftedProductsController < ApplicationController
+class My401k::PlugInAuthor::ManageContent::DraftedProductsController < My401k::PlugInAuthor::ManageContent::ProductsController
   def drafted
   end
 
