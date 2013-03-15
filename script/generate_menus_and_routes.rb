@@ -2,11 +2,11 @@ raise "this script must be run manually with care"
 
 ####### left-side-menu #####################
 
-sub_topic = "manage_content/products"
+sub_topic = "manage_content/bundles"
 sub_topic_underscore = sub_topic.gsub(/[\/]/, "_")
 sub_topic_dashed = sub_topic.gsub(/[_\/]/, "-")
 sub_topic_class = sub_topic.gsub(/[_\/]/, " ").titleize.gsub(/ +/, "")
-sub_topic_class = "My401k::PlugInAuthor::ManageContent::Products"
+sub_topic_class = "My401k::PlugInAuthor::ManageContent::Bundles"
 
 route = <<-EOL
   get "my401k/plug_in_author/#{sub_topic}/__entry__" => "#{sub_topic_class}#__entry__", as: "plug_in_author_#{sub_topic_underscore}___entry__"

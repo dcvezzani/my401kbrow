@@ -12,6 +12,29 @@ end
 
 BrowsercmsDemo::Application.routes.draw do
 
+  ### Manage Content Bundles
+  match "/my401k/plug_in_author/manage_content/bundles" => redirect("/my401k/plug_in_author/manage_content/bundles/published")
+  match "/my401k/plug_in_author/manage_content/bundles/index" => redirect("/my401k/plug_in_author/manage_content/bundles/published")
+  get "my401k/plug_in_author/manage_content/bundles/move_to_bundle" => "My401k::PlugInAuthor::ManageContent::Bundles#move_to_bundle", as: "plug_in_author_manage_content_bundles_move_to_bundle"
+  get "my401k/plug_in_author/manage_content/bundles/destroy" => "My401k::PlugInAuthor::ManageContent::Bundles#destroy", as: "plug_in_author_manage_content_bundles_destroy"
+  get "my401k/plug_in_author/manage_content/bundles/published" => "My401k::PlugInAuthor::ManageContent::Bundles#published", as: "plug_in_author_manage_content_bundles_published"
+  get "my401k/plug_in_author/manage_content/bundles/drafted" => "My401k::PlugInAuthor::ManageContent::Bundles#drafted", as: "plug_in_author_manage_content_bundles_drafted"
+  get "my401k/plug_in_author/manage_content/bundles/product_summary_by_all_types" => "My401k::PlugInAuthor::ManageContent::Bundles#product_summary_by_all_types", as: "plug_in_author_manage_content_bundles_product_summary_by_all_types"
+  get "my401k/plug_in_author/manage_content/bundles/product_summary_by_type" => "My401k::PlugInAuthor::ManageContent::Bundles#product_summary_by_type", as: "plug_in_author_manage_content_bundles_product_summary_by_type"
+  get "my401k/plug_in_author/manage_content/bundles/product_summary_by_all_categories" => "My401k::PlugInAuthor::ManageContent::Bundles#product_summary_by_all_categories", as: "plug_in_author_manage_content_bundles_product_summary_by_all_categories"
+  get "my401k/plug_in_author/manage_content/bundles/product_summary_by_category" => "My401k::PlugInAuthor::ManageContent::Bundles#product_summary_by_category", as: "plug_in_author_manage_content_bundles_product_summary_by_category"
+  get "my401k/plug_in_author/manage_content/bundles/details_summaries" => "My401k::PlugInAuthor::ManageContent::Bundles#details_summaries", as: "plug_in_author_manage_content_bundles_details_summaries"
+  get "my401k/plug_in_author/manage_content/bundles/details_summary" => "My401k::PlugInAuthor::ManageContent::Bundles#details_summary", as: "plug_in_author_manage_content_bundles_details_summary"
+  get "my401k/plug_in_author/manage_content/bundles/details_product" => "My401k::PlugInAuthor::ManageContent::Bundles#details_product", as: "plug_in_author_manage_content_bundles_details_product"
+  get "my401k/plug_in_author/manage_content/bundles/publish" => "My401k::PlugInAuthor::ManageContent::Bundles#publish", as: "plug_in_author_manage_content_bundles_publish"
+  get "my401k/plug_in_author/manage_content/bundles/clone_draft" => "My401k::PlugInAuthor::ManageContent::Bundles#clone_draft", as: "plug_in_author_manage_content_bundles_clone_draft"
+  get "my401k/plug_in_author/manage_content/bundles/move_to_draft" => "My401k::PlugInAuthor::ManageContent::Bundles#move_to_draft", as: "plug_in_author_manage_content_bundles_move_to_draft"
+  get "my401k/plug_in_author/manage_content/bundles/edit" => "My401k::PlugInAuthor::ManageContent::Bundles#edit", as: "plug_in_author_manage_content_bundles_edit"
+  get "my401k/plug_in_author/manage_content/bundles/destroy" => "My401k::PlugInAuthor::ManageContent::Bundles#destroy", as: "plug_in_author_manage_content_bundles_destroy"
+  get "my401k/plug_in_author/manage_content/bundles/search" => "My401k::PlugInAuthor::ManageContent::Bundles#search", as: "plug_in_author_manage_content_bundles_search"
+  get "my401k/plug_in_author/manage_content/bundles/filter" => "My401k::PlugInAuthor::ManageContent::Bundles#filter", as: "plug_in_author_manage_content_bundles_filter"
+  get "my401k/plug_in_author/manage_content/bundles/help" => "My401k::PlugInAuthor::ManageContent::Bundles#help", as: "plug_in_author_manage_content_bundles_help"
+
   ### Manage Content Products
   match "/my401k/plug_in_author/manage_content/products" => redirect("/my401k/plug_in_author/manage_content/products/published")
   match "/my401k/plug_in_author/manage_content/products/index" => redirect("/my401k/plug_in_author/manage_content/products/published")
