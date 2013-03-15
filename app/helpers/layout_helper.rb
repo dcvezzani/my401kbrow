@@ -23,4 +23,8 @@ module LayoutHelper
   def side_menu(&blk)
     content_for(:side_menu, &blk) unless content_for?(:side_menu)
   end
+
+  def top_nav_menu(&blk)
+    content_for(:top_nav_menu, &blk) unless content_for?(:top_nav_menu)
+  end
 end

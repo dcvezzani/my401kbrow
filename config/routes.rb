@@ -12,6 +12,12 @@ end
 
 BrowsercmsDemo::Application.routes.draw do
 
+  get "my401k/plug_in_author/manage_profile" => "My401k::PlugInAuthor::ManageProfile#index", as: "plug_in_author_manage_profile"
+  get "my401k/plug_in_author/promote_plug_ins" => "My401k::PlugInAuthor::PromotePlugIns#index", as: "plug_in_author_promote_plug_ins"
+  get "my401k/plug_in_author/manage_content" => "My401k::PlugInAuthor::ManageContent::Products#published", as: "plug_in_author_manage_content_products_published"
+  get "my401k/plug_in_author/reports" => "My401k::PlugInAuthor::Reports#index", as: "plug_in_author_reports"
+  get "my401k/plug_in_author/create_new_content" => "My401k::PlugInAuthor::CreateNewContent#index", as: "plug_in_author_create_new_content"
+
   ### Manage Content Bundles
   match "/my401k/plug_in_author/manage_content/bundles" => redirect("/my401k/plug_in_author/manage_content/bundles/published")
   match "/my401k/plug_in_author/manage_content/bundles/index" => redirect("/my401k/plug_in_author/manage_content/bundles/published")

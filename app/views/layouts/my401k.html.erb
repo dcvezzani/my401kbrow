@@ -88,14 +88,22 @@
               Hover over the buttons to get STARTED.
             </div>
             <div id="header-navigation">
+
+            <% if content_for?(:top_nav_menu) %>
+              <%= yield(:top_nav_menu) %>
+
+            <% else %>
               <ul class="inline-block">
-                <li class="button easy-browse button-about-plan first"><a href="/plan_participant/about_plan">About Plan</a></li>
+                <li class="button easy-browse button-about-plan first"><a href="/plan_participant/about_plan">XX About Plan</a></li>
                 <li class="button easy-browse button-manage-account"><a href="/plan_participant/manage_account">Manage Account</a></li>
                 <li class="button easy-browse button-helpful-resources"><a href="/plan_participant/helpful_resources">Helpful Resources</a></li>
                 <li class="button easy-browse button-enroll"><a href="/plan_participant/enroll">Enroll</a></li>
                 <li class="button easy-browse button-special-offers"><a href="/plan_participant/special_offers">Special Offers</a></li>
               </ul>
-            </div>
+
+            <% end %>
+              
+          </div> <!-- #header-navigation -->
           </div>
           <div id="mid-section">
             <div id="banner"></div>
