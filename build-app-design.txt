@@ -4,8 +4,26 @@
 ./bin/rails g controller My401k::PlugInAuthor::ManageProfile index
 ./bin/rails g controller My401k::PlugInAuthor::PromotePlugIns index
 
+# bundles
+./bin/rails g controller My401k::PlugInAuthor::ManageContent::Bundles published drafted details_summaries details_summary details_bundle details_products details_product publish clone_draft move_to_draft edit destroy search filter help remove_product
+
 # published/drafted bundles
-./bin/rails g controller My401k::PlugInAuthor::ManageContent::Bundle published drafted details_summaries details_summary details_bundle details_products details_product publish clone_draft move_to_draft edit destroy
+./bin/rails g controller My401k::PlugInAuthor::ManageContent::PublishedBundles published help
+
+# published/drafted bundles
+./bin/rails g controller My401k::PlugInAuthor::ManageContent::DraftedBundles drafted help
+
+
+rm -rf app/assets/javascripts/my401k/plug_in_author/manage_content/ app/assets/stylesheets/my401k/plug_in_author/manage_content/ app/controllers/my401k/plug_in_author/manage_content/ app/helpers/my401k/plug_in_author/manage_content/ app/views/my401k/plug_in_author/manage_content/ test/functional/my401k/plug_in_author/manage_content/ test/unit/helpers/my401k/plug_in_author/manage_content/
+
+# products
+./bin/rails g controller My401k::PlugInAuthor::ManageContent::Products move_to_bundle destroy published drafted product_summary_by_all_types product_summary_by_type product_summary_by_all_categories product_summary_by_category details_summaries details_summary details_product publish clone_draft move_to_draft edit destroy search filter help 
+
+# published products
+./bin/rails g controller My401k::PlugInAuthor::ManageContent::PublishedProducts published help 
+
+# drafted products
+./bin/rails g controller My401k::PlugInAuthor::ManageContent::DraftedProducts drafted help 
 
 
 bundles_published bundles_draft bundle_show_details bundle_publish bundle
