@@ -1,8 +1,11 @@
-<%# define this in each 'action' view  %>
-<%# title("Published Products", true) %>
+  ### Plug In Author - Reports
+  match "/my401k/plug_in_author/reports" => redirect("/my401k/plug_in_author/reports/report_001")
+  match "/my401k/plug_in_author/reports/index" => redirect("/my401k/plug_in_author/reports/report_001")
+  get "my401k/plug_in_author/reports/report_001" => "My401k::PlugInAuthor::Reports#report_001", as: "plug_in_author_reports_report_001"
+  get "my401k/plug_in_author/reports/report_002" => "My401k::PlugInAuthor::Reports#report_002", as: "plug_in_author_reports_report_002"
+  get "my401k/plug_in_author/reports/report_003" => "My401k::PlugInAuthor::Reports#report_003", as: "plug_in_author_reports_report_003"
+  get "my401k/plug_in_author/reports/report_004" => "My401k::PlugInAuthor::Reports#report_004", as: "plug_in_author_reports_report_004"
 
-<%# default menu for all plug-in authors, manage content %>
-<% side_menu do %>
   <dl>
     <dt>Reports Menu</dt>
       <dd>
@@ -38,7 +41,3 @@
         </div><!-- /.redSideButon -->
       </dd>
   </dl>
-<% end %>
-
-<%= render template: "layouts/my401k/plug_in_author" %>
-<%= render template: "layouts/my401k" %>
