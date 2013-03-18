@@ -1,2 +1,181 @@
 <h1>My401k::ManageContent#quick_links</h1>
 <p>Find me in app/views/my401k/manage_content/quick_links.html.erb</p>
+
+<% title("Live Published Content", true) %>
+
+<% content_for :side_menu do %>
+  <dl>
+    <dt>Manage Profile Menu</dt>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Live Published Content</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Draft Content</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Plug-in Content Store</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Quick Links</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Emergency Message</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+  </dl>
+<% end %>
+
+<div class="wrapper">
+  
+  
+  <!-- _____________ WHAT CONTENT PRODUCTS ARE BEING WORKED ON? ___________ -->
+  
+  <p class="pull-left">View live portal</p>
+  <p class="pull-right">Add new content</p>
+  
+  <div class="grayDividerBar">
+    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+    <p class="grayBarText">Configure your quick links</p>
+  </div><!-- /.grayDividerBar -->
+  <br>
+    
+  <form>
+    <fieldset>
+      
+      
+      <div name="quicklinkDivs">
+        <label class="checkbox">
+          <input type="checkbox"> Forms - upload form (beneficiaries, contributions changes, etc.)
+        </label>
+        <a href="#">Show forms (xx of yy are visible to participants)</a>
+            <table class="table table-hover">
+              <caption>...</caption>
+              <thead>
+                <tr>
+                  <th><input type="checkbox"></th>
+                  <th>Public</th>
+                  <th>Title *</th>
+                  <th>What for</th>
+                  <th>Resource(s) *</th>
+                  <th>Instructions</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td><input type="checkbox"</td>
+                  <td>Nullam Dictum</td>
+                  <td>Blah blah blah blah</td>
+                  <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
+                  <td>Yada yada yada yada</td>
+                  <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td><input type="checkbox"</td>
+                  <td>Nullam Dictum</td>
+                  <td>Blah blah blah blah</td>
+                  <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
+                  <td>Yada yada yada yada</td>
+                  <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td><input type="checkbox"</td>
+                  <td>Nullam Dictum</td>
+                  <td>Blah blah blah blah</td>
+                  <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
+                  <td>Yada yada yada yada</td>
+                  <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td><input type="checkbox"</td>
+                  <td>Nullam Dictum</td>
+                  <td>Blah blah blah blah</td>
+                  <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
+                  <td>Yada yada yada yada</td>
+                  <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
+                </tr>
+              </tbody>
+            </table>
+      </div><!-- /quicklinkDivs -->
+      
+      
+      
+      <div name="quicklinksDiv">
+        <label class="checkbox">
+          <input type="checkbox"> Key contacts - feed from contact date in profile (needs to look more user friendly for participant view)
+        </label>
+      </div><!-- /quicklinksDiv -->
+      
+      
+      
+      <div name="quicklinksDiv">
+        <label class="checkbox">
+          <input type="checkbox"> Access [provider's name] website - Enter url
+        </label>
+        <input type="text" placeholder="Your company's website...">*
+      </div><!-- /quicklinksDiv -->
+      
+      
+      <div name="quicklinksDiv">
+        <label class="checkbox">
+          <input type="checkbox"> Get professional help (generate form to forward to pro) - need to link to a professional of sponsor's choosing
+        </label>
+        <input type="text" placeholder="Professional advisor's email address...">*
+      </div><!-- /quicklinksDiv -->
+      
+      
+      <div name="quicklinksDiv">
+        <label class="checkbox">
+          <input type="checkbox"> Feedback / Question (need to create process)
+        </label>
+        <input type="text" placeholder="Email address to receive feedback...">*
+      </div><!-- /quicklinksDiv -->
+      
+      
+      <div name="quicklinksDiv">
+        <label class="checkbox">
+          <input type="checkbox"> Enroll in the company's retirement plan
+        </label>
+        <input type="text" placeholder="Page location...">*
+      </div><!-- /quicklinksDiv -->
+      
+      
+      <button type="submit" class="btn">Update Quick Links</button>
+    </fieldset>
+  </form>
+    
+</div><!-- /.wrapper -->
