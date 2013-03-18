@@ -1,0 +1,117 @@
+<% title("Published Bundles", true) %>
+
+<style type="text/css">
+.ruler{
+  border: 1px dashed orange;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.popup{
+  position: relative;
+  z-index: 10;
+}
+</style>
+
+<%= image_tag asset_path("wf/manage-content-top-actions.png") %>
+
+<div class="gray-bar gray-bar-label">
+  <h3>Published plug-in bundles</h3>
+</div>
+
+
+<!-- asdf -->
+<!-- slide-001 -->
+<div class="slide-001">
+  <%= image_tag asset_path("wf/plug-in-profile-manage-content-published-bundles.png") %>
+  <%= link_to "#" do %>
+    <div class="hotspot" style="border: 1px solid orange; position: absolute; top: 253px; left: 14px; width: 645.167px; height: 203.167px;"></div>
+  <% end %>
+</div>
+
+
+<!-- slide-002 -->
+<div class="slide-002" style="display: none; ">
+  <%= image_tag asset_path("wf/plug-in-profile-manage-content-published-bundles-003.png") %>
+  <%= link_to "#" do %>
+    <div class="hotspot" style="border: 1px solid orange; left: 263px; top: 246px; position: absolute; width: 178.167px; height: 123.167px;" title="edit particular product in the wizard view"></div>
+  <% end %>
+
+  <%= link_to "#" do %>
+    <div style="border: 1px solid orange; position: absolute; top: 444px; left: 265px; width: 54.1667px; height: 21.1667px;" class="hotspot " data-popup="popup-publish-bundle" title="publish"></div>
+  <% end %>
+
+  <%= link_to "#" do %>
+  <div style="border: 1px solid orange; left: 325px; top: 444px; position: absolute; width: 71.1667px; height: 21.1667px;" class="hotspot " data-popup="popup-clone-bundle" title="clone draft"></div>
+  <% end %>
+
+  <%= link_to "#" do %>
+  <div style="border: 1px solid orange; left: 405px; top: 444px; position: absolute; width: 83.1667px; height: 20.1667px;" class="hotspot " title="move to draft"></div>
+  <% end %>
+
+  <%= link_to "#" do %>
+    <div style="border: 1px solid orange; left: 267px; top: 468px; position: absolute; width: 32.1667px; height: 18.1667px;" class="hotspot " data-popup="popup-edit-bundle" title="edit"></div>
+  <% end %>
+
+  <%= link_to "#" do %>
+  <div style="border: 1px solid orange; left: 307px; top: 468px; position: absolute; width: 38.1667px; height: 20.1667px;" class="hotspot " data-popup="popup-depublish-bundle" title="delete"></div>
+  <% end %>
+</div>
+
+
+<!-- popups -->
+<div id="popup-depublish-bundle" class="popup" style="display: none; ">
+<%= image_tag asset_path("wf/plug-in-profile-manage-content-depublish-bundle.png") %>
+</div>
+
+<div id="popup-clone-bundle" class="popup" style="display: none; ">
+<%= image_tag asset_path("wf/plug-in-profile-manage-content-clone-bundle.png") %>
+</div>
+
+<div id="popup-delete-bundle" class="popup" style="display: none; ">
+<%= image_tag asset_path("wf/plug-in-profile-manage-content-delete-bundle.png") %>
+</div>
+
+<div id="popup-publish-bundle" class="popup" style="display: none; ">
+<%= image_tag asset_path("wf/plug-in-profile-manage-content-publish-bundle.png") %>
+</div>
+
+
+
+
+<!-- ruler -->
+<div class="ruler"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".slide-001").click(function(){
+    $(".slide-001").hide();
+    $(".slide-002").show();
+  })
+  $(".slide-002").click(function(){
+    $(".slide-002").hide();
+    $(".slide-001").show();
+  })
+
+  $(".hotspot[data-popup]").click(function(e){
+    //$(e.target).
+    var popup_id = $(this).attr("data-popup");
+    $("#" + popup_id).show();
+    return false;
+  })
+  
+
+  $(".ruler").draggable().resizable({stop: function(event, ui){
+    ruler_style = $(".ruler").attr("style");
+    if(!ruler_style.match(/border: 1px solid orange/)){
+      ruler_style = "border: 1px solid orange; " + ruler_style;
+    }
+    prompt("copy hotspot", "div.hotspot[style='" + ruler_style + "'][title='title']");
+  }
+  });
+});
+</script>
+
