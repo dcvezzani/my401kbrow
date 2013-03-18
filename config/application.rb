@@ -60,7 +60,7 @@ module BrowsercmsDemo
     config.assets.version = '1.0'
 
     # Additional paths where assets may be looked for
-    config.assets.paths %W(#{config.root}/mediabrowser #{config.root}/images-orig #{config.root}/demo #{config.root}/overcast #{config.root}/tinymce/jscripts/tiny_mce #{config.root}/bootstrap.css)
+    config.assets.paths %W(#{config.root}/mediabrowser #{config.root}/images-orig #{config.root}/demo #{config.root}/overcast #{config.root}/tinymce/jscripts/tiny_mce #{config.root}/bootstrap #{config.root}/wf)
 
     initializer :after_append_asset_paths, 
                 :group => :all, 

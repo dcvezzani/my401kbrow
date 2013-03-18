@@ -1,4 +1,6 @@
-class My401k::ManageContentController < My401k::PlanSponsorController
+class My401k::PlanSponsor::ManageContentController < My401k::PlanSponsorController
+  layout "my401k/plan_sponsor/manage_content"
+
   def published_content
   end
 

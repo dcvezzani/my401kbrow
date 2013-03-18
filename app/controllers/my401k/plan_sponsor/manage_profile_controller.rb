@@ -1,4 +1,6 @@
-class My401k::ManageProfileController < My401k::PlanSponsorController
+class My401k::PlanSponsor::ManageProfileController < My401k::PlanSponsorController
+  layout "my401k/plan_sponsor/manage_profile"
+
   def basic_information
   end
 

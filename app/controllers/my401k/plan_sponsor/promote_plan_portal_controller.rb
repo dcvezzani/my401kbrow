@@ -1,4 +1,6 @@
-class My401k::PromotePlanPortalController < My401k::PlanSponsorController
+class My401k::PlanSponsor::PromotePlanPortalController < My401k::PlanSponsorController
+  layout "my401k/plan_sponsor/promote_plan_portal"
+
   def print_material
   end
 

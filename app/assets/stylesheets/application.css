@@ -13,4 +13,5 @@
  *= require_tree ./my401k
  *= require 'stub'
  *= require '../bootstrap/css/bootstrap'
+ *= require '../overcast/jquery-ui-1.8.18.custom'
 */

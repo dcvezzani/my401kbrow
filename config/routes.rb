@@ -132,11 +132,11 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plug_in_author/reports/report_004" => "My401k::PlugInAuthor::Reports#report_004", as: "plug_in_author_reports_report_004"
   
   ### Plan Sponsor - top nav
-  get "my401k/plan_sponsor/manage_profile" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_manage_profile"
-  get "my401k/plan_sponsor/promote_plan" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_promote_plan"
-  get "my401k/plan_sponsor/manage_content" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_manage_content"
-  get "my401k/plan_sponsor/professional_help" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_professional_help"
-  get "my401k/plan_sponsor/create_new_content" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_create_new_content"
+  get "my401k/plan_sponsor/manage_profile" => "My401k::PlanSponsor::ManageProfile#basic_information", as: "plan_sponsor_manage_profile"
+  get "my401k/plan_sponsor/promote_plan_portal" => "My401k::PlanSponsor::PromotePlanPortal#print_material", as: "plan_sponsor_promote_plan_portal"
+  get "my401k/plan_sponsor/manage_content" => "My401k::PlanSponsor::ManageContent#published_content", as: "plan_sponsor_manage_content"
+  get "my401k/plan_sponsor/professional_help" => "My401k::PlanSponsor::ProfessionalHelp#index", as: "plan_sponsor_professional_help"
+  get "my401k/plan_sponsor/create_new_content" => "My401k::PlanSponsor::CreateNewContent#select_section", as: "plan_sponsor_create_new_content"
 
   ### Plan Sponsor - Promote Plan Portal
   match "/my401k/plan_sponsor/promote_plan_portal" => redirect("/my401k/plan_sponsor/promote_plan_portal/print_material")
@@ -182,63 +182,6 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plan_sponsor/manage_profile/subscription_status" => "My401k::PlanSponsor::ManageContent#subscription_status", as: "plan_sponsor_manage_profile_subscription_status"
   get "my401k/plan_sponsor/manage_profile/sponsor_contacts" => "My401k::PlanSponsor::ManageContent#sponsor_contacts", as: "plan_sponsor_manage_profile_sponsor_contacts"
   get "my401k/plan_sponsor/manage_profile/alert_preferences" => "My401k::PlanSponsor::ManageContent#alert_preferences", as: "plan_sponsor_manage_profile_alert_preferences"
-
-
-  ### Plan Sponsor - deprecated routes; please replace all references to 'admin' with 'my401k'
-
-  ### Plan Sponsor - top nav
-  get "admin/plan_sponsor/manage_profile" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_manage_profile"
-  get "admin/plan_sponsor/promote_plan" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_promote_plan"
-  get "admin/plan_sponsor/manage_content" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_manage_content"
-  get "admin/plan_sponsor/professional_help" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_professional_help"
-  get "admin/plan_sponsor/create_new_content" => "My401k::PlanSponsor::ManageProfile#index", as: "plan_sponsor_create_new_content"
-
-  ### Plan Sponsor - Promote Plan Portal
-  match "/admin/plan_sponsor/promote_plan_portal" => redirect("/admin/plan_sponsor/promote_plan_portal/print_material")
-  match "/admin/plan_sponsor/promote_plan_portal/index" => redirect("/admin/plan_sponsor/promote_plan_portal/print_material")
-  get "admin/plan_sponsor/promote_plan_portal/print_material" => "My401k::PlanSponsor::PromotePlanPortal#print_material", as: "plan_sponsor_promote_plan_portal_print_material"
-  get "admin/plan_sponsor/promote_plan_portal/email_templates" => "My401k::PlanSponsor::PromotePlanPortal#email_templates", as: "plan_sponsor_promote_plan_portal_email_templates"
-  get "admin/plan_sponsor/promote_plan_portal/banners" => "My401k::PlanSponsor::PromotePlanPortal#banners", as: "plan_sponsor_promote_plan_portal_banners"
-  get "admin/plan_sponsor/promote_plan_portal/letters" => "My401k::PlanSponsor::PromotePlanPortal#letters", as: "plan_sponsor_promote_plan_portal_letters"
-  get "admin/plan_sponsor/promote_plan_portal/videos" => "My401k::PlanSponsor::PromotePlanPortal#videos", as: "plan_sponsor_promote_plan_portal_videos"
-  get "admin/plan_sponsor/promote_plan_portal/enrollment_support" => "My401k::PlanSponsor::PromotePlanPortal#enrollment_support", as: "plan_sponsor_promote_plan_portal_enrollment_support"
-  
-  ### Plan Sponsor - Manage Content
-  match "/admin/plan_sponsor/manage_content" => redirect("/admin/plan_sponsor/manage_content/published_content")
-  match "/admin/plan_sponsor/manage_content/index" => redirect("/admin/plan_sponsor/manage_content/published_content")
-  get "admin/plan_sponsor/manage_content/published_content" => "My401k::PlanSponsor::ManageContent#published_content", as: "plan_sponsor_manage_content_published_content"
-  get "admin/plan_sponsor/manage_content/draft_content" => "My401k::PlanSponsor::ManageContent#draft_content", as: "plan_sponsor_manage_content_draft_content"
-  get "admin/plan_sponsor/manage_content/plugin_content_store" => "My401k::PlanSponsor::ManageContent#plugin_content_store", as: "plan_sponsor_manage_content_plugin_content_store"
-  get "admin/plan_sponsor/manage_content/quick_links" => "My401k::PlanSponsor::ManageContent#quick_links", as: "plan_sponsor_manage_content_quick_links"
-  get "admin/plan_sponsor/manage_content/emergency_message" => "My401k::PlanSponsor::ManageContent#emergency_message", as: "plan_sponsor_manage_content_emergency_message"
-
-  ### Plan Sponsor - Professional Help
-  match "/admin/plan_sponsor/professional_help" => redirect("/admin/plan_sponsor/professional_help/index")
-  get "admin/plan_sponsor/professional_help/index" => "My401k::PlanSponsor::ProfessionalHelp#index"
-
-  ### Plan Sponsor - Create New Content
-  match "/admin/plan_sponsor/create_new_content" => redirect("/admin/plan_sponsor/create_new_content/select_section")
-  match "/admin/plan_sponsor/create_new_content/index" => redirect("/admin/plan_sponsor/create_new_content/select_section")
-  get "admin/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor::ManageContent#select_section", as: "plug_in_author_create_new_content"
-  get "admin/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor::ManageContent#select_section", as: "plan_sponsor_create_new_content_select_section"
-  get "admin/plan_sponsor/create_new_content/select_layout" => "My401k::PlanSponsor::ManageContent#select_layout", as: "plan_sponsor_create_new_content_select_layout"
-  get "admin/plan_sponsor/create_new_content/create_title_and_body" => "My401k::PlanSponsor::ManageContent#create_title_and_body", as: "plan_sponsor_create_new_content_create_title_and_body"
-  get "admin/plan_sponsor/create_new_content/create_tile" => "My401k::PlanSponsor::ManageContent#create_tile", as: "plan_sponsor_create_new_content_create_tile"
-  get "admin/plan_sponsor/create_new_content/optional_elections" => "My401k::PlanSponsor::ManageContent#optional_elections", as: "plan_sponsor_create_new_content_optional_elections"
-  get "admin/plan_sponsor/create_new_content/point_content" => "My401k::PlanSponsor::ManageContent#point_content", as: "plan_sponsor_create_new_content_point_content"
-
-  ### Plan Sponsor - Manage Profile
-  match "/admin/plan_sponsor/manage_profile" => redirect("/admin/plan_sponsor/manage_profile/basic_information")
-  match "/admin/plan_sponsor/manage_profile/index" => redirect("/admin/plan_sponsor/manage_profile/basic_information")
-  get "admin/plan_sponsor/manage_profile/basic_information" => "My401k::PlanSponsor::ManageContent#basic_information", as: "plan_sponsor_manage_profile_basic_information"
-  get "admin/plan_sponsor/manage_profile/admin_delegates" => "My401k::PlanSponsor::ManageContent#admin_delegates", as: "plan_sponsor_manage_profile_admin_delegates"
-  get "admin/plan_sponsor/manage_profile/portal_branding" => "My401k::PlanSponsor::ManageContent#portal_branding", as: "plan_sponsor_manage_profile_portal_branding"
-  get "admin/plan_sponsor/manage_profile/participant_access_control" => "My401k::PlanSponsor::ManageContent#participant_access_control", as: "plan_sponsor_manage_profile_participant_access_control"
-  get "admin/plan_sponsor/manage_profile/subscription_status" => "My401k::PlanSponsor::ManageContent#subscription_status", as: "plan_sponsor_manage_profile_subscription_status"
-  get "admin/plan_sponsor/manage_profile/sponsor_contacts" => "My401k::PlanSponsor::ManageContent#sponsor_contacts", as: "plan_sponsor_manage_profile_sponsor_contacts"
-  get "admin/plan_sponsor/manage_profile/alert_preferences" => "My401k::PlanSponsor::ManageContent#alert_preferences", as: "plan_sponsor_manage_profile_alert_preferences"
-
-
 
 
 
