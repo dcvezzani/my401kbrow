@@ -10,7 +10,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require '../bootstrap/js/bootstrap'
 // require 'rangy-1.2.3/rangy-core.js'
 // require 'rangy-1.2.3/rangy-cssclassapplier.js'
 // require 'rangy-1.2.3/rangy-selectionsaverestore.js'
@@ -18,6 +17,7 @@
 // require 'spin.min.js'
 // require 'spin-instance.js'
 //= require_tree .
+//= require '../bootstrap/js/bootstrap'
 
 function saveWizardPage(step, serialized_data, success, failure){
   href = "/content_page/wizard/step_0" + step;
