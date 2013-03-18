@@ -10,12 +10,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require 'rangy-1.2.3/rangy-core.js'
-//= require 'rangy-1.2.3/rangy-cssclassapplier.js'
-//= require 'rangy-1.2.3/rangy-selectionsaverestore.js'
-//= require 'rangy-1.2.3/rangy-serializer.js'
-//= require 'spin.min.js'
-//= require 'spin-instance.js'
+//= require '../bootstrap/js/bootstrap'
+// require 'rangy-1.2.3/rangy-core.js'
+// require 'rangy-1.2.3/rangy-cssclassapplier.js'
+// require 'rangy-1.2.3/rangy-selectionsaverestore.js'
+// require 'rangy-1.2.3/rangy-serializer.js'
+// require 'spin.min.js'
+// require 'spin-instance.js'
 //= require_tree .
 
 function saveWizardPage(step, serialized_data, success, failure){

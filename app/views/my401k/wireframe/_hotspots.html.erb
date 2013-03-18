@@ -1,0 +1,12 @@
+<% hotspots.each do |popup_label, options| %>
+  <%= link_to "#" do %>
+  <div style="border: 1px solid orange; position: absolute; <%= options[:pos] %>" class="hotspot " data-popup="<%= popup_label %>" title="<%= options[:title] %>"></div>
+  <% end %>
+<% end %>
+
+<% passive_hotspots.each do |popup_label, options| %>
+  <%= link_to "#" do %>
+  <div style="border: 1px solid orange; position: absolute; <%= options[:pos] %>" class="hotspot " title="<%= options[:title] %>"></div>
+  <% end %>
+<% end %>
+

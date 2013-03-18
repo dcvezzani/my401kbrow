@@ -17,6 +17,7 @@ BrowsercmsDemo::Application.routes.draw do
 
 
   ### Plug-in Author - top nav
+  match "/my401k/plug_in_author" => redirect("/my401k/plug_in_author/manage_profile")
   get "my401k/plug_in_author/manage_profile" => "My401k::PlugInAuthor::ManageProfile#index", as: "plug_in_author_manage_profile"
   get "my401k/plug_in_author/promote_plug_ins" => "My401k::PlugInAuthor::PromotePlugIns#index", as: "plug_in_author_promote_plug_ins"
 
@@ -112,7 +113,7 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plug_in_author/manage_content_wf/products/filter" => "My401k::PlugInAuthor::ManageContentWf::Products#filter", as: "plug_in_author_manage_content_wf_products_filter"
   get "my401k/plug_in_author/manage_content_wf/products/help" => "My401k::PlugInAuthor::ManageContentWf::Products#help", as: "plug_in_author_manage_content_wf_products_help"
 
-  ### Plan Sponsor - Create New Content
+  ### Plug In Author - Create New Content
   match "/my401k/plug_in_author/create_new_content" => redirect("/my401k/plug_in_author/create_new_content/select_section")
   match "/my401k/plug_in_author/create_new_content/index" => redirect("/my401k/plug_in_author/create_new_content/select_section")
   get "my401k/plug_in_author/create_new_content/select_section" => "My401k::PlugInAuthor::CreateNewContent#select_section", as: "plan_sponsor_create_new_content_select_section"
@@ -130,8 +131,10 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plug_in_author/reports/report_002" => "My401k::PlugInAuthor::Reports#report_002", as: "plug_in_author_reports_report_002"
   get "my401k/plug_in_author/reports/report_003" => "My401k::PlugInAuthor::Reports#report_003", as: "plug_in_author_reports_report_003"
   get "my401k/plug_in_author/reports/report_004" => "My401k::PlugInAuthor::Reports#report_004", as: "plug_in_author_reports_report_004"
-  
+ 
+
   ### Plan Sponsor - top nav
+  match "/my401k/plan_sponsor" => redirect("/my401k/plan_sponsor/manage_profile")
   get "my401k/plan_sponsor/manage_profile" => "My401k::PlanSponsor::ManageProfile#basic_information", as: "plan_sponsor_manage_profile"
   get "my401k/plan_sponsor/promote_plan_portal" => "My401k::PlanSponsor::PromotePlanPortal#print_material", as: "plan_sponsor_promote_plan_portal"
   get "my401k/plan_sponsor/manage_content" => "My401k::PlanSponsor::ManageContent#published_content", as: "plan_sponsor_manage_content"
