@@ -1,2 +1,172 @@
 <h1>My401k::ManageContent#published_content</h1>
 <p>Find me in app/views/my401k/manage_content/published_content.html.erb</p>
+
+
+<% title("Live Published Content", true) %>
+
+<% content_for :side_menu do %>
+  <dl>
+    <dt>Manage Profile Menu</dt>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Live Published Content</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Draft Content</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Plug-in Content Store</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Quick Links</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+      <dd>
+        <div class="redSideButton">
+          <a href="#">
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Emergency Message</p>
+          </a>
+        </div><!-- /.redSideButon -->
+      </dd>
+      
+  </dl>
+<% end %>
+
+<div class="wrapper">
+  
+  
+  <!-- _____________ WHAT CONTENT PRODUCTS ARE BEING WORKED ON? ___________ -->
+  
+  <p class="pull-left">View live portal</p>
+  <p class="pull-right">Add new content</p>
+  
+  <div class="grayDividerBar">
+    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+    <p class="grayBarText">What content products are being worked on?</p>
+  </div><!-- /.grayDividerBar -->
+  <br>
+  
+  <!-- ____________________ BUTTONS & BANNER _________________ -->
+  
+  
+  
+    <div class="contentSection">
+      <div class="contentSectionButton">
+        <img class="contentSectionImg" src="<%= asset_path 'buttonBarImgs/grey-button.png' %>">
+        <p class="contentSectionText">About Plan</p>
+      </div><!-- /.contentSectionButton -->
+    </div><!-- /.contentSection -->
+    
+    
+    
+    <div class="contentSection margin2">
+      <div class="contentSectionButton">
+        <img class="contentSectionImg" src="<%= asset_path 'buttonBarImgs/grey-button.png' %>">
+        <p class="contentSectionText">Manage Account</p>
+      </div><!-- /.contentSectionButton -->
+    </div><!-- /.contentSection -->
+    
+    
+    
+    <div class="contentSection margin2">
+      <div class="contentSectionButton">
+        <img class="contentSectionImg" src="<%= asset_path 'buttonBarImgs/grey-button.png' %>">
+        <p class="contentSectionText">Helpful Resources</p>
+      </div><!-- /.contentSectionButton -->
+    </div><!-- /.contentSection -->
+      
+    
+    
+    <div class="contentSection margin2">
+      <div class="contentSectionButton">
+        <img class="contentSectionImg" src="<%= asset_path 'buttonBarImgs/grey-button.png' %>">
+        <p class="contentSectionText">Blog</p>
+      </div><!-- /.contentSectionButton -->
+    </div><!-- /.contentSection -->
+    
+    
+    
+    <div class="contentSection margin2">
+      <div class="contentSectionButton">
+        <img class="contentSectionImg" src="<%= asset_path 'buttonBarImgs/grey-button.png' %>">
+        <p class="contentSectionText">Special Offers</p>
+      </div><!-- /.contentSectionButton -->
+    </div><!-- /.contentSection -->
+  
+  
+  
+  <div class="editBanner">
+    <div class="editableBanner">
+    </div><!-- /.editableBanner -->
+    <a href="#"><img class ="remove" src="<%= asset_path 'demo/icon-cross.png' %>"></a>
+    <a href="#"><img class="add" src="<%= asset_path 'beta/plus.png' %>"></a>
+  </div><!-- /.editBanner -->
+  
+  
+  
+  
+  <!-- ___________________ FEATURED CONTENT ________________ -->
+  
+  <div class="grayDividerBar">
+    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+    <p class="grayBarText">Featured content</p>
+  </div><!-- /.grayDividerBar -->
+  <br>
+    
+    
+    
+  <div class="rowOfTiles">
+    
+    <div class="oneTile">
+      <div class="theTile">
+        <i class="icon-picture">Icon?</i>
+      </div><!-- /.theTile -->
+    </div><!-- /.oneTile -->
+    
+    <div class="oneTile margin3">
+      <div class="theTile">
+        
+      </div><!-- /.theTile -->
+    </div><!-- /.oneTile -->
+    
+    <div class="oneTile margin3">
+      <div class="theTile">
+        
+      </div><!-- /.theTile -->
+    </div><!-- /.oneTile -->
+    
+    <div class="oneTile margin3">
+      <div class="theTile">
+        
+      </div><!-- /.theTile -->
+    </div><!-- /.oneTile -->
+    
+  </div><!-- /.rowOfTiles -->
+
+</div><!-- /.wrapper -->
+
+
