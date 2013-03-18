@@ -1,0 +1,27 @@
+  ### Plug In Author - Reports
+  match "/my401k/plug_in_author/reports" => redirect("/my401k/plug_in_author/reports/report_001")
+  match "/my401k/plug_in_author/reports/index" => redirect("/my401k/plug_in_author/reports/report_001")
+  get "my401k/plug_in_author/reports/report_001" => "My401k::PlugInAuthor::Reports#report_001", as: "plug_in_author_reports_report_001"
+  get "my401k/plug_in_author/reports/report_002" => "My401k::PlugInAuthor::Reports#report_002", as: "plug_in_author_reports_report_002"
+  get "my401k/plug_in_author/reports/report_003" => "My401k::PlugInAuthor::Reports#report_003", as: "plug_in_author_reports_report_003"
+  get "my401k/plug_in_author/reports/report_004" => "My401k::PlugInAuthor::Reports#report_004", as: "plug_in_author_reports_report_004"
+
+  <dl>
+    <dt>Reports Menu</dt>
+      <dd>
+        <div class="redSideButton">
+          <%= link_to plug_in_author_reports_published_path, class: "nav-label" do %>
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Published</p>
+          <% end %>
+        </div><!-- /.redSideButon -->
+      </dd>
+        <dd>
+        <div class="redSideButton">
+          <%= link_to plug_in_author_reports_drafted_path, class: "nav-label" do %>
+            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
+            <p class="redButtonText">Drafted</p>
+          <% end %>
+        </div><!-- /.redSideButon -->
+      </dd>
+  </dl>

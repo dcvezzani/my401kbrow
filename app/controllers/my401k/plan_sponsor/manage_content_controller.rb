@@ -1,4 +1,4 @@
-class My401k::ManageContentController < My401k::AdminController
+class My401k::ManageContentController < My401k::PlanSponsorController
   def published_content
   end
 

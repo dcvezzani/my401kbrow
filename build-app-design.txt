@@ -34,6 +34,12 @@ bundles_published bundles_draft bundle_show_details bundle_publish bundle
 ./bin/rails g controller My401k::PlugInAuthor manage_profile promote_plugins
 
 
+./bin/rails g controller My401k::PlanSponsor::CreateNewContent select_section select_layout define_body define_tile select_elections save_content preview_page
+./bin/rails g controller My401k::PlugInAuthor::CreateNewContent select_section select_layout define_body define_tile select_elections save_content preview_page
+
+./bin/rails g controller My401k::PlugInAuthor::Reports report_001 report_002 report_003 report_004
+
+
 # ===== Fri Mar  8 07:15:43 PST 2013
 
 

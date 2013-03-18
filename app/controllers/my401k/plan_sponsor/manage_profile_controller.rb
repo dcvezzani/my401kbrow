@@ -1,4 +1,4 @@
-class My401k::ManageProfileController < My401k::AdminController
+class My401k::ManageProfileController < My401k::PlanSponsorController
   def basic_information
   end
 

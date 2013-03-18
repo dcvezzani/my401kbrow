@@ -1,4 +1,4 @@
-class My401k::PromotePlanPortalController < My401k::AdminController
+class My401k::PromotePlanPortalController < My401k::PlanSponsorController
   def print_material
   end
 

@@ -1,4 +1,4 @@
-class My401k::CreateNewContentController < My401k::AdminController
+class My401k::CreateNewContentController < My401k::PlanSponsorController
   def select_section
   end
 
