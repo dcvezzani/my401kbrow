@@ -178,13 +178,13 @@ BrowsercmsDemo::Application.routes.draw do
   ### Plan Sponsor - Manage Profile
   match "/my401k/plan_sponsor/manage_profile" => redirect("/my401k/plan_sponsor/manage_profile/basic_information")
   match "/my401k/plan_sponsor/manage_profile/index" => redirect("/my401k/plan_sponsor/manage_profile/basic_information")
-  get "my401k/plan_sponsor/manage_profile/basic_information" => "My401k::PlanSponsor::ManageContent#basic_information", as: "plan_sponsor_manage_profile_basic_information"
-  get "my401k/plan_sponsor/manage_profile/admin_delegates" => "My401k::PlanSponsor::ManageContent#admin_delegates", as: "plan_sponsor_manage_profile_admin_delegates"
-  get "my401k/plan_sponsor/manage_profile/portal_branding" => "My401k::PlanSponsor::ManageContent#portal_branding", as: "plan_sponsor_manage_profile_portal_branding"
-  get "my401k/plan_sponsor/manage_profile/participant_access_control" => "My401k::PlanSponsor::ManageContent#participant_access_control", as: "plan_sponsor_manage_profile_participant_access_control"
-  get "my401k/plan_sponsor/manage_profile/subscription_status" => "My401k::PlanSponsor::ManageContent#subscription_status", as: "plan_sponsor_manage_profile_subscription_status"
-  get "my401k/plan_sponsor/manage_profile/sponsor_contacts" => "My401k::PlanSponsor::ManageContent#sponsor_contacts", as: "plan_sponsor_manage_profile_sponsor_contacts"
-  get "my401k/plan_sponsor/manage_profile/alert_preferences" => "My401k::PlanSponsor::ManageContent#alert_preferences", as: "plan_sponsor_manage_profile_alert_preferences"
+  get "my401k/plan_sponsor/manage_profile/basic_information" => "My401k::PlanSponsor::ManageProfile#basic_information", as: "plan_sponsor_manage_profile_basic_information"
+  get "my401k/plan_sponsor/manage_profile/admin_delegates" => "My401k::PlanSponsor::ManageProfile#admin_delegates", as: "plan_sponsor_manage_profile_admin_delegates"
+  get "my401k/plan_sponsor/manage_profile/portal_branding" => "My401k::PlanSponsor::ManageProfile#portal_branding", as: "plan_sponsor_manage_profile_portal_branding"
+  get "my401k/plan_sponsor/manage_profile/participant_access_control" => "My401k::PlanSponsor::ManageProfile#participant_access_control", as: "plan_sponsor_manage_profile_participant_access_control"
+  get "my401k/plan_sponsor/manage_profile/subscription_status" => "My401k::PlanSponsor::ManageProfile#subscription_status", as: "plan_sponsor_manage_profile_subscription_status"
+  get "my401k/plan_sponsor/manage_profile/sponsor_contacts" => "My401k::PlanSponsor::ManageProfile#sponsor_contacts", as: "plan_sponsor_manage_profile_sponsor_contacts"
+  get "my401k/plan_sponsor/manage_profile/alert_preferences" => "My401k::PlanSponsor::ManageProfile#alert_preferences", as: "plan_sponsor_manage_profile_alert_preferences"
 
 
 
