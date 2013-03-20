@@ -1,2 +1,33 @@
 <h1>My401k::CreateNewContent#create_tile</h1>
 <p>Find me in app/views/my401k/create_new_content/create_tile.html.erb</p>
+
+
+<div class="wrapper">
+
+
+<p>Create New Content</p>
+<ul class="breadcrumb">
+  <li><a href="#">Section</a> <span class="divider">/</span></li>
+  <li><a href="#">Layout</a> <span class="divider">/</span></li>
+  <li><a href="#">Title/Body</a> <span class="divider">/</span></li>
+  <li class="active">Tile <span class="divider">/</span></li>
+  <li><a href="#">Elections</a> <span class="divider">/</span></li>
+  <li><a href="#">Finish</a></li>
+</ul>
+
+
+<p>Preview tile and add content-designating icon</p>
+
+<div class="tilePreview">
+  <img class="tilePreviewTile" src="<%= asset_path 'demo/tile-sample.png' %>">
+  <a href="#"><img class ="tilePreviewIcon" src="<%= asset_path 'demo/icon.png' %>"></a>
+  <h4>Title of Content</h4>
+  <p>Stuff stuff stuff stuff. Stuff stuff stuff stuff. Stuff stuff stuff stuff. Stuff stuff stuff stuff.</p>
+  <div class="btn btn-small">Read more</div>
+</div><!-- /.tilePreview -->
+
+<a href="#"><div class="btn pull-left">Previous</div></a>
+<a href="#"><div class="btn pull-right">Next</div></a>
+  
+  
+</div><!-- /.wrapper -->
