@@ -1,6 +1,4 @@
 Cms::Engine.routes.draw do
-
-
   match '/super_administration', :to=>"sites#index", :as=>'super_administration'
 
   resources :sites do
@@ -12,9 +10,7 @@ Cms::Engine.routes.draw do
 end
 
 BrowsercmsDemo::Application.routes.draw do
-
-  root :to => 'My401k::PlugInAuthor::ManageProfile#index'
-
+  #root :to => 'My401k::PlugInAuthor::ManageProfile#index'
 
   ### Plug-in Author - top nav
   match "/my401k/plug_in_author" => redirect("/my401k/plug_in_author/manage_profile")
@@ -167,13 +163,13 @@ BrowsercmsDemo::Application.routes.draw do
   ### Plan Sponsor - Create New Content
   match "/my401k/plan_sponsor/create_new_content" => redirect("/my401k/plan_sponsor/create_new_content/select_section")
   match "/my401k/plan_sponsor/create_new_content/index" => redirect("/my401k/plan_sponsor/create_new_content/select_section")
-  get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor::ManageContent#select_section", as: "plug_in_author_create_new_content"
-  get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor::ManageContent#select_section", as: "plan_sponsor_create_new_content_select_section"
-  get "my401k/plan_sponsor/create_new_content/select_layout" => "My401k::PlanSponsor::ManageContent#select_layout", as: "plan_sponsor_create_new_content_select_layout"
-  get "my401k/plan_sponsor/create_new_content/create_title_and_body" => "My401k::PlanSponsor::ManageContent#create_title_and_body", as: "plan_sponsor_create_new_content_create_title_and_body"
-  get "my401k/plan_sponsor/create_new_content/create_tile" => "My401k::PlanSponsor::ManageContent#create_tile", as: "plan_sponsor_create_new_content_create_tile"
-  get "my401k/plan_sponsor/create_new_content/optional_elections" => "My401k::PlanSponsor::ManageContent#optional_elections", as: "plan_sponsor_create_new_content_optional_elections"
-  get "my401k/plan_sponsor/create_new_content/point_content" => "My401k::PlanSponsor::ManageContent#point_content", as: "plan_sponsor_create_new_content_point_content"
+  get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor:CreateNewContent#select_section", as: "plug_in_author_create_new_content"
+  get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor::CreateNewContent#select_section", as: "plan_sponsor_create_new_content_select_section"
+  get "my401k/plan_sponsor/create_new_content/select_layout" => "My401k::PlanSponsor::CreateNewContent#select_layout", as: "plan_sponsor_create_new_content_select_layout"
+  get "my401k/plan_sponsor/create_new_content/create_title_and_body" => "My401k::PlanSponsor::CreateNewContent#create_title_and_body", as: "plan_sponsor_create_new_content_create_title_and_body"
+  get "my401k/plan_sponsor/create_new_content/create_tile" => "My401k::PlanSponsor::CreateNewContent#create_tile", as: "plan_sponsor_create_new_content_create_tile"
+  get "my401k/plan_sponsor/create_new_content/optional_elections" => "My401k::PlanSponsor::CreateNewContent#optional_elections", as: "plan_sponsor_create_new_content_optional_elections"
+  get "my401k/plan_sponsor/create_new_content/point_content" => "My401k::PlanSponsor::CreateNewContent#point_content", as: "plan_sponsor_create_new_content_point_content"
 
   ### Plan Sponsor - Manage Profile
   match "/my401k/plan_sponsor/manage_profile" => redirect("/my401k/plan_sponsor/manage_profile/basic_information")
@@ -186,9 +182,6 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plan_sponsor/manage_profile/sponsor_contacts" => "My401k::PlanSponsor::ManageProfile#sponsor_contacts", as: "plan_sponsor_manage_profile_sponsor_contacts"
   get "my401k/plan_sponsor/manage_profile/alert_preferences" => "My401k::PlanSponsor::ManageProfile#alert_preferences", as: "plan_sponsor_manage_profile_alert_preferences"
 
-
-
-  mount_bcms_blog
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -247,5 +240,6 @@ BrowsercmsDemo::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
+  mount_bcms_blog
   mount_browsercms
 end
