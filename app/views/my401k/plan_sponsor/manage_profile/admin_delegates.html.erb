@@ -70,10 +70,69 @@
 </div><!-- /.grayDividerBar -->
 <br>
   
-  <div class="btn btn-small pull-right">
-    <img src="#">
+  <a href="#myModal" role="button" data-toggle="modal">
+    <div class="btn btn-small pull-right">
     <span id="addDelegate">Add New Admin Delegate</span>
-    <a href="#"><img src="<%= asset_path 'beta/plus.png' %>"></a>
+    <img src="<%= asset_path 'beta/plus.png' %>">
+  </a>
+    
+  
+  <!-- MODAL -->
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <h3 id="myModalLabel">Create a new Admin Delegate</h3>
+    </div><!-- /.modal-header -->
+    <div class="modal-body">
+      <p>Sponsor Contact Information</p>
+          <form class="form-horizontal">
+            
+            <div class="control-group">
+              <label class="control-label" for="inputName">Name</label>
+              <div class="controls">
+                <input type="text" id="inputName" placeholder="Name...">
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label" for="inputCompany">Company</label>
+              <div class="controls">
+                <input type="text" id="inputCompany" placeholder="Company name...">
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Email</label>
+              <div class="controls">
+                <input type="text" id="inputEmail" placeholder="Email...">
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label" for="inputPhone">Phone</label>
+              <div class="controls">
+                <input type="text" id="inputPhone" placeholder="Phone number...">
+              </div>
+            </div>
+            
+            <p>Provide a description for your admin delegates so your participants will know who they are and what they do.</p>
+            
+            <div class="control-group">
+              <label class="control-label" for="inputCompany">Description</label>
+              <div class="controls">
+                <textarea rows="6" class="input-block-level" type="text" id="inputCompany" placeholder="..."></textarea>
+              </div>
+            </div>
+          </form>
+    </div><!-- /.modal-body -->
+    <div class="modal-footer">
+      <button class="btn pull-left" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button type="submit" class="btn btn-primary pull-right">Create Sponsor Contact</button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /#myModal -->
+    
+    
+    
   </div>
   
   <table class="table table-hover">

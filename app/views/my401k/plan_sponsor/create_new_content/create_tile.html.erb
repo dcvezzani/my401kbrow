@@ -20,14 +20,72 @@
 
 <div class="tilePreview">
   <img class="tilePreviewTile" src="<%= asset_path 'demo/tile-sample.png' %>">
-  <a href="#"><img class ="tilePreviewIcon" src="<%= asset_path 'demo/icon.png' %>"></a>
-  <h4>Title of Content</h4>
-  <p>Stuff stuff stuff stuff. Stuff stuff stuff stuff. Stuff stuff stuff stuff. Stuff stuff stuff stuff.</p>
-  <div class="btn btn-small">Read more</div>
+  
+  <a href="#myModal" role="button" data-toggle="modal">
+    <div class="btn btn-small">Edit Tile</div>
+  </a>
+  
+  <!-- ________MODAL_________ -->
+  
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <h3 id="myModalLabel">Edit Tile</h3>
+    </div><!-- /.modal-header -->
+    <div class="modal-body">
+      <p>Title</p>
+        <p>TEXT EDITOR HERE</p>
+      
+      
+      <p>Summary</p>
+        <p>TEXT EDITOR HERE</p>
+        
+    </div><!-- /.modal-body -->
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button class="btn btn-primary">Yes</button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /#myModal -->
+    
+    
 </div><!-- /.tilePreview -->
 
 <a href="#"><div class="btn pull-left">Previous</div></a>
-<a href="#"><div class="btn pull-right">Next</div></a>
+<a href="#"><div class="btn pull-right">Save</div></a>
+  
+  
+  <a href="#icon" role="button" data-toggle="modal">
+    <div class="btn btn-small">Select Icon</div>
+  </a>
+  
+  <!-- ________ MODAL ___________ -->
+  
+  <div id="icon" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <h3 id="myModalLabel">Select Icon</h3>
+    </div><!-- /.modal-header -->
+    <div class="modal-body">
+      <p>WINDOW FOR BROWSING ICONS</p>
+      
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="uploadIcon">Upload Icon:</label>
+          <div class="controls">
+            <input type="text" id="uploadIcon">
+          </div>
+        </div>
+        
+        <div class="btn btn-primary">Browse</div>
+        
+      </form>
+      
+    </div><!-- /.modal-body -->
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button class="btn btn-primary">Yes</button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /#myModal -->
   
   
 </div><!-- /.wrapper -->

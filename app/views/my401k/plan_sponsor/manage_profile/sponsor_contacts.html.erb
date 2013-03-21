@@ -62,6 +62,10 @@
   </dl>
 <% end %>
 
+
+<!-- ________________________________SPONSOR CONTACTS_____________________ -->
+
+
 <div class="wrapper">
   
   <div class="grayDividerBar">
@@ -72,11 +76,99 @@
   
   <div class="sectionBox">
     
-  <div class="btn btn-small pull-right">
-    <img src="#">
-    <span id="addDelegate">Add new sponsor contact</span>
-    <a href="#"><img src="<%= asset_path 'beta/plus.png' %>"></a>
-  </div>
+  <a href="#myModal" role="button" data-toggle="modal">
+    <div class="btn btn-small pull-right">
+      <img src="#">
+      <span id="addDelegate">Add new sponsor contact</span>
+      <img src="<%= asset_path 'beta/plus.png' %>">
+    </div>
+  </a>
+    
+    <!-- MODAL -->
+    
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <h3 id="myModalLabel">Manage site status</h3>
+    </div><!-- /.modal-header -->
+    <div class="modal-body">
+    
+      <form class="form-horizontal">
+    
+      <div class="control-group">
+        <label class="control-label" for="inputName">Name</label>
+        <div class="controls">
+          <input type="text" id="inputName" placeholder="Name...">
+        </div>
+      </div>
+            
+      <div class="control-group">
+        <label class="control-label" for="inputCompany">Company</label>
+        <div class="controls">
+          <input type="text" id="inputCompany" placeholder="Company name...">
+        </div>
+      </div>
+            
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+          <input type="text" id="inputEmail" placeholder="Email...">
+        </div>
+      </div>
+            
+      <div class="control-group">
+        <label class="control-label" for="inputPhone">Phone</label>
+        <div class="controls">
+          <input type="text" id="inputPhone" placeholder="Phone number...">
+        </div>
+      </div>
+      
+      
+      <p>Roles:</p>
+      
+      <label class="checkbox">
+        <input type="checkbox" value="">
+        Flagship plan provider
+      </label>
+      
+      <label class="checkbox">
+        <input type="checkbox" value="">
+        Plan auditor
+      </label>
+      
+      <label class="checkbox">
+        <input type="checkbox" value="">
+          Plan consultant
+      </label>
+      
+      <label class="checkbox">
+        <input type="checkbox" value="">
+          Participant education / advicer provider
+      </label>
+      
+      <label class="checkbox">
+        <input type="checkbox" value="">
+          Plan administrator
+      </label>
+      
+      <label class="checkbox">
+        <input type="checkbox" value="">
+          Plan broker
+      </label>
+      
+      <label class="checkbox">
+        <input type="checkbox" value="">
+          ERISA attorney
+      </label>
+      
+      </form><!-- /.form-horizontal -->
+      
+    </div><!-- /.modal-body -->
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button class="btn btn-primary">Create Sponsor Contact</button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /#myModal -->
     
     <table class="table table-hover">
       <thead>

@@ -19,9 +19,58 @@
 
 
 <div class="layoutTileRow">
-  <div class="layoutTile">
-    
-  </div><!-- /.layoutTile -->
+  
+  <a href="#myModal" role="button" data-toggle="modal">
+    <div class="layoutTile">
+    </div><!-- /.layoutTile -->
+  </a>
+     
+     
+     <!-- _______ MODAL ____________ -->
+      
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h3 id="myModalLabel">Manage site status</h3>
+        </div><!-- /.modal-header -->
+        <div class="modal-body">
+          <p>Please select your layout from the options below.</p>
+          
+          <!-- ________ CAROUSEL ______ -->
+          
+          <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <div class="active item">
+                <p>LAYOUT 1</p>
+              </div>
+              <div class="item">
+                <p>LAYOUT 2</p>
+              </div>
+              <div class="item">
+                <p>LAYOUT 3</p>
+              </div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+          </div>
+
+
+          
+          
+        </div><!-- /.modal-body -->
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+          <button class="btn btn-primary">Select</button>
+        </div><!-- /.modal-footer -->
+      </div><!-- /#myModal -->
+  
 </div><!-- /.layoutTileRow -->
 
 <a href="#"><div class="btn pull-left">Previous</div></a>
