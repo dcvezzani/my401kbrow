@@ -7,6 +7,35 @@
 <% end %>
 
 
+<ul class="breadcrumb pull-right">
+  <li class="active">On <span class="divider">/</span></li>
+  <li><a href="#myModal" role="button" data-toggle="modal">Off</a> </li>
+  
+  <!-- MODAL -->
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <h3 id="myModalLabel">Manage site status</h3>
+    </div><!-- /.modal-header -->
+    <div class="modal-body">
+      <p>By turning off the site, none of your plan participants should be able to access the site. Turning off the site is sometimes
+         useful when maintenance routines need to be run and you don't want your participants accessing the site during that time.</p>
+      <p>A subscribed site should not typically be down for any great length of time.  While a small outages may occur from time to time,
+         for longer than normal outages, there may be implications for portal owners who have negotiated a lower price by using sponsors.</p>
+      <p>More importantly, you should continue to stay in touch with your plan participants and having your portal up is a great way to do that.</p>
+      <h4>Are you sure you want to turn your site off?</h4>
+    </div><!-- /.modal-body -->
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button class="btn btn-primary">Yes</button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /#myModal -->
+  
+</ul>
+<h4 class="pull-right">The portal is:</h4>
+
+
+
 <div class="grayDividerBar" id="planInformation">
   <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
   <p class="grayBarText">Plan Information</p>
