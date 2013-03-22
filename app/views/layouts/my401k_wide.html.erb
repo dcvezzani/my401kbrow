@@ -137,6 +137,15 @@
 
 
 <script type="text/javascript">
+function register_buttons(){
+  $("a:contains('Previous')").click(function(){
+    $('#rootwizard').bootstrapWizard('previous');
+  });
+  $("a:contains('Next')").click(function(){
+    $('#rootwizard').bootstrapWizard('next');
+  });
+}
+
   $(document).ready(function() {
     $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
       var $total = navigation.find('li').length;
@@ -162,15 +171,20 @@
       }
 
 
-      console.log($(tab).html());
+      //console.log($(tab).html());
       var href = $("a", tab).attr("href");
-      console.log(href);
+      //console.log(href);
       if(!href.match(/^#/)){
         $.get(href, function(data){
           var lz_id = href.match(/(#[^#]+)$/)[1];
           $(lz_id).html(data);
         });
       }
+
+      // register the buttons in the wizard; usually this is to navigate to previous and next
+      setTimeout(function(){
+        register_buttons();
+      }, 100);
     }});
   });
 </script>
