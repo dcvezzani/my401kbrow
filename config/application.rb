@@ -60,7 +60,7 @@ module BrowsercmsDemo
     config.assets.version = '1.0'
 
     # Additional paths where assets may be looked for
-    config.assets.paths %W(#{config.root}/mediabrowser #{config.root}/images-orig #{config.root}/demo #{config.root}/overcast #{config.root}/tinymce/jscripts/tiny_mce #{config.root}/bootstrap #{config.root}/wf #{config.root}/layout #{config.root}/twitter-bootstrap-wizard)
+    config.assets.paths %W(#{config.root}/mediabrowser #{config.root}/images-orig #{config.root}/demo #{config.root}/overcast #{config.root}/tinymce/jscripts/tiny_mce #{config.root}/bootstrap #{config.root}/wf #{config.root}/layout #{config.root}/bootstrap-wizard)
 
     initializer :after_append_asset_paths, 
                 :group => :all, 
@@ -71,7 +71,7 @@ module BrowsercmsDemo
        config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "demo").to_s
        config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "tinymce", "jscripts", "tiny_mce").to_s
        config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "bootstrap", "css").to_s
-       config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "twitter-bootstrap-wizard").to_s
+       config.assets.paths.unshift Rails.root.join(config.root, "app", "assets", "bootstrap-wizard").to_s
     end
     
     # (Devise installation instructions) If you are deploying Rails 3.1 on Heroku, you may want to set:
