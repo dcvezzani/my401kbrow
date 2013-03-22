@@ -66,16 +66,6 @@ div.page-with-shadows {
   z-index: -10;
 }
 
-div.page-with-shadows-wide {
-  background: url("/assets/layout/curled-paper-bottom-edge-wide.png") no-repeat scroll left top transparent;
-  bottom: -36px;
-  height: 899px;
-  left: -15px;
-  position: absolute;
-  width: 698px;
-  z-index: -10;
-}
-
 #mid-section{
   position: relative; 
   left: 2px;
