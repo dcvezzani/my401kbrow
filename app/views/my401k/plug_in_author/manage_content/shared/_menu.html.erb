@@ -8,13 +8,23 @@
           <% end %>
         </div><!-- /.redSideButon -->
       </dd>
-        <dd>
+      <dd>
+        <%= link_to "by Main Section", plug_in_author_manage_content_published_products_product_summary_by_type_main_section_path %> | 
+        <%= link_to "by Blog Post", plug_in_author_manage_content_published_products_product_summary_by_type_blog_post_path %> | 
+        <%= link_to "by Headline Banner", plug_in_author_manage_content_published_products_product_summary_by_type_headline_banner_path %>
+      </dd>
+      <dd>
         <div class="redSideButton">
           <%= link_to plug_in_author_manage_content_products_drafted_path, class: "nav-label" do %>
             <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
             <p class="redButtonText">Drafted Products</p>
           <% end %>
         </div><!-- /.redSideButon -->
+      </dd>
+      <dd>
+        <%= link_to "by Main Section", plug_in_author_manage_content_drafted_products_product_summary_by_type_main_section_path %> | 
+        <%= link_to "by Blog Post", plug_in_author_manage_content_drafted_products_product_summary_by_type_blog_post_path %> | 
+        <%= link_to "by Headline Banner", plug_in_author_manage_content_drafted_products_product_summary_by_type_headline_banner_path %>
       </dd>
   </dl>
 
