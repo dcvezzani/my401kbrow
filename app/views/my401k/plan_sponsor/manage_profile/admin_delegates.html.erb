@@ -1,65 +1,6 @@
 <% title("Admin Delegates", true) %>
 
 <% content_for :side_menu do %>
-  <dl>
-    <dt>Manage Profile Menu</dt>
-      <dd>
-        <div class="redSideButton">
-          <a href="#">
-            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
-            <p class="redButtonText">Basic Information</p>
-          </a>
-        </div><!-- /.redSideButon -->
-      </dd>
-      <dd>
-        <div class="redSideButton">
-          <a href="#">
-            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
-            <p class="redButtonText">Admin Delegates</p>
-          </a>
-        </div><!-- /.redSideButon -->
-      </dd>
-      <dd>
-        <div class="redSideButton">
-          <a href="#">
-            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
-            <p class="redButtonText">Portal Branding</p>
-          </a>
-        </div><!-- /.redSideButon -->
-      </dd>
-      <dd>
-        <div class="redSideButton">
-          <a href="#">
-            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
-            <p class="redButtonText">Part. Access Control</p>
-          </a>
-        </div><!-- /.redSideButon -->
-      </dd>
-      <dd>
-        <div class="redSideButton">
-          <a href="#">
-            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
-            <p class="redButtonText">Subscription Status</p>
-          </a>
-        </div><!-- /.redSideButon -->
-      </dd>
-      <dd>
-        <div class="redSideButton">
-          <a href="#">
-            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
-            <p class="redButtonText">Sponsor Contacts</p>
-          </a>
-        </div><!-- /.redSideButon -->
-      </dd>
-      <dd>
-        <div class="redSideButton">
-          <a href="#">
-            <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
-            <p class="redButtonText">Alert Preferences</p>
-          </a>
-        </div><!-- /.redSideButon -->
-      </dd>
-  </dl>
 <% end %>
 
 <div class="wrapper">
@@ -70,12 +11,19 @@
 </div><!-- /.grayDividerBar -->
 <br>
   
-  <a href="#myModal" role="button" data-toggle="modal">
+  <a href="#myModal" role="button" data-toggle="modal" style="display: none; ">
     <div class="btn btn-small pull-right">
     <span id="addDelegate">Add New Admin Delegate</span>
     <img src="<%= asset_path 'beta/plus.png' %>">
+    </div>
   </a>
     
+
+  <a href="#myModal" role="button" data-toggle="modal" class="btn btn-small pull-right" id="addDelegate">
+    Add New Admin Delegate
+    <img src="<%= asset_path 'beta/plus.png' %>">
+  </a>
+  
   
   <!-- MODAL -->
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

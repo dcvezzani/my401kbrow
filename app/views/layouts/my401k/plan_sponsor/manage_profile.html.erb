@@ -3,7 +3,7 @@
 
 <%# default menu for all plug-in authors, manage content %>
 <% side_menu do %>
-  Please define menu in app/views/layouts/my401k/plan_sponsor/manage_profile.html.erb
+  <%= render partial: "my401k/plan_sponsor/shared/manage_profile_side_menu" %>
 <% end %>
 
 <%= render template: "layouts/my401k/plan_sponsor" %>

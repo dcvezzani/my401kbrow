@@ -1,62 +1,70 @@
   <dl>
     <dt>Manage Profile Menu</dt>
+
       <dd>
         <div class="redSideButton">
-          <a href="#">
+          <%= link_to plan_sponsor_manage_profile_basic_information_path do %>
             <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
             <p class="redButtonText">Basic Information</p>
-          </a>
+          <% end %>
         </div><!-- /.redSideButon -->
       </dd>
-      <dd>
-      <div class="redSideButton">
 
+      <dd>
+        <div class="redSideButton">
           <%= link_to plan_sponsor_manage_profile_admin_delegates_path do %>
             <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
             <p class="redButtonText">Admin Delegates</p>
           <% end %>
-          
         </div><!-- /.redSideButon -->
       </dd>
+
       <dd>
         <div class="redSideButton">
-          <a href="#">
+          <%= link_to plan_sponsor_manage_profile_portal_branding_path do %>
             <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
             <p class="redButtonText">Portal Branding</p>
-          </a>
+          <% end %>
         </div><!-- /.redSideButon -->
       </dd>
+
       <dd>
         <div class="redSideButton">
-          <a href="#">
+          <%= link_to plan_sponsor_manage_profile_participant_access_control_path do %>
             <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
             <p class="redButtonText">Part. Access Control</p>
-          </a>
+          <% end %>
         </div><!-- /.redSideButon -->
       </dd>
+
       <dd>
         <div class="redSideButton">
           <a href="#">
+          <%= link_to plan_sponsor_manage_profile_subscription_status_path do %>
             <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
             <p class="redButtonText">Subscription Status</p>
+          <% end %>
           </a>
         </div><!-- /.redSideButon -->
       </dd>
+
       <dd>
         <div class="redSideButton">
-          <a href="#">
+          <%= link_to plan_sponsor_manage_profile_sponsor_contacts_path do %>
             <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
             <p class="redButtonText">Sponsor Contacts</p>
-          </a>
+          <% end %>
         </div><!-- /.redSideButon -->
       </dd>
+
       <dd>
         <div class="redSideButton">
-          <a href="#">
+          <%= link_to plan_sponsor_manage_profile_alert_preferences_path do %>
             <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/red-wide-button.png' %>">
             <p class="redButtonText">Alert Preferences</p>
-          </a>
+          <% end %>
         </div><!-- /.redSideButon -->
       </dd>
+
   </dl>
 
