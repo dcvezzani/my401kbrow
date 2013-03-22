@@ -79,10 +79,15 @@ div.page-with-shadows-wide {
   z-index: -10;
 }
 
+#main-wide .body, 
 #mid-section{
   position: relative; 
   left: 2px;
   min-height: 500px;
+}
+
+#body.full-page #mid-section{
+  min-height: 0px;
 }
 
 #mid-section .cover{
@@ -111,6 +116,7 @@ div.page-with-shadows-wide {
 
 #main-wide{
   float: left; 
+  padding: 0 1em;
 }
 
 #mid-section{
@@ -170,6 +176,9 @@ div.page-with-shadows-wide {
   margin-bottom: 37px;
 }
 
+#body.full-page #center-right{
+  margin-bottom: 0;
+}
 
 
 div.left-navigation ul li.button, div#header-navigation ul li.button, div#logo{

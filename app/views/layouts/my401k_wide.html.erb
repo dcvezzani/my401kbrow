@@ -52,7 +52,7 @@
 
         <!-- ##### BODY ############################### -->
 
-        <div id="body">
+        <div id="body" class="full-page">
           <div id="left">
             <div class="xeasy-browse" id="logo">
               <a style="display: none; " href="/plan_participant"></a>
@@ -87,8 +87,7 @@
 
             <div id="mid-section">
               <div id="banner"></div>
-              <h2><%= yield(:title) if show_title? %></h2>
-              <div class="" id="content">
+              <div class="content">
                 <%#= yield %>
               </div><!-- #content -->
 
@@ -98,7 +97,7 @@
 
           <div id="main-wide">
             <div class="body">
-              <div id="banner"></div>
+              <div class="banner"></div>
               <h2><%= yield(:title) if show_title? %></h2>
               <div class="" id="content">
                 <%#= yield %>
