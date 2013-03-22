@@ -6,24 +6,16 @@
 <div class="wrapper">
   
   <div class="grayDividerBar">
-  <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
-  <p class="grayBarText">Manage admin delegates</p>
-</div><!-- /.grayDividerBar -->
-<br>
-  
-  <a href="#myModal" role="button" data-toggle="modal" style="display: none; ">
-    <div class="btn btn-small pull-right">
-    <span id="addDelegate">Add New Admin Delegate</span>
-    <img src="<%= asset_path 'beta/plus.png' %>">
-    </div>
-  </a>
-    
+    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+    <p class="grayBarText">Manage admin delegates</p>
+  </div><!-- /.grayDividerBar -->
 
+  <br>
+  
   <a href="#myModal" role="button" data-toggle="modal" class="btn btn-small pull-right" id="addDelegate">
     Add New Admin Delegate
     <img src="<%= asset_path 'beta/plus.png' %>">
   </a>
-  
   
   <!-- MODAL -->
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -79,10 +71,6 @@
     </div><!-- /.modal-footer -->
   </div><!-- /#myModal -->
     
-    
-    
-  </div>
-  
   <table class="table table-hover">
     <thead>
       <tr>
