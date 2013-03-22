@@ -1,2 +1,73 @@
 <h1>My401k::PlugInAuthor::Reports#report_001</h1>
 <p>Find me in app/views/my401k/plug_in_author/reports/report_001.html.erb</p>
+
+<div class="grayDividerBar">
+  <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+  <p class="grayBarText">Report 001</p>
+  <div class="input-append grayBarSearch">
+    <input class="span2" id="appendedInputButton" type="text">
+    <button class="btn" type="button">Search</button>
+    <a href="#myModal" role="button" data-toggle="modal"><i class="icon-filter"></i></a>
+  </div><!-- /.input-append -->
+</div><!-- /.grayDividerBar -->
+  
+<!-- _______________________________________MODAL____________________________________ -->
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <h3 id="myModalLabel">Filter Reports</h3>
+    </div><!-- /.modal-header -->
+    <div class="modal-body">
+      
+      <p>Filter your reports by the following criteria:</p>
+      
+      <select>
+        <option>Name</option>
+        <option>Title</option>
+        <option>Company</option>
+        <option>Permissions</option>
+      </select>
+      
+    </div><!-- /.modal-body -->
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button class="btn btn-primary">Filter</button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /#myModal -->
+  
+  
+  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Permissions</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sam Jones</td>
+        <td>CFO</td>
+        <td>Johnson & Johnson</td>
+        <td>(555) 555-5555</td>
+        <td>sam.jones@johnson.com</td>
+        <td>---</td>
+        <td>Send password reset</td>
+      </tr>
+      <tr>
+        <td>Janice Whithers</td>
+        <td>Engineer</td>
+        <td>TD Ameritrade</td>
+        <td>(555) 555-5555</td>
+        <td>janice.whithers@ameritrade.com</td>
+        <td>---</td>
+        <td>Send password reset</td>
+      </tr>
+    </tbody>
+  </table>

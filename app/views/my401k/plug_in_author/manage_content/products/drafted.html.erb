@@ -4,16 +4,19 @@
   <%= render partial: "my401k/plug_in_author/manage_content/shared/menu" %>
 <% end %>
 
-<h1>My401k::PlugInAuthor::ManageContent::DraftedProducts#drafted</h1>
-<p>Find me in app/views/my401k/plug_in_author/manage_content/drafted_products/drafted.html.erb</p>
 
-<!-- ______________ VIEW 1 ______________ -->
+<!-- ______________ DRAFTED (BY PRODUCT TYPE) ______________ -->
 
 <div class="grayDividerBar">
-    <img class="grayBarImg" src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
-    <p class="grayBarText">Summary of drafted plug-in content</p>
-  </div><!-- /.grayDividerBar -->
-  <br>
+  <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+  <p class="grayBarText">Summary of published plug-in content</p>
+  <div class="input-append grayBarSearch">
+    <select>
+      <option>View by Category</option>
+      <option>View by Product Type</option>
+    </select>
+  </div><!-- /.input-append -->
+</div><!-- /.grayDividerBar -->
 
 <!-- ____________contentSection__________ -->
 
