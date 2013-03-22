@@ -27,4 +27,8 @@ module LayoutHelper
   def top_nav_menu(&blk)
     content_for(:top_nav_menu, &blk) unless content_for?(:top_nav_menu)
   end
+
+  def progress_bar(&blk)
+    content_for(:progress_bar, &blk) unless content_for?(:progress_bar)
+  end
 end

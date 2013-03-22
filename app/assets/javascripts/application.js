@@ -18,6 +18,8 @@
 // require 'spin-instance.js'
 //= require_tree .
 //= require '../bootstrap/js/bootstrap'
+//= require '../twitter-bootstrap-wizard/jquery.bootstrap.wizard'
+//= require '../twitter-bootstrap-wizard/prettify'
 
 function saveWizardPage(step, serialized_data, success, failure){
   href = "/content_page/wizard/step_0" + step;

@@ -1,17 +1,7 @@
 <% title("Select Section", true) %>
+<h2 style=" "><%= yield(:title) if show_title? %></h2>
 
 <div class="wrapper">
-
-<p>Create New Content</p>
-<ul class="breadcrumb">
-  <li class="active">Section <span class="divider">/</span></li>
-  <li><a href="#">Layout</a> <span class="divider">/</span></li>
-  <li><a href="#">Title/Body</a> <span class="divider">/</span></li>
-  <li><a href="#">Tile</a> <span class="divider">/</span></li>
-  <li><a href="#">Elections</a> <span class="divider">/</span></li>
-  <li><a href="#">Finish</a></li>
-</ul>
-
 
 <div class="mainSectionArticle pull-left">
   <div>
@@ -37,7 +27,7 @@
         </div><!-- /.mainSectionTile -->
       </a>
       
-      <a href="#">
+      <a href="#">  
         <div class="mainSectionTile pull-left">
           <p>Special Offers</p>
         </div><!-- /.mainSectionTile -->
