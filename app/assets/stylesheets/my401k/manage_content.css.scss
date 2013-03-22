@@ -36,11 +36,18 @@
 
 .oneTile {
   float: left;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .theTile {
   height: 155px;
   width: 155px;
   background-color: #AAA;
+}
+
+/* ________________Admin Delegates CSS__________________ */
+
+.addContentButton {
+  margin: 10px 0;
+  box-shadow: 10px 10px 5px #000;
 }
