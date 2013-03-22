@@ -175,7 +175,6 @@ BrowsercmsDemo::Application.routes.draw do
   ### Plan Sponsor - Create New Content
   match "/my401k/plan_sponsor/create_new_content" => redirect("/my401k/plan_sponsor/create_new_content/select_section")
   match "/my401k/plan_sponsor/create_new_content/index" => redirect("/my401k/plan_sponsor/create_new_content/select_section")
-  get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor:CreateNewContent#select_section", as: "plan_sponsor_create_new_content"
   get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor::CreateNewContent#select_section", as: "plan_sponsor_create_new_content_select_section"
   get "my401k/plan_sponsor/create_new_content/select_layout" => "My401k::PlanSponsor::CreateNewContent#select_layout", as: "plan_sponsor_create_new_content_select_layout"
   get "my401k/plan_sponsor/create_new_content/create_title_and_body" => "My401k::PlanSponsor::CreateNewContent#create_title_and_body", as: "plan_sponsor_create_new_content_create_title_and_body"
