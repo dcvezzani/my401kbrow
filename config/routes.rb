@@ -73,7 +73,6 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plug_in_author/manage_content/drafted_products/product_summary_by_type_blog_post" => "My401k::PlugInAuthor::ManageContent::DraftedProducts#product_summary_by_type_blog_post", as: "plug_in_author_manage_content_drafted_products_product_summary_by_type_blog_post"
   get "my401k/plug_in_author/manage_content/drafted_products/product_summary_by_type_headline_banner" => "My401k::PlugInAuthor::ManageContent::DraftedProducts#product_summary_by_type_headline_banner", as: "plug_in_author_manage_content_drafted_products_product_summary_by_type_headline_banner"
 
-
   ### Plug-in Author - Manage Content Bundles (wireframe)
   match "/my401k/plug_in_author/manage_content_wf/bundles" => redirect("/my401k/plug_in_author/manage_content_wf/bundles/published")
   match "/my401k/plug_in_author/manage_content_wf/bundles/index" => redirect("/my401k/plug_in_author/manage_content_wf/bundles/published")
@@ -123,12 +122,13 @@ BrowsercmsDemo::Application.routes.draw do
   ### Plug In Author - Create New Content
   match "/my401k/plug_in_author/create_new_content" => redirect("/my401k/plug_in_author/create_new_content/select_section")
   match "/my401k/plug_in_author/create_new_content/index" => redirect("/my401k/plug_in_author/create_new_content/select_section")
-  get "my401k/plug_in_author/create_new_content/select_section" => "My401k::PlugInAuthor::CreateNewContent#select_section", as: "plan_sponsor_create_new_content_select_section"
-  get "my401k/plug_in_author/create_new_content/select_layout" => "My401k::PlugInAuthor::CreateNewContent#select_layout", as: "plan_sponsor_create_new_content_select_layout"
-  get "my401k/plug_in_author/create_new_content/create_title_and_body" => "My401k::PlugInAuthor::CreateNewContent#create_title_and_body", as: "plan_sponsor_create_new_content_create_title_and_body"
-  get "my401k/plug_in_author/create_new_content/create_tile" => "My401k::PlugInAuthor::CreateNewContent#create_tile", as: "plan_sponsor_create_new_content_create_tile"
-  get "my401k/plug_in_author/create_new_content/optional_elections" => "My401k::PlugInAuthor::CreateNewContent#optional_elections", as: "plan_sponsor_create_new_content_optional_elections"
-  get "my401k/plug_in_author/create_new_content/point_content" => "My401k::PlugInAuthor::CreateNewContent#point_content", as: "plan_sponsor_create_new_content_point_content"
+  get "my401k/plug_in_author/create_new_content/select_section" => "My401k::PlugInAuthor::CreateNewContent#select_section", as: "plug_in_author_create_new_content"
+  get "my401k/plug_in_author/create_new_content/select_section" => "My401k::PlugInAuthor::CreateNewContent#select_section", as: "plug_in_author_create_new_content_select_section"
+  get "my401k/plug_in_author/create_new_content/select_layout" => "My401k::PlugInAuthor::CreateNewContent#select_layout", as: "plug_in_author_create_new_content_select_layout"
+  get "my401k/plug_in_author/create_new_content/create_title_and_body" => "My401k::PlugInAuthor::CreateNewContent#create_title_and_body", as: "plug_in_author_create_new_content_create_title_and_body"
+  get "my401k/plug_in_author/create_new_content/create_tile" => "My401k::PlugInAuthor::CreateNewContent#create_tile", as: "plug_in_author_create_new_content_create_tile"
+  get "my401k/plug_in_author/create_new_content/optional_elections" => "My401k::PlugInAuthor::CreateNewContent#optional_elections", as: "plug_in_author_create_new_content_optional_elections"
+  get "my401k/plug_in_author/create_new_content/point_content" => "My401k::PlugInAuthor::CreateNewContent#point_content", as: "plug_in_author_create_new_content_point_content"
 
   ### Plug In Author - Reports
   match "/my401k/plug_in_author/reports" => redirect("/my401k/plug_in_author/reports/report_001")
@@ -174,7 +174,7 @@ BrowsercmsDemo::Application.routes.draw do
   ### Plan Sponsor - Create New Content
   match "/my401k/plan_sponsor/create_new_content" => redirect("/my401k/plan_sponsor/create_new_content/select_section")
   match "/my401k/plan_sponsor/create_new_content/index" => redirect("/my401k/plan_sponsor/create_new_content/select_section")
-  get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor:CreateNewContent#select_section", as: "plug_in_author_create_new_content"
+  get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor:CreateNewContent#select_section", as: "plan_sponsor_create_new_content"
   get "my401k/plan_sponsor/create_new_content/select_section" => "My401k::PlanSponsor::CreateNewContent#select_section", as: "plan_sponsor_create_new_content_select_section"
   get "my401k/plan_sponsor/create_new_content/select_layout" => "My401k::PlanSponsor::CreateNewContent#select_layout", as: "plan_sponsor_create_new_content_select_layout"
   get "my401k/plan_sponsor/create_new_content/create_title_and_body" => "My401k::PlanSponsor::CreateNewContent#create_title_and_body", as: "plan_sponsor_create_new_content_create_title_and_body"
