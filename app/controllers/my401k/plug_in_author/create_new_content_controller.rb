@@ -7,16 +7,16 @@ class My401k::PlugInAuthor::CreateNewContentController < My401k::PlugInAuthorCon
   def select_layout
   end
 
-  def define_body
+  def create_title_and_body
   end
 
-  def define_tile
+  def create_tile
   end
 
-  def select_elections
+  def optional_elections
   end
 
-  def save_content
+  def point_content
   end
 
   def preview_page

@@ -129,6 +129,7 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plug_in_author/create_new_content/create_tile" => "My401k::PlugInAuthor::CreateNewContent#create_tile", as: "plug_in_author_create_new_content_create_tile"
   get "my401k/plug_in_author/create_new_content/optional_elections" => "My401k::PlugInAuthor::CreateNewContent#optional_elections", as: "plug_in_author_create_new_content_optional_elections"
   get "my401k/plug_in_author/create_new_content/point_content" => "My401k::PlugInAuthor::CreateNewContent#point_content", as: "plug_in_author_create_new_content_point_content"
+  get "my401k/plug_in_author/create_new_content/preview_page" => "My401k::PlugInAuthor::CreateNewContent#preview_page", as: "plug_in_author_create_new_content_preview_page"
 
   ### Plug In Author - Reports
   match "/my401k/plug_in_author/reports" => redirect("/my401k/plug_in_author/reports/report_001")
@@ -181,6 +182,7 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plan_sponsor/create_new_content/create_tile" => "My401k::PlanSponsor::CreateNewContent#create_tile", as: "plan_sponsor_create_new_content_create_tile"
   get "my401k/plan_sponsor/create_new_content/optional_elections" => "My401k::PlanSponsor::CreateNewContent#optional_elections", as: "plan_sponsor_create_new_content_optional_elections"
   get "my401k/plan_sponsor/create_new_content/point_content" => "My401k::PlanSponsor::CreateNewContent#point_content", as: "plan_sponsor_create_new_content_point_content"
+  get "my401k/plan_sponsor/create_new_content/preview_page" => "My401k::PlanSponsor::CreateNewContent#preview_page", as: "plan_sponsor_create_new_content_preview_page"
 
   ### Plan Sponsor - Manage Profile
   match "/my401k/plan_sponsor/manage_profile" => redirect("/my401k/plan_sponsor/manage_profile/basic_information")

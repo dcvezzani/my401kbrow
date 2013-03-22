@@ -18,4 +18,7 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
 
   def point_content
   end
+
+  def preview_page
+  end
 end
