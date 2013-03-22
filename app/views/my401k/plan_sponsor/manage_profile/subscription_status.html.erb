@@ -8,13 +8,14 @@
     
     <div class="grayDividerBar">
       <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
-      <p class="grayBarText">Subscription status</p>
+      <h3 class="grayBarText noMargin">Subscription status</h3>
     </div><!-- /.grayDividerBar -->
 
-    <p>Want to enjoy subscriptions at a lower cost? Here are some <a href="#">ideas</a>.</p>
+    <h4 class="reducedWidth well well-small">Want to enjoy subscriptions at a lower cost? Here are some <a href="#">ideas</a>.</h4>
     
-    <div class="sectionBox">
+    <div class="sectionBox boxWithPadding">
       <p class="tlb">Subscription Period</p>
+      <span class="clearfix"></span>
       <a href="#">Start date<i class="icon-calendar"></i></a>
       <a href="#">End date<i class="icon-calendar"></i></a>
       <label class="checkbox">
@@ -23,32 +24,35 @@
     </div><!-- /.sectionBox -->
     <br>
     
-    <div class="sectionBox">
+    <div class="sectionBox boxWithPadding">
       <p class="tlb">Extend Subscription</p>
+      <div>
+        <div class="centered">
+          <label class="radio inline">
+            <input type="radio" id="oneYear" value="oneYear"> 1 Year $1,250
+          </label>
+          <label class="radio inline">
+            <input type="radio" id="threeYear" value="threeYear"> 3 Years $3,300
+          </label>
+          <label class="radio inline">
+            <input type="radio" id="fiveYear" value="fiveYear"> 5 Years $5,000
+          </label>
+          <label class="radio inline">
+            <input type="radio" id="tenYear" value="tenYear"> 10 Years $9,000
+          </label>
+        </div><!-- /.centered -->
+      </div>
+      <br>
       
-      <label class="radio inline">
-        <input type="radio" id="oneYear" value="oneYear"> 1 Year $1,250
-      </label>
-      <label class="radio inline">
-        <input type="radio" id="threeYear" value="threeYear"> 3 Years $3,300
-      </label>
-      <label class="radio inline">
-        <input type="radio" id="fiveYear" value="fiveYear"> 5 Years $5,000
-      </label>
-      <label class="radio inline">
-        <input type="radio" id="tenYear" value="tenYear"> 10 Years $9,000
-      </label>
-      
-      <div class="btn">Extend Subscription</div>
+      <div class="btn pull-right">Extend Subscription</div>
+      <span class="clearfix"></span>
     </div><!-- /.sectionBox -->
     <br>
     
-    <div class="sectionBox">
+    <div class="sectionBox boxWithPadding">
       <p class="tlb">Other subscription options</p>
       <p>Unhappy? Contact us to close your account.</p>
-      <textarea rows="11">
-        Let us know
-      </textarea>
+      <textarea rows="11" class="input-block-level">Let us know</textarea>
       <div class="btn">
         Send Us Your Comments
       </div>
