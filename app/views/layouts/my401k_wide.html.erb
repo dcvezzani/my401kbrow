@@ -160,7 +160,17 @@
       } else {
         $('#rootwizard .pager .first').removeClass("disabled");
       }
-      
+
+
+      console.log($(tab).html());
+      var href = $("a", tab).attr("href");
+      console.log(href);
+      if(!href.match(/^#/)){
+        $.get(href, function(data){
+          var lz_id = href.match(/(#[^#]+)$/)[1];
+          $(lz_id).html(data);
+        });
+      }
     }});
   });
 </script>

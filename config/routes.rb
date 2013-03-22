@@ -147,7 +147,7 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plan_sponsor/promote_plan_portal" => "My401k::PlanSponsor::PromotePlanPortal#print_material", as: "plan_sponsor_promote_plan_portal"
   get "my401k/plan_sponsor/manage_content" => "My401k::PlanSponsor::ManageContent#published_content", as: "plan_sponsor_manage_content"
   get "my401k/plan_sponsor/professional_help" => "My401k::PlanSponsor::ProfessionalHelp#index", as: "plan_sponsor_professional_help"
-  get "my401k/plan_sponsor/create_new_content" => "My401k::PlanSponsor::CreateNewContent#select_section", as: "plan_sponsor_create_new_content"
+  get "my401k/plan_sponsor/create_new_content" => "My401k::PlanSponsor::CreateNewContent#index", as: "plan_sponsor_create_new_content"
 
   ### Plan Sponsor - Promote Plan Portal
   match "/my401k/plan_sponsor/promote_plan_portal" => redirect("/my401k/plan_sponsor/promote_plan_portal/print_material")

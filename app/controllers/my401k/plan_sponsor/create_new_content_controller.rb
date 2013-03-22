@@ -1,5 +1,9 @@
 class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorController
-  layout "my401k/plan_sponsor/create_new_content"
+  layout false
+
+  def index
+    render layout: "my401k/plan_sponsor/create_new_content"
+  end
 
   def select_section
   end
