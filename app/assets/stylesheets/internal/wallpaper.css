@@ -52,6 +52,7 @@ span.user-id{
   font-weight: bold;
 }
 
+#main-wide, 
 #center-right{
   position: relative; 
 }
@@ -63,6 +64,18 @@ div.page-with-shadows {
   left: -15px;
   position: absolute;
   width: 698px;
+  z-index: -10;
+}
+
+div.page-with-shadows-wide {
+  background: url("/assets/layout/curled-paper-bottom-edge-wide.png") no-repeat scroll left top transparent;
+  height: 359px;
+  width: 1024px;
+  width: 1035px;
+  bottom: -36px;
+  left: -15px;
+  left: -3px;
+  position: absolute;
   z-index: -10;
 }
 
@@ -90,9 +103,14 @@ div.page-with-shadows {
 #logo, #communications, #navigation, 
 #header-body, #mid-section, 
 #header-instructions, #header-navigation, 
+#main-wide,
 #banner, #content{
   float: left; 
   width: 100%;
+}
+
+#main-wide{
+  float: left; 
 }
 
 #mid-section{
@@ -147,6 +165,7 @@ div.page-with-shadows {
   top: 8px;
 }
 
+#main-wide, 
 #center-right{
   margin-bottom: 37px;
 }
