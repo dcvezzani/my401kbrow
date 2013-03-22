@@ -98,7 +98,8 @@
           <div id="main-wide">
             <div class="body">
               <div class="banner"></div>
-              <h2><%= yield(:title) if show_title? %></h2>
+              <h2 style="display: none; "><%= yield(:title) if show_title? %></h2>
+              <%= yield(:progress_bar) if content_for?(:progress_bar) %>
               <div class="" id="content">
                 <%#= yield %>
               </div><!-- #content -->
@@ -134,3 +135,32 @@
   </body>
 </html>
 
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
+      var $total = navigation.find('li').length;
+      var $current = index+1;
+      var $percent = ($current/$total) * 100;
+      $('#rootwizard').find('.bar').css({width:$percent+'%'});
+
+    	// If it's the last tab then hide the last button and show the finish instead
+      if($current >= $total) {
+        $('#rootwizard').find('.pager .next').addClass("disabled");
+        $('#rootwizard').find('.pager .finish').removeClass("disabled");
+        $('#rootwizard').find('.pager .last').addClass("disabled");
+      } else {
+        $('#rootwizard').find('.pager .next').removeClass("disabled");
+        $('#rootwizard').find('.pager .last').removeClass("disabled");
+        $('#rootwizard').find('.pager .finish').addClass("disabled");
+      }
+
+      if($('#rootwizard .pager .previous').hasClass("disabled")){
+        $('#rootwizard .pager .first').addClass("disabled");
+      } else {
+        $('#rootwizard .pager .first').removeClass("disabled");
+      }
+      
+    }});
+  });
+</script>

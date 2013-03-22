@@ -80,10 +80,11 @@ div.page-with-shadows-wide {
 }
 
 #main-wide .body, 
-#mid-section{
-  position: relative; 
-  left: 2px;
+#mid-section {
+  left: 0px;
   min-height: 500px;
+  position: relative;
+  width: 97%;
 }
 
 #body.full-page #mid-section{
