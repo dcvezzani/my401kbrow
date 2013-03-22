@@ -63,6 +63,17 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plug_in_author/manage_content/products/filter" => "My401k::PlugInAuthor::ManageContent::Products#filter", as: "plug_in_author_manage_content_products_filter"
   get "my401k/plug_in_author/manage_content/products/help" => "My401k::PlugInAuthor::ManageContent::Products#help", as: "plug_in_author_manage_content_products_help"
 
+  ### Plug-in Author - Manage Content Products - published mockups
+  get "my401k/plug_in_author/manage_content/published_products/product_summary_by_type_main_section" => "My401k::PlugInAuthor::ManageContent::PublishedProducts#product_summary_by_type_main_section", as: "plug_in_author_manage_content_published_products_product_summary_by_type_main_section"
+  get "my401k/plug_in_author/manage_content/published_products/product_summary_by_type_blog_post" => "My401k::PlugInAuthor::ManageContent::PublishedProducts#product_summary_by_type_blog_post", as: "plug_in_author_manage_content_published_products_product_summary_by_type_blog_post"
+  get "my401k/plug_in_author/manage_content/published_products/product_summary_by_type_headline_banner" => "My401k::PlugInAuthor::ManageContent::PublishedProducts#product_summary_by_type_headline_banner", as: "plug_in_author_manage_content_published_products_product_summary_by_type_headline_banner"
+
+  ### Plug-in Author - Manage Content Products - drafted mockups
+  get "my401k/plug_in_author/manage_content/drafted_products/product_summary_by_type_main_section" => "My401k::PlugInAuthor::ManageContent::DraftedProducts#product_summary_by_type_main_section", as: "plug_in_author_manage_content_drafted_products_product_summary_by_type_main_section"
+  get "my401k/plug_in_author/manage_content/drafted_products/product_summary_by_type_blog_post" => "My401k::PlugInAuthor::ManageContent::DraftedProducts#product_summary_by_type_blog_post", as: "plug_in_author_manage_content_drafted_products_product_summary_by_type_blog_post"
+  get "my401k/plug_in_author/manage_content/drafted_products/product_summary_by_type_headline_banner" => "My401k::PlugInAuthor::ManageContent::DraftedProducts#product_summary_by_type_headline_banner", as: "plug_in_author_manage_content_drafted_products_product_summary_by_type_headline_banner"
+
+
   ### Plug-in Author - Manage Content Bundles (wireframe)
   match "/my401k/plug_in_author/manage_content_wf/bundles" => redirect("/my401k/plug_in_author/manage_content_wf/bundles/published")
   match "/my401k/plug_in_author/manage_content_wf/bundles/index" => redirect("/my401k/plug_in_author/manage_content_wf/bundles/published")
