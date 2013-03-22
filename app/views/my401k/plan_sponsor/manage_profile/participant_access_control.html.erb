@@ -13,7 +13,7 @@
   
   <!-- _______________________Plan participant authentication_____________________ -->
   
-  <div class="sectionBox">
+  <div class="sectionBox boxWithPadding">
     <p class="tlb">Plan participant authentication</p>
      <label class="checkbox">
       <input type="checkbox"> Anyone can register anytime
@@ -26,15 +26,17 @@
      </label>
      <p>Copy the following text and paste in your email:</p>
      <textarea rows="3">
-      
      </textarea>
-     <div class="btn"><a href="#">Copy Link</a></div>
-     <div class="btn"><a href="#">Save</a></div>
+     <span class="clearfix"></span>
+     
+     <a href="#" class="btn pull-left">Copy Link</a>
+     <a href="#" class="btn pull-right">Save</a>
+     <span class="clearfix"></span>
   </div>
   
   <!-- __________________Plan participant access status___________________ -->
   
-  <div class="grayDividerBar">
+  <div class="grayDividerBar grayBarTopMargin">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
     <p class="grayBarText">Plan participant access status</p>
     <div class="input-append grayBarSearch">
