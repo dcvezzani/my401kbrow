@@ -1,2 +1,67 @@
-<h1>My401k::PlugInAuthor::CreateNewContent#define_body</h1>
-<p>Find me in app/views/my401k/plug_in_author/create_new_content/define_body.html.erb</p>
+
+<div class="wrapper">
+  
+  
+  <p>Create New Content</p>
+<ul class="breadcrumb">
+  <li><a href="#">Section</a> <span class="divider">/</span></li>
+  <li><a href="#">Layout</a> <span class="divider">/</span></li>
+  <li class="active">Title/Body <span class="divider">/</span></li>
+  <li><a href="#">Tile</a> <span class="divider">/</span></li>
+  <li><a href="#">Elections</a> <span class="divider">/</span></li>
+  <li><a href="#">Finish</a></li>
+</ul>
+
+<div class="articleDetails">
+  
+  
+  <p>Provide details for your article or posting</p>
+  
+  
+  <form>
+    <fieldset>
+      <input type="text" placeholder="Enter your title here...">
+      <input type="text" placeholder="Enter your optional sub-title here...">
+        <div class="textEditor">
+          <textarea class="input-block-level" rows="7" type="text" placeholder="Your product's contents...">
+        </div><!-- /.textEditor -->
+    </fieldset>
+  </form>
+
+  
+  <div class="addAttachment">
+    
+    <form>
+      <fieldset>
+        <label>Add attachment:</label>
+        <input type="text" placeholder="Location of attachment...">
+      </fieldset>
+    </form>
+    
+    <div>
+      <img class="pull-left" src="<%= asset_path 'demo/icon-cross.png' %>">
+      <p class="pull-left">Attachment Name</p>
+    </div>
+    
+    <div>
+      <img class="pull-left" src="<%= asset_path 'demo/icon-cross.png' %>">
+      <p class="pull-left">Attachment Name</p>
+    </div>
+    
+    <div>
+      <img class="pull-left" src="<%= asset_path 'demo/icon-cross.png' %>">
+      <p class="pull-left">Attachment Name</p>
+    </div>
+    
+  </div><!-- /.addAttachment -->
+  
+  
+  <a href="#"><div class="btn pull-left">Previous</div></a>
+  <a href="#"><div class="btn pull-right">Next</div></a>
+  
+</div><!-- /.articleDetails -->
+
+
+
+  
+</div><!-- /.wrapper -->
