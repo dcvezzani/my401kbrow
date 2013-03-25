@@ -8,10 +8,16 @@
   
   <!-- _____________ WHAT CONTENT PRODUCTS ARE BEING WORKED ON? ___________ -->
   
-  <p class="pull-left">View live portal</p>
-  <p class="pull-right">Add new content</p>
+  <a class="btn btn-success pull-left">
+    View live portal
+  </a>
+  <a class="btn pull-right">
+    Add new content
+    <img src="<%= asset_path 'beta/plus.png' %>">
+  </a>
+  <span class="clearfix"></span>
   
-  <div class="grayDividerBar">
+  <div class="grayDividerBar marginTop">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
     <p class="grayBarText">Configure your quick links</p>
   </div><!-- /.grayDividerBar -->
@@ -21,64 +27,79 @@
     <fieldset>
       
       
-      <div name="quicklinkDivs">
-        <label class="checkbox">
-          <input type="checkbox"> Forms - upload form (beneficiaries, contributions changes, etc.)
-        </label>
-        <a href="#">Show forms (xx of yy are visible to participants)</a>
-            <table class="table table-hover">
-              <caption>...</caption>
-              <thead>
-                <tr>
-                  <th><input type="checkbox"></th>
-                  <th>Public</th>
-                  <th>Title *</th>
-                  <th>What for</th>
-                  <th>Resource(s) *</th>
-                  <th>Instructions</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><input type="checkbox"></td>
-                  <td><input type="checkbox"</td>
-                  <td>Nullam Dictum</td>
-                  <td>Blah blah blah blah</td>
-                  <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
-                  <td>Yada yada yada yada</td>
-                  <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"></td>
-                  <td><input type="checkbox"</td>
-                  <td>Nullam Dictum</td>
-                  <td>Blah blah blah blah</td>
-                  <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
-                  <td>Yada yada yada yada</td>
-                  <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"></td>
-                  <td><input type="checkbox"</td>
-                  <td>Nullam Dictum</td>
-                  <td>Blah blah blah blah</td>
-                  <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
-                  <td>Yada yada yada yada</td>
-                  <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"></td>
-                  <td><input type="checkbox"</td>
-                  <td>Nullam Dictum</td>
-                  <td>Blah blah blah blah</td>
-                  <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
-                  <td>Yada yada yada yada</td>
-                  <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
-                </tr>
-              </tbody>
-            </table>
-      </div><!-- /quicklinkDivs -->
+      <div class="accordion" id="accordionQuickLinks">
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <label class="checkbox">
+              <input type="checkbox" class="accordion-toggle" data-toggle="collapse" data-parent="accordionQuickLinks" href="collapseOne"> Forms - upload form (beneficiaries, contributions changes, etc.)
+            </label>
+          </div><!-- /.accordion-heading -->
+          <div id="collapseOne" class="accordion-body collapse in">
+            <div class="accordion-inner">
+              
+              
+              <a href="#">Show forms (xx of yy are visible to participants)</a>
+              <table class="table table-hover">
+                <caption>...</caption>
+                <thead>
+                  <tr>
+                    <th><input type="checkbox"></th>
+                    <th>Public</th>
+                    <th>Title *</th>
+                    <th>What for</th>
+                    <th>Resource(s) *</th>
+                    <th>Instructions</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"</td>
+                    <td>Nullam Dictum</td>
+                    <td>Blah blah blah blah</td>
+                    <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
+                    <td>Yada yada yada yada</td>
+                    <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"</td>
+                    <td>Nullam Dictum</td>
+                    <td>Blah blah blah blah</td>
+                    <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
+                    <td>Yada yada yada yada</td>
+                    <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"</td>
+                    <td>Nullam Dictum</td>
+                    <td>Blah blah blah blah</td>
+                    <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
+                    <td>Yada yada yada yada</td>
+                    <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"</td>
+                    <td>Nullam Dictum</td>
+                    <td>Blah blah blah blah</td>
+                    <td><p>Stuff Stuff Stuff</p><p>Stuff stuff stuff</p></td>
+                    <td>Yada yada yada yada</td>
+                    <td><a href="#">Send password reset</a>, <a href="#">edit</a>, <a href="#">delete</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- /.accordion-inner -->
+          </div><!-- /#collapseOne -->
+        </div><!-- /.accordion-group -->
+      </div><!-- /.accordion -->
+      
+      
+     <!-- <div name="quicklinkDivs"> -->
+        
+      <!-- </div><!-- /quicklinkDivs -->
       
       
       

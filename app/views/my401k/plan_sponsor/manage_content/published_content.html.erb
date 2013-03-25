@@ -8,10 +8,16 @@
   
   <!-- _____________ WHAT CONTENT PRODUCTS ARE BEING WORKED ON? ___________ -->
   
-  <p class="pull-left">View live portal</p>
-  <p class="pull-right">Add new content</p>
+  <a class="btn btn-success pull-left">
+    View live portal
+  </a>
+  <a class="btn pull-right">
+    Add new content
+    <img src="<%= asset_path 'beta/plus.png' %>">
+  </a>
+  <span class="clearfix"></span>
   
-  <div class="grayDividerBar">
+  <div class="grayDividerBar marginTop">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
     <p class="grayBarText">What content products are being worked on?</p>
   </div><!-- /.grayDividerBar -->
@@ -78,7 +84,7 @@
   
   <!-- ___________________ FEATURED CONTENT ________________ -->
   
-  <div class="grayDividerBar">
+  <div class="grayDividerBar marginTop">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
     <p class="grayBarText">Featured content</p>
   </div><!-- /.grayDividerBar -->
@@ -89,14 +95,14 @@
   <div class="rowOfTiles">
     
     
-    <div class="oneTile">
+    <a class="oneTile" title="" data-content="Checking to see if this popover works." data-placement="right" data-toggle="popover" href="#" data-original-title="Options">
       <div class="theTile">
-        <p>Icon</p>
-        <p>Checked?</p>
-        <p>Read More</p>
-        <p>Actions</p>
-      </div><!-- /.theTile -->
-    </div><!-- /.oneTile -->
+        Icon
+        Checked
+        Read More
+        Actions
+      </div>
+    </a><!-- /.oneTile -->
     
     
     
@@ -136,7 +142,9 @@
   
   <!-- ________________ OTHER CONTENT ____________ -->
   
-  <div class="grayDividerBar">
+  <span class="clearfix"></span>
+  
+  <div class="grayDividerBar marginTop">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
     <p class="grayBarText">Other content</p>
   </div><!-- /.grayDividerBar -->
@@ -193,5 +201,4 @@
   </div><!-- /.rowOfTiles -->
 
 </div><!-- /.wrapper -->
-
 

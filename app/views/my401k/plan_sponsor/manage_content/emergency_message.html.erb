@@ -8,10 +8,16 @@
   
   <!-- _____________ WHAT CONTENT PRODUCTS ARE BEING WORKED ON? ___________ -->
   
-  <p class="pull-left">View live portal</p>
-  <p class="pull-right">Add new content</p>
+  <a class="btn btn-success pull-left">
+    View live portal
+  </a>
+  <a class="btn pull-right">
+    Add new content
+    <img src="<%= asset_path 'beta/plus.png' %>">
+  </a>
+  <span class="clearfix"></span>
   
-  <div class="grayDividerBar">
+  <div class="grayDividerBar marginTop">
     <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
     <p class="grayBarText">Manage emergency message</p>
   </div><!-- /.grayDividerBar -->
@@ -22,14 +28,20 @@
   <p>Message *</p>
   <textarea class="input-block-level" rows="7" placeholder="Please write your emergency message here..."></textarea>
   
-  <p>Publish on:</p>
-  <input type="text" placeholder="DD/MM/YY">
-  <p>Un-Publish on:</p>
-  <input type="text" placeholder="DD/MM/YY">
-    
-  <div class="btn btn-large">Remove emergency message</div>
-  <div class="btn btn-large">Create emergency message</div>
+  <div class="pull-left">
+    <p>Publish on:</p>
+    <input type="text" placeholder="DD/MM/YY">
+    <p>Un-Publish on:</p>
+    <input type="text" placeholder="DD/MM/YY">
+  </div><!-- /.pull-left -->
   
-  <a href="#">Show emergency message log</a>
+  <div class="pull-right">
+    <div class="btn btn-large btn-primary marginTop">Create emergency message</div>
+    <br>
+    <div class="btn btn-large btn-danger marginTop">Remove emergency message</div>
+    <br>
+    <span class="clearfix"></span>
+    <a class="btn btn-small marginTop" href="http://www.example.com/dontknowwherethisgoes.html" target="_blank">Show emergency message log</a>
+  </div><!-- /.pull-right -->
   
 </div><!-- /.wrapper -->
