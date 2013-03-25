@@ -1,2 +1,96 @@
-<h1>My401k::PlanParticipant#show_all_re_blog</h1>
-<p>Find me in app/views/my401k/plan_participant/show_all_re_blog.html.erb</p>
+<div class="grayDividerBar grayBarTopMargin">
+    <img src="<%= asset_path 'buttonBarImgs/gray-divider-bar.png' %>">
+    <h4 class="grayBarText noMargin">Featured Content</h4>
+    <div>
+      <a href="#myModal" role="button" data-toggle="modal"><i class="icon-filter absoluteIcon2"></i></a>
+      <a href="#myModal2" role="button" data-toggle="modal"><i class="icon-cog absoluteIcon"></i></a>
+      <div class="input-append grayBarSearch2">
+        <input class="span2" id="appendedInputButton" type="text">
+        <button class="btn" type="button">Search</button>
+      </div><!-- /.input-append -->
+    </div>
+  </div><!-- /.grayDividerBar -->
+  
+  <!-- ________________________________________FILTER MODAL___________________________________ -->
+      
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <h3 id="myModalLabel">Filter Plan Participants</h3>
+    </div><!-- /.modal-header -->
+    <div class="modal-body">
+      
+      <p>Select the criteria by which you would like to filter.</p>
+      
+      <select>
+        <option>Date registered</option>
+        <option>Number of log-ins</option>
+        <option>Access granted</option>
+        <option></option>
+      </select>
+      
+    </div><!-- /.modal-body -->
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button class="btn btn-primary">Filter</button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /#myModal -->
+  
+  <!-- ______________________________________SETTINGS MODAL___________________________________ -->
+  
+  <div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <h3 id="myModalLabel">Plan Participant Authentication</h3>
+    </div><!-- /.modal-header -->
+    <div class="modal-body">
+      
+      <h4>How do you want to be notified of blog updates?</h4>
+      <p>Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla.</p>
+        
+        <label class="checkbox">
+          <input type="checkbox" value="">
+            Notify me of blog post via email.
+        </label>
+        
+        <div class="groupedCheckboxes">
+ 
+          <label class="checkbox">
+            <input type="checkbox" value="">
+              About Plan
+          </label>
+ 
+          <label class="checkbox">
+            <input type="checkbox" value="">
+              Manage Account
+          </label>
+          
+          <label class="checkbox">
+            <input type="checkbox" value="">
+              Helpful Resources
+          </label>
+          
+          <label class="checkbox">
+            <input type="checkbox" value="">
+              Blog
+          </label>
+          
+          <label class="checkbox">
+            <input type="checkbox" value="">
+              Special Offers
+          </label>
+ 
+        </div><!-- /.groupedCheckboxes -->
+        
+        <label class="checkbox">
+          <input type="checkbox" value="">
+            Send me a single digest with all my email notifications at the end of each day.
+        </label>
+      
+      
+    </div><!-- /.modal-body -->
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div><!-- /.modal-footer -->
+  </div><!-- /#myModal2 -->

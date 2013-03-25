@@ -36,6 +36,12 @@
   right: 25px;
 }
 
+.grayBarSearch2 {
+  position: absolute;
+  top: 7px;
+  right: 45px;
+}
+
 .leftMargin {
   margin-left: 25px;
 }
@@ -57,7 +63,7 @@
 
 .sectionBox {
   border: 1px solid black;
-  width: 98%;
+  /*width: 98%;*/
   margin: 0 auto;
 }
 
@@ -109,9 +115,20 @@
   right: 8px;
 }
 
+.absoluteIcon2 {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
 /*_______________Subscription Status CSS_______________*/
 
 .centered {
   margin: 0 auto;
   
+}
+
+
+.groupedCheckboxes {
+  margin-left: 30px;
 }
