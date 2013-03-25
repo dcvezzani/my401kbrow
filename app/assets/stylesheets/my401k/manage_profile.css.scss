@@ -57,6 +57,8 @@
 
 .sectionBox {
   border: 1px solid black;
+  width: 98%;
+  margin: 0 auto;
 }
 
 .tlb {
@@ -74,7 +76,11 @@
 /* ________________Admin Delegates CSS__________________ */
 
 .addContentButton {
-  margin: 10px 0 ;
+  margin: 17px 5px;
+}
+
+.topMargin {
+  margin-top: 10px;
 }
 
 /* ________________Portal Branding CSS________________ */
@@ -95,6 +101,12 @@
 
 .top {
   padding-top: 17px;
+}
+
+.absoluteIcon {
+  position: absolute;
+  top: 15px;
+  right: 8px;
 }
 
 /*_______________Subscription Status CSS_______________*/
