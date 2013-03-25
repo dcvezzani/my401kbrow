@@ -1,5 +1,4 @@
 Cms::Engine.routes.draw do
-  match '/super_administration', :to=>"sites#index", :as=>'super_administration'
 
   resources :sites do
   end
@@ -10,6 +9,7 @@ Cms::Engine.routes.draw do
 end
 
 BrowsercmsDemo::Application.routes.draw do
+
   #root :to => 'My401k::PlugInAuthor::ManageProfile#index'
 
   ### Plug-in Author - top nav
@@ -195,6 +195,17 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plan_sponsor/manage_profile/alert_preferences" => "My401k::PlanSponsor::ManageProfile#alert_preferences", as: "plan_sponsor_manage_profile_alert_preferences"
 
 
+  ### Plan Participant - top nav
+  match "/my401k/plan_participant" => redirect("/my401k/plan_participant/show_all_re_about_plan")
+  get "my401k/plan_participant/show_all_re_about_plan" => "My401k::PlanParticipant#show_all_re_about_plan", as: "plan_participant_about_plan"
+  get "my401k/plan_participant/show_all_re_manage_account" => "My401k::PlanParticipant#show_all_re_manage_account", as: "plan_participant_manage_account"
+  get "my401k/plan_participant/show_all_re_helpful_resources" => "My401k::PlanParticipant#show_all_re_helpful_resources", as: "plan_participant_helpful_resources"
+  get "my401k/plan_participant/show_all_re_blog" => "My401k::PlanParticipant#show_all_re_blog", as: "plan_participant_blog"
+  get "my401k/plan_participant/show_all_re_special_offers" => "My401k::PlanParticipant#show_all_re_special_offers", as: "plan_participant_special_offers"
+  get "my401k/plan_participant/show_article" => "My401k::PlanParticipant#show_article", as: "plan_participant_show_article"
+  get "my401k/plan_participant/show_blog_post" => "My401k::PlanParticipant#show_blog_post", as: "plan_participant_show_blog_post"
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

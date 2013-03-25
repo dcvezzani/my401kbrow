@@ -1,0 +1,17 @@
+<%# default top navigation menu for all plug-in authors %>
+<% top_nav_menu do %>
+  <%= render partial: "my401k/plan_participant/shared/top_nav_menu" %>
+<% end %>
+
+<%# default menu for all plan participants %>
+<% side_menu do %>
+  <div style="position: relative; top: -20px; ">
+  <%= link_to "Show Article", plan_participant_show_article_path %> | 
+  <%= link_to "Show Blog Post", plan_participant_show_blog_post_path %>
+
+  <%= image_tag asset_path('wf/plan-participant-left-menu.png') %>
+  </div>
+<% end %>
+
+<%= render template: "layouts/my401k" %>
+
