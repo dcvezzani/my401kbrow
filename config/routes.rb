@@ -11,7 +11,16 @@ end
 
 BrowsercmsDemo::Application.routes.draw do
 
-  root :to => 'My401k::PlugInAuthor::ManageProfile#index'
+  root :to => 'My401k::Guest#welcome'
+
+  ### Guest - top nav
+  get "guest/welcome"
+  get "guest/what_is_it" => "My401k::Guest#guest_what_is_it", as: "guest_what_is_it"
+  get "guest/how_does_it_work" => "My401k::Guest#how_does_it_work", as: "guest_how_does_it_work"
+  get "guest/why_do_it" => "My401k::Guest#why_do_it", as: "guest_why_do_it"
+  get "guest/pricing_and_support" => "My401k::Guest#pricing_and_support", as: "guest_pricing_and_support"
+  get "guest/join_now" => "My401k::Guest#join_now", as: "guest_join_now"
+
 
   ### Plug-in Author - top nav
   match "/my401k/plug_in_author" => redirect("/my401k/plug_in_author/manage_profile")
