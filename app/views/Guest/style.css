@@ -6,7 +6,7 @@ body {
 
 .tall {
   position: absolute;
-  top: 50px;
+  top: 35px;
   right: 50px;
   min-height: 450px;
   width: 190px;
@@ -21,8 +21,9 @@ body {
 }
 
 .bordered {
-  border: 1px solid black;
+  border: 1px solid #BBB;
   background-color: #EEE;
+  min-height: 550px;
 }
 
 .relative {
@@ -36,6 +37,10 @@ body {
 
 .marginLeft {
   margin-left: 10px;
+}
+
+.paddingTop {
+  padding-top: 15px;
 }
 
 .lightBlue {
