@@ -25,6 +25,15 @@ body {
   background-color: #EEE;
 }
 
+.relative {
+  position: relative;
+}
+
+.relative0 {
+  position: relative;
+  bottom: 0;
+}
+
 .marginLeft {
   margin-left: 10px;
 }
