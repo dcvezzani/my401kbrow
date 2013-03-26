@@ -1,3 +1,4 @@
+./bin/rails g controller My401k::PlanParticipant show_all_re_about_plan show_all_re_manage_account show_all_re_helpful_resources show_all_re_blog show_all_re_special_offers show_article show_blog_post
 
 # ===== Fri Mar 15 06:11:21 PDT 2013
 
