@@ -15,11 +15,11 @@ BrowsercmsDemo::Application.routes.draw do
 
   ### Guest - top nav
   get "my401k/guest/welcome"
-  get "my401k/guest/what_is_it" => "Guest#guest_what_is_it", as: "guest_what_is_it"
-  get "my401k/guest/how_does_it_work" => "Guest#how_does_it_work", as: "guest_how_does_it_work"
-  get "my401k/guest/why_do_it" => "Guest#why_do_it", as: "guest_why_do_it"
-  get "my401k/guest/pricing_and_support" => "Guest#pricing_and_support", as: "guest_pricing_and_support"
-  get "my401k/guest/join_now" => "Guest#join_now", as: "guest_join_now"
+  get "my401k/guest/what_is_it" => "My401k::Guest#guest_what_is_it", as: "guest_what_is_it"
+  get "my401k/guest/how_does_it_work" => "My401k::Guest#how_does_it_work", as: "guest_how_does_it_work"
+  get "my401k/guest/why_do_it" => "My401k::Guest#why_do_it", as: "guest_why_do_it"
+  get "my401k/guest/pricing_and_support" => "My401k::Guest#pricing_and_support", as: "guest_pricing_and_support"
+  get "my401k/guest/join_now" => "My401k::Guest#join_now", as: "guest_join_now"
 
   ### Plug-in Author - top nav
   match "/my401k/plug_in_author" => redirect("/my401k/plug_in_author/manage_profile")
