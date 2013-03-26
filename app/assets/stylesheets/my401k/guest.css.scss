@@ -1,3 +1,50 @@
 // Place all the styles related to the My401k::Guest controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.my401k-guest{
+  
+  body {
+      margin-top: 20px;
+  }
+  
+  .tall {
+      background-color: white;
+      border: 1px solid black;
+      left: 970px;
+      min-height: 450px;
+      position: absolute;
+      top: 19px;
+      width: 190px;
+  }
+  .centered {
+      margin: 29px;
+      position: static;
+  }
+  .bordered {
+      background-color: white;
+      border: 1px solid #EEEEEE;
+  }
+  .relative {
+      position: relative;
+  }
+  .relative0 {
+      bottom: 0;
+      position: relative;
+  }
+  .marginLeft {
+      margin: 20px 20px 47px;
+  }
+  .lightBlue {
+      color: #6666DD;
+  }
+  .red {
+      color: red;
+  }
+  
+  .row-main{
+    margin-bottom: 2em;
+  }
+
+
+} /* /.my401k-guest */

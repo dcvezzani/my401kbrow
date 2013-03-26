@@ -1,7 +1,79 @@
-<%# default top navigation menu for all plug-in authors %>
-<% top_nav_menu do %>
-  <%= render partial: "my401k/guest/shared/top_nav_menu" %>
-<% end %>
 
-<%= render template: "layouts/my401k_home" %>
+<html><head>
+  <%= stylesheet_link_tag "application" %> 
+</head>
+
+<body> 
+  <div class="container my401k-guest">
+    <div class="well" style="position: relative">
+      <div class="row">
+        <div class="span7">
+          <h2>Logo and Slogan here</h2>
+        </div><!-- /.span7 -->
+        <div class="span3">
+          <h3>Sponsor Logo here</h3>
+        </div><!-- /.span3 -->
+      </div><!-- /.row -->
+
+      <div class="span2 tall">
+        <div class="centered">
+          <img src="<%= asset_path 'guest/profilepic.png' %>">
+        </div>
+        <div class="centered">
+          <h3>Your Advertising banner would go here.</h3>
+        </div>
+      </div>
+
+<!-- ___________________________________________________Nav Menu__________________________________ -->
+      
+    </div><!-- /.well -->
+    <div class="well">
+      <div class="row">
+        <div class="span10">
+        <div class="navbar">
+        <div class="navbar-inner">
+          
+          <%= yield :top_nav_menu %>
+          
+        </div><!--/.navbar-inner -->
+        </div><!-- /.navbar -->
+        </div><!-- /.span10 -->
+      </div><!-- /.row -->
+    </div><!-- /.well -->
+    
+    <!-- ____________________________________________Bottom boxes ___________________________________ -->
+    
+    <!--<div class="well">-->
+      <div class="row row-main">
+        
+  <!-- ____________________________________________Left box ___________________________________ -->
+    
+        <div class="span6 bordered">
+          <div class="marginLeft">
+            
+            <%= yield %>
+            
+          </div><!-- /.marginLeft -->
+        </div><!-- /.span6 -->
+        
+    <!-- ____________________________________________Right box ___________________________________ -->
+    
+        <div class="span4 bordered">
+          <div class="centered">
+            <img src="<%= asset_path 'guest/image.png' %>">
+          </div><!-- /.centered -->
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+    <!-- /.span2 -->
+    <!--</div><!-- /.well -->
+    <div class="well">
+      <footer>
+        Copyright info
+      </footer>
+    </div><!-- /.well -->
+  </div><!-- /.container -->
+  
+
+</body></html>
+
 
