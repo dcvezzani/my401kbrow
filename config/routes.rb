@@ -1,4 +1,5 @@
 Cms::Engine.routes.draw do
+  match '/super_administration', :to=>"sites#index", :as=>'super_administration'
 
   resources :sites do
   end
@@ -10,7 +11,7 @@ end
 
 BrowsercmsDemo::Application.routes.draw do
 
-  #root :to => 'My401k::PlugInAuthor::ManageProfile#index'
+  root :to => 'My401k::PlugInAuthor::ManageProfile#index'
 
   ### Plug-in Author - top nav
   match "/my401k/plug_in_author" => redirect("/my401k/plug_in_author/manage_profile")
