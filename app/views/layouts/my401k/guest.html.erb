@@ -5,6 +5,26 @@
 
 <body> 
   <div class="container my401k-guest">
+        <!-- ##### HEADER ############################### -->
+
+        <div id="header">
+          <div class="top-bar"></div>
+          <div class="log-out-profile-button">
+            <ul class="menu">
+              <% if logged_in? %>
+                <li class="first"><%= link_to "Log-out", cms.logout_path %></li>
+                <li><%= link_to "Profile", cms.edit_user_path(current_user) %></li>
+              <% else %>
+                <li class="first"><%= link_to "Log-in", cms.login_path %></li>
+              <% end %>
+            </ul>
+            <div class="who-am-i">Welcome, <span class="user-id"><%= (logged_in?) ? current_user.email : "Guest" %></span></div>
+          </div>
+        </div>
+  </div>
+
+
+  <div class="container my401k-guest">
     <div class="well" style="position: relative">
       <div class="row">
         <div class="span7">
@@ -63,12 +83,27 @@
         </div><!-- /.span4 -->
       </div><!-- /.row -->
     <!-- /.span2 -->
-    <!--</div><!-- /.well -->
-    <div class="well">
-      <footer>
-        Copyright info
-      </footer>
-    </div><!-- /.well -->
+    <!--</div> /.well -->
+
+        <!-- ##### FOOTER ############################### -->
+
+        <div id="footer">
+          <div class="social-media">
+            <div class="icon-social-media first icon-social-media-twitter"></div>
+            <div class="icon-social-media icon-social-media-rss-feed"></div>
+            <div class="icon-social-media icon-social-media-facebook"></div>
+          </div>
+          <ul class="menu">
+            <li class="first"><a href="javascript: void(0);">Feedback &amp; Questions</a></li>
+            <li><a href="javascript: void(0);">Contacts</a></li>
+            <li><a href="javascript: void(0);">Terms of Service</a></li>
+            <li><a href="javascript: void(0);">Privacy Policy</a></li>
+            <li><a href="javascript: void(0);">Refer</a></li>
+          </ul>
+          <div class="powered-by">Powered by My 401k Made Easy</div>
+          <div class="bottom-bar"></div>
+        </div><!-- #footer -->
+
   </div><!-- /.container -->
   
 

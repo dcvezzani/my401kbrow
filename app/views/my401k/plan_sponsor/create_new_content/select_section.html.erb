@@ -3,6 +3,7 @@
 
 <div class="wrapper">
 
+<%= form_for :blog_post do %>
 <div class="mainSectionArticle pull-left">
   <div>
     <p>Main Section (Article)</p>
@@ -11,25 +12,25 @@
       
       <a href="#">
         <div class="mainSectionTile pull-left">
-          <p>About Plan</p>
+          <%= image_tag asset_path('plan_sponsor/about_plan_button.png'), alt: "About Plan" %>
         </div><!-- /.mainSectionTile -->
       </a>
       
       <a href="#">
         <div class="mainSectionTile pull-left">
-          <p>Manage Account</p>
+          <%= image_tag asset_path('plan_sponsor/manage_account_button.png'), alt: "Manage Account" %>
         </div><!-- /.mainSectionTile -->
       </a>
       
       <a href="#">
         <div class="mainSectionTile pull-left">
-          <p>Helpful Resources</p>
+          <%= image_tag asset_path('plan_sponsor/helpful_resources_button.png'), alt: "Helpful Resources" %>
         </div><!-- /.mainSectionTile -->
       </a>
       
       <a href="#">  
         <div class="mainSectionTile pull-left">
-          <p>Special Offers</p>
+          <%= image_tag asset_path('plan_sponsor/special_offers_button.png'), alt: "Special Offers" %>
         </div><!-- /.mainSectionTile -->
       </a>
       
@@ -39,7 +40,7 @@
 
 
 
-<div class="mainSectionArticle pull-left Small">
+<div class="mainSectionArticle pull-left ">
   <div>
     <p>Enrollment Page</p>
     <div class="mainSectionTiles pull-left Small">
@@ -47,7 +48,7 @@
       
       <a href="#">
         <div class="mainSectionTile pull-left">
-          <p>Enrollment Page</p>
+          <%= image_tag asset_path('plan_sponsor/enrollment_page_button.png'), alt: "Enrollment Page" %>
         </div><!-- /.mainSectionTile -->
       </a>
       
@@ -57,7 +58,7 @@
 
 
 
-<div class="mainSectionArticle pull-left Small">
+<div class="mainSectionArticle pull-left ">
   <div>
     <p>Blog Post</p>
     <div class="mainSectionTiles pull-left Small">
@@ -65,13 +66,13 @@
       
       <a href="#">
         <div class="mainSectionTile pull-left">
-          <p>Blog Post</p>
+          <%= image_tag asset_path('plan_sponsor/blog_button.png'), alt: "Blog Post" %>
         </div><!-- /.mainSectionTile -->
       </a>
       
     </div><!-- /.mainSectionTiles -->
   </div>
 </div><!-- /.mainSectionArticle -->
-
+<% end %>
 
 </div><!-- /.wrapper -->

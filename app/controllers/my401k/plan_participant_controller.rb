@@ -1,5 +1,6 @@
 class My401k::PlanParticipantController < ApplicationController
   layout "my401k/plan_participant"
+  include Cms::Acts::ContentPage
 
   def show_all_re_about_plan
   end

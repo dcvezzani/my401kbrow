@@ -42,10 +42,12 @@
       color: red;
   }
   
+  /******************************* main content section */
   .row-main{
     margin-bottom: 2em;
   }
 
+  /******************************* navigation buttons */
   .navbar {
     margin: 0 0 0 20px;
     width: 763px;
@@ -57,6 +59,20 @@
 
   .header-navigation .button, #header-navigation .button {
     height: 58px;
+  }
+
+  /******************************* top header login bar */
+  #header {
+    height: 57px;
+  }
+
+  div.top-bar {
+    width: auto;
+  }
+
+  /******************************* footer */
+  .bottom-bar{
+    width: auto;
   }
 
 } /* /.my401k-guest */
