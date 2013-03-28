@@ -3,7 +3,11 @@
 
 <div class="wrapper">
 
-<%= form_for :blog_post do %>
+  <%= form_for @product, url: product_route(@product) do |f| %>
+    <%= f.text_field :blog_id %>
+    <%= f.text_field :slug %>
+    <%= f.text_field :name %>
+
 <div class="mainSectionArticle pull-left">
   <div>
     <p>Main Section (Article)</p>
@@ -13,24 +17,28 @@
       <a href="#">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/about_plan_button.png'), alt: "About Plan" %>
+          <%= f.radio_button :category_id, @product_categories["About Plan"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
       <a href="#">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/manage_account_button.png'), alt: "Manage Account" %>
+          <%= f.radio_button :category_id, @product_categories["Manage Account"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
       <a href="#">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/helpful_resources_button.png'), alt: "Helpful Resources" %>
+          <%= f.radio_button :category_id, @product_categories["Helpful Resources"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
       <a href="#">  
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/special_offers_button.png'), alt: "Special Offers" %>
+          <%= f.radio_button :category_id, @product_categories["Special Offers"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
@@ -49,6 +57,7 @@
       <a href="#">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/enrollment_page_button.png'), alt: "Enrollment Page" %>
+          <%= f.radio_button :category_id, @product_categories["Plan Enrollment"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
@@ -67,6 +76,7 @@
       <a href="#">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/blog_button.png'), alt: "Blog Post" %>
+          <%= f.radio_button :category_id, @product_categories["Blog"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
@@ -75,4 +85,28 @@
 </div><!-- /.mainSectionArticle -->
 <% end %>
 
+<div class="container bottom-nav">
+  <div class="span1 pull-left">
+    <a href="#" class="btn" >Previous</a>
+  </div>
+  <div class="span10"></div>
+  <div class="span1 pull-right">
+    <a href="#" class="btn">Next</a>
+  </div>
+</div>
+
 </div><!-- /.wrapper -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".mainSectionTiles a").click(function(e){
+    var radio = $("input[type='radio']", this)
+    radio.attr("checked", true)
+    $(".mainSectionTile .drawn-circle").remove();
+    $(".mainSectionTile", this).append('<div class="drawn-circle"></div>')
+    return false;
+  });
+
+  $(".mainSectionTiles input:checked").closest(".mainSectionTile").append('<div class="drawn-circle"></div>')
+});
+</script>

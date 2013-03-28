@@ -22,7 +22,12 @@
   height: 2em;
 }
 
+.mainSectionTile input[type="radio"] {
+  display: none; 
+}
+
 .mainSectionTile {
+  position: relative;
   height: 100px;
   width: 100px;
   // background-color: #AAA;
@@ -33,6 +38,28 @@
 
 .Small {
   width: 130px;
+}
+
+.drawn-circle{
+  background: url('/assets/plan_sponsor/drawn_circle.png') no-repeat transparent;
+  width: 145px; 
+  height: 86px;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+}
+
+/* ____________________BOTTOM NAV BUTTONS CSS_____________________ */
+
+.navbar .container.bottom-nav{
+  width: 100%;
+  float: left;
+  margin-top: 1em;
+
+  .pull-left{
+    margin-left: 0;
+  }
 }
 
 /*__________________________LAYOUT CSS______________________*/

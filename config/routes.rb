@@ -191,6 +191,7 @@ BrowsercmsDemo::Application.routes.draw do
   get "my401k/plan_sponsor/create_new_content/optional_elections" => "My401k::PlanSponsor::CreateNewContent#optional_elections", as: "plan_sponsor_create_new_content_optional_elections"
   get "my401k/plan_sponsor/create_new_content/point_content" => "My401k::PlanSponsor::CreateNewContent#point_content", as: "plan_sponsor_create_new_content_point_content"
   get "my401k/plan_sponsor/create_new_content/preview_page" => "My401k::PlanSponsor::CreateNewContent#preview_page", as: "plan_sponsor_create_new_content_preview_page"
+  get "my401k/plan_sponsor/create_new_content/next_product_id" => "My401k::PlanSponsor::CreateNewContent#next_product_id", as: "plan_sponsor_create_new_content_next_product_id"
 
   ### Plan Sponsor - Manage Profile
   match "/my401k/plan_sponsor/manage_profile" => redirect("/my401k/plan_sponsor/manage_profile/basic_information")
