@@ -44,6 +44,23 @@ gem "bcms_blog"
 # gem "bcms_blog", git: 'git@github.com:dcvezzani/bcms_blog.git'
 # gem "bcms_blog", :path => "/Users/davidvezzani/rails-app/bcms_blog"
 
+group :test do
+  gem 'factory_girl_rails', '3.3.0'
+  gem 'test-unit', '2.1.1'
+  # :require=>false allows mocha to correctly modify the test:unit code to add mock() and stub()
+  gem "mocha", '=0.9.8', :require=>false
+  #gem "sqlite3-ruby", :require => "sqlite3"
+
+  # Cucumber and dependencies
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails', require: false
+  gem 'cucumber'
+  gem 'launchy'
+  gem 'ruby-prof'
+  gem 'aruba'
+end
+
 
 group :development, :test do
   gem 'nifty-generators', git: 'http://github.com/dcvezzani/nifty-generators.git'
