@@ -40,6 +40,10 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "bcms_blog"
+# gem "browsercms", "4.0.0.a", git: 'git@github.com:browsermedia/browsercms.git'
+# gem "bcms_blog", git: 'git@github.com:dcvezzani/bcms_blog.git'
+# gem "bcms_blog", :path => "/Users/davidvezzani/rails-app/bcms_blog"
+
 
 group :development, :test do
   gem 'nifty-generators', git: 'http://github.com/dcvezzani/nifty-generators.git'
