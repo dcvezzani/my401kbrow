@@ -1,4 +1,6 @@
 Cms::Engine.routes.draw do
+  get "pages/create"
+
   match '/super_administration', :to=>"sites#index", :as=>'super_administration'
 
   resources :sites do
@@ -10,6 +12,8 @@ Cms::Engine.routes.draw do
 end
 
 BrowsercmsDemo::Application.routes.draw do
+
+  get "pages/create"
 
   root :to => 'My401k::Guest#pricing_and_support'
 
