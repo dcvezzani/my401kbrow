@@ -1,0 +1,57 @@
+@import url('bootstrap/css/bootstrap.min.css');
+
+body {
+  background-color: #777;
+}
+
+time {
+  color: #EEE;
+  padding: 3px;
+  margin-bottom: 8px;
+  background-color: #333;
+  border-radius: 3px;
+  border: 1px solid #888;
+}
+
+footer {
+  color: #EEE;
+  background-color: #333;
+  padding: 10px;
+}
+
+.bg_green {
+  background-color: #33e4a3;
+}
+
+.margin_left {
+  margin-left: 10px;
+}
+
+.margin_right {
+  margin-right: 10px;
+}
+
+.margin_top {
+  margin-top: 10px;
+}
+
+.margin_bottom {
+  margin-bottom: 10px;
+}
+
+.textured {
+  background-image: url('imgs/wavegrid/wavegrid.png');
+}
+
+.clearfix {
+  clear: both;
+}
+
+.bordered {
+  border: 3px dashed #888;
+}
+
+.top-border {
+  border-top: 1px solid #666;
+  margin-top: 15px;
+}
