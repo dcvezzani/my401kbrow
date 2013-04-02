@@ -66,6 +66,8 @@ end
 
 
 group :development, :test do
+  gem 'jasmine'
+
   gem 'nifty-generators', git: 'http://github.com/dcvezzani/nifty-generators.git'
   gem 'debugger'
 end
