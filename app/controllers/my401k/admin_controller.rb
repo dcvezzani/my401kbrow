@@ -1,4 +1,6 @@
 class My401k::AdminController < ApplicationController
   layout "my401k"
-  include Cms::Acts::ContentPage
+  include Cms::Authentication::Controller
+
+  before_filter :login_required
 end

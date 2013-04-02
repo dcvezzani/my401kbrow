@@ -14,7 +14,7 @@ class ApplicationController < ::ApplicationController
   helper Cms::RenderingHelper
   helper Cms::UiElementsHelper
 
-  before_filter :load_cms_site
+  #before_filter :load_cms_site
   #before_filter :current_site
  
   # before_filter :load_cms_page,
@@ -41,7 +41,6 @@ class ApplicationController < ::ApplicationController
     # end
 
     def load_cms_site
-      # debugger
       @cms_site ||= if params[:site_id]
         Cms::Site.find_by_id(params[:site_id])
       else

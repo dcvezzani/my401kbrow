@@ -56,21 +56,29 @@ module Cms
       end
     end
 
+    def self.extract_site_indicator!(path)
+      md = path.match(/^([^\/]+)\/(.+)/)
+      site_indicator = md[1]
+      path = md[2]
+    end
+
 
     # -- Class Methods --------------------------------------------------------
     # returning the Cms::Site instance based on host and path
     def self.find_site(host, path = nil)
       return Site.first if Site.count == 1
       cms_site = nil
+      
       Site.find_all_by_domain(real_host_from_aliases(host)).each do |site|
-        if site.path.blank?
-          cms_site = site
-        elsif "#{path}/".match /^\/#{Regexp.escape(site.path.to_s)}\//
+        #if "#{path}/".match /^\/#{Regexp.escape(site.path.to_s)}\//
+        debugger
+        if (path and site.path) and "#{path}/".match /^#{Regexp.escape(site.path.to_s)}/
           cms_site = site
           break
         end
       end
-      return cms_site
+      
+      return (cms_site or Site.where{sites.path == nil}.first)
     end
     
 protected
@@ -86,6 +94,7 @@ protected
           return alias_host if aliases.include?(host)
         end
       end
+      strip_www!(host)
       host
     end
   end

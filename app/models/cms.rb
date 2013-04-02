@@ -1,5 +1,6 @@
 module Cms
   def self.table_name_prefix
-    'cms_'
+    #'cms_'
+    ''
   end
 end
