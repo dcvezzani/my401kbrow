@@ -7,7 +7,7 @@ module BcmsMy401k
 
     config.to_prepare do
       #%W{ArticleProduct Article BlogPost HeadlineBanner}.each do |resource|
-      %W{Article}.each do |resource|
+      %W{Article Layout}.each do |resource|
         Cms::ViewContext.send(:include, BcmsMy401k.module_eval("#{resource.pluralize}Helper"))
         ApplicationHelper.send(:include, BcmsMy401k.module_eval("#{resource.pluralize}Helper"))
       end

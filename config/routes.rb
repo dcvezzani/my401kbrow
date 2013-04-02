@@ -12,6 +12,7 @@ end
 
 require 'bcms_my401k'
 BrowsercmsDemo::Application.routes.draw do
+
   mount BcmsMy401k::Engine => '/bcms_my401k'
 
   root :to => 'My401k::Guest#pricing_and_support'
@@ -281,6 +282,7 @@ BrowsercmsDemo::Application.routes.draw do
 end
 
 BcmsMy401k::Engine.routes.draw do
+  content_blocks :layouts
   content_blocks :articles
 end
 

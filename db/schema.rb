@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402090341) do
+ActiveRecord::Schema.define(:version => 20130402092925) do
 
   create_table "bcms_blog_blog_comment_versions", :force => true do |t|
     t.integer  "original_record_id"
@@ -142,7 +142,6 @@ ActiveRecord::Schema.define(:version => 20130402090341) do
     t.integer  "version"
     t.integer  "section_id"
     t.integer  "layout_id"
-    t.text     "title"
     t.text     "sub_title"
     t.text     "body"
     t.text     "summary"
@@ -169,6 +168,35 @@ ActiveRecord::Schema.define(:version => 20130402090341) do
     t.text     "summary"
     t.text     "tile_title"
     t.text     "tile_icon"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "name"
+    t.boolean  "published",     :default => false
+    t.boolean  "deleted",       :default => false
+    t.boolean  "archived",      :default => false
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+  end
+
+  create_table "bcms_my401k_layout_versions", :force => true do |t|
+    t.integer  "original_record_id"
+    t.integer  "version"
+    t.text     "description"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.string   "name"
+    t.boolean  "published",          :default => false
+    t.boolean  "deleted",            :default => false
+    t.boolean  "archived",           :default => false
+    t.string   "version_comment"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+  end
+
+  create_table "bcms_my401k_layouts", :force => true do |t|
+    t.integer  "version"
+    t.integer  "lock_version",  :default => 0
+    t.text     "description"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
     t.string   "name"
