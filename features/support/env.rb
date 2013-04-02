@@ -1,8 +1,16 @@
 ENV["RAILS_ENV"] ||= "test"
 ENV["DB_SEED"] ||= "true"
 
+
 require 'debugger'
 require File.expand_path("./config/environment.rb")
+
+DatabaseCleaner.clean_with :truncation
+silence_stream(STDOUT) do
+  require File.join(File.dirname(__FILE__), '../../db/seeds.rb')
+end
+DatabaseCleaner.strategy = :transaction
+
 #require File.expand_path("../../../config/environment.rb", __FILE__)
 #Cms.table_prefix = "cms_"
 #require File.expand_path("/Users/davidvezzani/rails-app/browsercms-demo/config/environment.rb")
@@ -76,10 +84,21 @@ ActionController::Base.allow_rescue = false
 
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
-begin
+# begin
+#   DatabaseCleaner.strategy = :transaction
+# rescue NameError
+#   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+# end
+
+# Before('@no-txn,@selenium,@culerity,@celerity') do
+#   # I added this block and changed to transaction because @javascript was truncating most of my tables
+#   #DatabaseCleaner.strategy = :truncation, {:except => %w[groups]}
+#   DatabaseCleaner.strategy = :truncation
+# end
+
+Before('@javascript') do
+  # I added this block and changed to transaction because @javascript was truncating most of my tables
   DatabaseCleaner.strategy = :transaction
-rescue NameError
-  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
@@ -105,8 +124,8 @@ end
 
 # Load the seed data once at the start of the test run.
 # By doing this here, and using transaction strategy, we ensure the fastest possible tests.
-DatabaseCleaner.clean_with :truncation
-silence_stream(STDOUT) do
-  require File.join(File.dirname(__FILE__), '../../db/seeds.rb')
-end
+# DatabaseCleaner.clean_with :truncation
+# silence_stream(STDOUT) do
+#   require File.join(File.dirname(__FILE__), '../../db/seeds.rb')
+# end
 
