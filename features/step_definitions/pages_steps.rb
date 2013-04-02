@@ -1,4 +1,7 @@
-When /^blah$/ do
+When /^asdf/ do
+  # silence_stream(STDOUT) do
+  #   load File.join(File.dirname(__FILE__), '../../db/seeds.rb')
+  # end
   debugger
   x=3-1
 end
@@ -29,3 +32,12 @@ end
 Then(/^the radio button associated with "(.*?)" should be checked$/) do |arg1|
   page.should have_css "##{arg1} input[type='radio'][checked='checked']"
 end
+
+Then(/^"(.*?)" should have a circle drawn around it$/) do |arg1|
+  page.should have_css "##{arg1} .drawn-circle"
+end
+
+Then(/^there should only be one drawn circle at a time on the page$/) do
+  page.all(".drawn-circle").count.should == 1
+end
+

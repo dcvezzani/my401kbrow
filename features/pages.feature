@@ -22,3 +22,18 @@ Feature: Content Pages
     And clicks on "category-about-plan"
     Then the radio button associated with "category-about-plan" should be checked
 
+  @javascript
+  Scenario: An editor selects the product category; a sketched circle indicates the active selection
+    When a registered user visits "/my401k/plan_sponsor/create_new_content"
+    And clicks on "category-plan-enrollment"
+    Then the radio button associated with "category-plan-enrollment" should be checked
+    And "category-plan-enrollment" should have a circle drawn around it
+    And there should only be one drawn circle at a time on the page
+
+  @javascript
+  Scenario: An editor saves the selected category and navigates next to select the desired layout
+    When a registered user visits "/my401k/plan_sponsor/create_new_content"
+    And clicks on "category-about-plan"
+    And clicks on "Next"
+    Then they should see "Select Layout"
+
