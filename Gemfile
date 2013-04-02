@@ -60,8 +60,9 @@ group :test do
   gem 'ruby-prof'
   gem 'aruba'
 
+  gem 'spork'
   gem 'watchr'
-  gem 'ruby-fsevent'
+  #gem 'ruby-fsevent'
 end
 
 

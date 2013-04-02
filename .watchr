@@ -6,7 +6,7 @@ def run_spec(file)
 
   puts "Running #{file}"
   #system "bundle exec rspec #{file}"
-  system "./bin/cucumber -r features features/pages.feature"
+  system "./bin/cucumber -r features --drb features/pages.feature"
   puts
 end
 
