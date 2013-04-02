@@ -1,3 +1,67 @@
+# ===== Tue Apr  2 00:26:28 PDT 2013
+
+NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::Article name:text section:category layout:category sub_title:text body:html summary:html tile_title:text tile_icon:text
+
+./bin/rails g migration add_name_to_bcms_my401k_articles name:text
+
+
+require 'browsercms'
+
+module BcmsMy401k
+  class Engine < ::Rails::Engine
+		include Cms::Module
+    isolate_namespace BcmsMy401k
+
+    config.to_prepare do
+      #%W{ArticleProduct Article BlogPost HeadlineBanner}.each do |resource|
+      %W{Article}.each do |resource|
+        Cms::ViewContext.send(:include, BcmsMy401k.module_eval("#{resource.pluralize}Helper"))
+        ApplicationHelper.send(:include, BcmsMy401k.module_eval("#{resource.pluralize}Helper"))
+      end
+    end
+
+    initializer 'bcms_my401k.route_extensions', :after => 'action_dispatch.prepare_dispatcher' do |app|
+       ActionDispatch::Routing::Mapper.send :include, BcmsMy401k::RouteExtensions
+    end
+  end
+end
+
+
+
+module My401k::RouteExtensions
+  def mount_bcms_my401k
+    mount BcmsMy401k::Engine => "/bcms_my401k"
+    #match '/blog/feeds', :to=>"bcms_blog/feeds#index", :defaults=>{:format => "rss"}, :as=>'blog_feeds'
+  end
+  
+  alias :routes_for_bcms_my401k :mount_bcms_my401k
+end
+
+
+
+require "bcms_my401k/engine"
+require 'mbcms_y401k/route_extensions'
+
+module BcmsMy401k
+end
+
+
+
+class BcmsMy401k::Article < ActiveRecord::Base
+  acts_as_content_block
+  belongs_to :section, class_name: "Cms::Category"
+  belongs_to :layout, class_name: "Cms::Category"
+end
+
+
+  def self.down
+    Cms::ContentType.destroy_all("name = 'BcmsMy401k::Article'")
+    Cms::ContentTypeGroup.destroy_all("name = 'My401k'")
+    drop_table :bcms_my401k_articles
+  end
+
+
+
 ./bin/rails g controller My401k::PlanParticipant show_all_re_about_plan show_all_re_manage_account show_all_re_helpful_resources show_all_re_blog show_all_re_special_offers show_article show_blog_post
 
 # ===== Fri Mar 15 06:11:21 PDT 2013

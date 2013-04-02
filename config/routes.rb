@@ -1,5 +1,4 @@
 Cms::Engine.routes.draw do
-  get "pages/create"
 
   match '/super_administration', :to=>"sites#index", :as=>'super_administration'
 
@@ -11,9 +10,9 @@ Cms::Engine.routes.draw do
   # put '/pages/:id/revert_to/:version', :to=>'pages#revert_to', :as=>'revert_page'
 end
 
+require 'bcms_my401k'
 BrowsercmsDemo::Application.routes.draw do
-
-  get "pages/create"
+  mount BcmsMy401k::Engine => '/bcms_my401k'
 
   root :to => 'My401k::Guest#pricing_and_support'
 
@@ -280,3 +279,9 @@ BrowsercmsDemo::Application.routes.draw do
   mount_bcms_blog
   mount_browsercms
 end
+
+BcmsMy401k::Engine.routes.draw do
+  content_blocks :articles
+end
+
+

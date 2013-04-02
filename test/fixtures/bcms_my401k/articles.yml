@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  section: 
+  layout: 
+  title: MyText
+  sub_title: MyText
+  body: 
+  summary: 
+  tile_title: MyText
+  tile_icon: MyText
+
+two:
+  section: 
+  layout: 
+  title: MyText
+  sub_title: MyText
+  body: 
+  summary: 
+  tile_title: MyText
+  tile_icon: MyText
