@@ -36,4 +36,5 @@ Feature: Content Pages
     And clicks on "category-about-plan"
     And clicks on "Next"
     Then they should see "Select Layout"
+    And an article in progress should exist in the database
 
