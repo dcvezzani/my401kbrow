@@ -1,4 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
+ENV["DB_SEED"] ||= "true"
 
 require 'debugger'
 require File.expand_path("./config/environment.rb")

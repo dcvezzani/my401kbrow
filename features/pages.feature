@@ -11,8 +11,14 @@ Feature: Content Pages
     Then they should be redirected to "http://www.example.com/cms/login"
     And the response should be 200
 
-  Scenario: A user who is logged in starts out creating content by selecting the type of product
+  Scenario: An editor starts out creating content by selecting the type of product
     When a registered user visits "/my401k/plan_sponsor/create_new_content"
     Then they should see "Select Section"
     And the response should be 200
+
+  @javascript
+  Scenario: An editor selects the product category; selection is persisted in the form
+    When a registered user visits "/my401k/plan_sponsor/create_new_content"
+    And clicks on "category-about-plan"
+    Then the radio button associated with "category-about-plan" should be checked
 

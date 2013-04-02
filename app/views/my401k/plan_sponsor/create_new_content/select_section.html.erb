@@ -17,28 +17,28 @@
     <div class="mainSectionTiles pull-left">
       <p>Select a main section topic for the content product you wish to create.</p>
       
-      <a href="#">
+      <a href="#" id="category-about-plan">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/about_plan_button.png'), alt: "About Plan" %>
           <%= f.radio_button :category_id, @product_categories["About Plan"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
-      <a href="#">
+      <a href="#" id="category-manage-account">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/manage_account_button.png'), alt: "Manage Account" %>
           <%= f.radio_button :category_id, @product_categories["Manage Account"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
-      <a href="#">
+      <a href="#" id="category-helpful-resources">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/helpful_resources_button.png'), alt: "Helpful Resources" %>
           <%= f.radio_button :category_id, @product_categories["Helpful Resources"] %>
         </div><!-- /.mainSectionTile -->
       </a>
       
-      <a href="#">  
+      <a href="#" id="category-special-offers">  
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/special_offers_button.png'), alt: "Special Offers" %>
           <%= f.radio_button :category_id, @product_categories["Special Offers"] %>
@@ -57,7 +57,7 @@
     <div class="mainSectionTiles pull-left Small">
       <p>Create an enrollment page</p>
       
-      <a href="#">
+      <a href="#" id="category-plan-enrollment">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/enrollment_page_button.png'), alt: "Enrollment Page" %>
           <%= f.radio_button :category_id, @product_categories["Plan Enrollment"] %>
@@ -76,7 +76,7 @@
     <div class="mainSectionTiles pull-left Small">
       <p>Create a blog post.</p>
       
-      <a href="#">
+      <a href="#" id="category-blog">
         <div class="mainSectionTile pull-left">
           <%= image_tag asset_path('plan_sponsor/blog_button.png'), alt: "Blog Post" %>
           <%= f.radio_button :category_id, @product_categories["Blog"] %>

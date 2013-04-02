@@ -22,3 +22,10 @@ Then(/^they should see "(.*?)"$/) do |arg1|
   page.should have_content arg1
 end
 
+When(/^clicks on "(.*?)"$/) do |arg1|
+  click_link "#{arg1}"
+end
+
+Then(/^the radio button associated with "(.*?)" should be checked$/) do |arg1|
+  page.should have_css "##{arg1} input[type='radio'][checked='checked']"
+end

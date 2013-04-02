@@ -59,6 +59,9 @@ group :test do
   gem 'launchy'
   gem 'ruby-prof'
   gem 'aruba'
+
+  gem 'watchr'
+  gem 'ruby-fsevent'
 end
 
 
