@@ -42,6 +42,6 @@ Then(/^there should only be one drawn circle at a time on the page$/) do
 end
 
 Then(/^an article in progress should exist in the database$/) do
-  BcmsMy401k::Article
+  BcmsMy401k::Article.count.should == 1
 end
 

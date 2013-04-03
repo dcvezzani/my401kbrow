@@ -10,7 +10,6 @@ Cms::Engine.routes.draw do
   # put '/pages/:id/revert_to/:version', :to=>'pages#revert_to', :as=>'revert_page'
 end
 
-require 'bcms_my401k'
 BrowsercmsDemo::Application.routes.draw do
 
   mount BcmsMy401k::Engine => '/bcms_my401k'

@@ -1,6 +1,12 @@
 # ===== Tue Apr  2 00:26:28 PDT 2013
 
-NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::Article name:text section:category layout:category sub_title:text body:html summary:html tile_title:text tile_icon:text
+NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::ArticleProduct section:category layout:category sub_title:text body:html summary:html tile_title:text tile_icon:text
+
+NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::Article section:category layout:category sub_title:text body:html summary:html tile_title:text tile_icon:text
+
+NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::EnrollmentPage section:category layout:category sub_title:text body:html summary:html tile_title:text tile_icon:text
+
+NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::Layout preview:attachment description:text
 
 ./bin/rails g migration add_name_to_bcms_my401k_articles name:text
 

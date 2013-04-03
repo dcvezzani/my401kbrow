@@ -20,3 +20,6 @@ end
 #  run_spec  %{spec/#{match[1]}_spec.rb}
 #end
 
+=begin
+./bin/cucumber -r features features/pages.feature
+=end

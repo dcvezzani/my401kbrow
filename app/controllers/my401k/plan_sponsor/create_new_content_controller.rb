@@ -9,7 +9,8 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
 
   def select_section
     dts = Time.now.strftime("%Y-%m-%d-%H-%M-%S")
-    @product = BcmsBlog::BlogPost.new(category_id: 8, blog_id: 1, slug: dts, name: dts)
+    category = Cms::Category.joins{category_type}.where{(self.name == "About Plan") & (category_type.name == "Article")}.first
+    @product = BcmsMy401k::Article.new(section: category, name: "New Article")
   end
 
   def select_layout
@@ -28,6 +29,10 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
   end
 
   def preview_page
+  end
+
+  def update_page
+    @product = BcmsMy401k::Article.find(params[:id])
   end
 
   # def next_product_id
