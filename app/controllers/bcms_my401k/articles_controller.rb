@@ -1,4 +1,8 @@
 class BcmsMy401k::ArticlesController < Cms::ContentBlockController
+  # def show
+  #   super
+  # end
+
   def after_create_on_success
     block = @block.class.versioned? ? @block.draft : @block
     flash[:notice] = "#{content_type.display_name} '#{block.name}' was created"
@@ -16,7 +20,8 @@ class BcmsMy401k::ArticlesController < Cms::ContentBlockController
 
   def after_update_on_success
     flash[:notice] = "#{content_type_name.demodulize.titleize} '#{@block.name}' was updated"
-    redirect_to_first params[:_redirect_to], block_path(@block)
+    #redirect_to_first params[:_redirect_to], block_path(@block)
+    render json: @block
   end
 
   def after_update_on_failure

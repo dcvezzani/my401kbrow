@@ -283,10 +283,8 @@ BcmsMy401k::Engine.routes.draw do
   # TODO: need to figure out why this is getting called twice during start up
   # check if routes were already drawn before drawing them again
   if(BcmsMy401k::Engine.routes.named_routes.names.length == 0)
-    namespace :bcms_my401k do
-      content_blocks :layouts
-      content_blocks :articles
-    end
+    content_blocks :layouts
+    content_blocks :articles
   end
 end
 

@@ -49,3 +49,6 @@ Then(/^(\d+) articles in progress should exist in the database$/) do |arg1|
   BcmsMy401k::Article.count.should == arg1.to_i
 end
 
+Given /^I wait for (\d+) seconds?$/ do |n|
+  sleep(n.to_i)
+end

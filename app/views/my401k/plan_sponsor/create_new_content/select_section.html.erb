@@ -4,7 +4,7 @@
 <div class="wrapper">
 
   <%= form_for @product, url: product_route(@product), html: {id: "product"} do |f| %>
-    <%= f.text_field :name %>
+    <%= f.hidden_field :name %>
     
 <div class="mainSectionArticle pull-left">
   <div>

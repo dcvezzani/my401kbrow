@@ -10,5 +10,9 @@ if(Cms::Category.count == 0)
   create_category(:special_offers, :name => 'Special Offers', :category_type => my401k_product_type)
   create_category(:enrollment_page, :name => 'Enrollment Page', :category_type => my401k_product_type)
   create_category(:blog, :name => 'Blog', :category_type => my401k_product_type)
-end
 
+  my401k_content_type_group = create_content_type_group(:my401k, :name => 'My401k')
+  
+  create_content_type(:article, :name => 'BcmsMy401k::Article', :content_type_group => my401k_content_type_group)
+  create_content_type(:layout, :name => 'BcmsMy401k::Layout', :content_type_group => my401k_content_type_group)
+end

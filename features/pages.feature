@@ -34,7 +34,14 @@ Feature: Content Pages
 
   @javascript
   Scenario: An editor saves the selected category and navigates next to select the desired layout
-    And asdf
+    When a registered user visits "/my401k/plan_sponsor/create_new_content"
+    And clicks on "category-about-plan"
+    And clicks on "Next"
+    Then they should see "Select Layout"
+    And an article in progress should exist in the database
+
+  @javascript
+  Scenario: An editor saves the selected category and navigates next to select the desired layout
     When a registered user visits "/my401k/plan_sponsor/create_new_content"
     And clicks on "category-about-plan"
     And clicks on "Next"

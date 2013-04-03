@@ -1,7 +1,7 @@
 <p><b>Title:</b> <%= @content_block.name %></p>
 <p><b>Sub Title:</b> <%= @content_block.sub_title %></p>
-<p><b>Section:</b> <%= @content_block.section.name %></p>
-<p><b>Layout:</b> <%= @content_block.layout.name %></p>
+<p><b>Section:</b> <%= @content_block.section ? @content_block.section.name : "None"%></p>
+<p><b>Layout:</b> <%= @content_block.layout ? @content_block.layout.name : "None" %></p>
 <p><b>Body:</b> <%= raw(@content_block.body) %></p>
 <p><b>Summary:</b> <%= raw(@content_block.summary) %></p>
 <p><b>Tile Title:</b> <%= @content_block.tile_title %></p>

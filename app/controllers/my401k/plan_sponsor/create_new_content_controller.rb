@@ -10,7 +10,8 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
   def select_section
     dts = Time.now.strftime("%Y-%m-%d-%H-%M-%S")
     section = Cms::Category.joins{category_type}.where{(self.name == "About Plan") & (category_type.name == "My401k Product")}.first
-    @product = BcmsMy401k::Article.create!(section: section, name: "New Article")
+    @product = BcmsMy401k::Article.where{self.name == "New Article"}.first
+    @product ||= BcmsMy401k::Article.create!(section: section, name: "New Article")
   end
 
   def select_layout
@@ -31,33 +32,33 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
   def preview_page
   end
 
-  def create_product
-    @product = BcmsMy401k::Article.new(params[:product])
+  # def create_product
+  #   @product = BcmsMy401k::Article.new(params[:product])
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @product.save
+  #       format.html { redirect_to @product, notice: 'Product was successfully created.' }
+  #       format.json { render json: @product, status: :created, location: @product }
+  #     else
+  #       format.html { render action: "new" }
+  #       format.json { render json: @product.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  def update_product
-    @product = BcmsMy401k::Article.find(params[:id])
+  # def update_product
+  #   @product = BcmsMy401k::Article.find(params[:id])
 
-    respond_to do |format|
-      if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @product.update_attributes(params[:product])
+  #       format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+  #       format.json { head :no_content }
+  #     else
+  #       format.html { render action: "edit" }
+  #       format.json { render json: @product.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
 
   # def next_product_id
