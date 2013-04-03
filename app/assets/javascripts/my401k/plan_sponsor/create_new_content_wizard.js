@@ -25,6 +25,7 @@ function register_buttons(){
     .fail(function(jqXHR, textStatus, errorThrown){
       // display error message indicating what validation failed
       // e.g., 'fix and try again'
+      alert("errors")
     });
 
   });
