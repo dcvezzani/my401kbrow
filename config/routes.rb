@@ -12,8 +12,6 @@ end
 
 BrowsercmsDemo::Application.routes.draw do
 
-  mount BcmsMy401k::Engine => '/bcms_my401k'
-
   root :to => 'My401k::Guest#pricing_and_support'
 
   ### Guest - top nav
@@ -276,13 +274,20 @@ BrowsercmsDemo::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
+  mount_bcms_my401k
   mount_bcms_blog
   mount_browsercms
 end
 
 BcmsMy401k::Engine.routes.draw do
-  content_blocks :layouts
-  content_blocks :articles
+  # TODO: need to figure out why this is getting called twice during start up
+  # check if routes were already drawn before drawing them again
+  if(BcmsMy401k::Engine.routes.named_routes.names.length == 0)
+    namespace :bcms_my401k do
+      content_blocks :layouts
+      content_blocks :articles
+    end
+  end
 end
 
 

@@ -3,7 +3,7 @@ require 'browsercms'
 module BcmsMy401k
   class Engine < ::Rails::Engine
 		include Cms::Module
-    isolate_namespace BcmsMy401k
+    #isolate_namespace BcmsMy401k
 
     config.to_prepare do
       #%W{ArticleProduct Article BlogPost HeadlineBanner}.each do |resource|
