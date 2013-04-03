@@ -13,5 +13,6 @@ DB_SEED=true ./bin/cucumber -r features features/pages.feature
 " unless ENV['DB_SEED'] == 'true'
 
 require File.expand_path('../browsercms.seeds.rb', __FILE__)
+require File.expand_path('../my401k.seeds.rb', __FILE__)
 
 load File.expand_path('../bcms_blog.seeds.rb', __FILE__)

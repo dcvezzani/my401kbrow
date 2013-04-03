@@ -505,7 +505,6 @@ ActiveRecord::Schema.define(:version => 20130402092925) do
     t.integer  "version"
     t.integer  "section_id_id"
     t.integer  "layout_id_id"
-    t.text     "title"
     t.text     "sub_title"
     t.text     "body"
     t.text     "summary"

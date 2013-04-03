@@ -45,3 +45,7 @@ Then(/^an article in progress should exist in the database$/) do
   BcmsMy401k::Article.count.should == 1
 end
 
+Then(/^(\d+) articles in progress should exist in the database$/) do |arg1|
+  BcmsMy401k::Article.count.should == arg1.to_i
+end
+

@@ -1,14 +1,3 @@
-function next_product_id(class_name){
-  class_name = "BcmsBlog::BlogPost"
-  var href = "/my401k/plan_sponsor/create_new_content/next_product_id?product[class_name]=" + class_name;
-  var next_id = null;
-
-  $.get(href, function(data){
-    next_id = data['next_id'];
-  }, "json");
-
-  return next_id;
-}
 function extract_product_id(model_type, data){
   var re = new RegExp("<div id=\\\"" + model_type + "_(\\\d+)\\\" class=\\\"" + model_type + "\\\">|<a href=\\\"\/bcms_blog\/blog_posts\/(\\\d+)\\\"");
   var md = null
@@ -21,15 +10,14 @@ function register_buttons(){
     $('#rootwizard').bootstrapWizard('previous');
   });
   $("a:contains('Next')").click(function(){
-    //var next_id = next_product_id;
 
     var form = $(this).closest(".wrapper").find("form").first();
     var href = $(form).attr("action");
 
     var jqxhr = $.post(href, form.serialize())
     .done(function(data, textStatus, jqXHR){
-      var product_id = extract_product_id("blog_post", data);
-      $(form).attr("data-product-id", product_id);
+      // var product_id = extract_product_id("blog_post", data);
+      // $(form).attr("data-product-id", product_id);
 
       // save was successful; move on
       $('#rootwizard').bootstrapWizard('next');
@@ -69,12 +57,12 @@ $(document).ready(function() {
 
     //console.log($(tab).html());
     var href = $("a", tab).attr("href");
-    var form = $("#blog_post_blog_id").closest("form")
-    if($(form).attr("data-product_id")){
-      // var parts = href.split(/#/);
-      // href = parts[0] + "/" + product_id + "#" + parts[1];
-      href = href + "?id=" + product_id;
-    }
+    // var form = $("#blog_post_blog_id").closest("form")
+    // if($(form).attr("data-product_id")){
+    //   // var parts = href.split(/#/);
+    //   // href = parts[0] + "/" + product_id + "#" + parts[1];
+    //   href = href + "?id=" + product_id;
+    // }
 
     //console.log(href);
     if(!href.match(/^#/)){

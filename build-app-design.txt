@@ -1,3 +1,8 @@
+# ===== Tue Apr  2 21:45:39 PDT 2013
+
+create_new_content_controller.rb
+./bin/rails g controller
+
 # ===== Tue Apr  2 00:26:28 PDT 2013
 
 NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::ArticleProduct section:category layout:category sub_title:text body:html summary:html tile_title:text tile_icon:text

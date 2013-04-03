@@ -76,11 +76,6 @@ class My401k::PlugInAuthor::ManageContent::ProductsControllerTest < ActionContro
     assert_response :success
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
-  end
-
   test "should get search" do
     get :search
     assert_response :success

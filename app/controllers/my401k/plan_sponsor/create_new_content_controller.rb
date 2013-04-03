@@ -9,8 +9,8 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
 
   def select_section
     dts = Time.now.strftime("%Y-%m-%d-%H-%M-%S")
-    category = Cms::Category.joins{category_type}.where{(self.name == "About Plan") & (category_type.name == "Article")}.first
-    @product = BcmsMy401k::Article.new(section: category, name: "New Article")
+    section = Cms::Category.joins{category_type}.where{(self.name == "About Plan") & (category_type.name == "My401k Product")}.first
+    @product = BcmsMy401k::Article.create!(section: section, name: "New Article")
   end
 
   def select_layout
@@ -31,9 +31,34 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
   def preview_page
   end
 
-  def update_page
-    @product = BcmsMy401k::Article.find(params[:id])
+  def create_product
+    @product = BcmsMy401k::Article.new(params[:product])
+
+    respond_to do |format|
+      if @product.save
+        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.json { render json: @product, status: :created, location: @product }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
   end
+
+  def update_product
+    @product = BcmsMy401k::Article.find(params[:id])
+
+    respond_to do |format|
+      if @product.update_attributes(params[:product])
+        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   # def next_product_id
   #   product = params[:product] # product: {id: 2, class_name: "BcmsBlog::BlogPost"}
@@ -51,7 +76,7 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
   private
 
   def load_blog_categories
-    ctype = Cms::CategoryType.where{name == "Blog Post"}.first
+    ctype = Cms::CategoryType.where{name == "My401k Product"}.first
     #categories = Cms::Category.where{category_type_id.in(my{ctype.id})}
     categories = Cms::Category.where{category_type_id.in(my{ctype.id})}.select{[id, name]}
     @product_categories = categories.inject({}){|a,b| a.merge({b.name => b.id})}

@@ -21,6 +21,7 @@ Feature: Content Pages
     When a registered user visits "/my401k/plan_sponsor/create_new_content"
     And clicks on "category-about-plan"
     Then the radio button associated with "category-about-plan" should be checked
+    And an article in progress should exist in the database
 
   @javascript
   Scenario: An editor selects the product category; a sketched circle indicates the active selection
@@ -29,9 +30,11 @@ Feature: Content Pages
     Then the radio button associated with "category-plan-enrollment" should be checked
     And "category-plan-enrollment" should have a circle drawn around it
     And there should only be one drawn circle at a time on the page
+    And an article in progress should exist in the database
 
   @javascript
   Scenario: An editor saves the selected category and navigates next to select the desired layout
+    And asdf
     When a registered user visits "/my401k/plan_sponsor/create_new_content"
     And clicks on "category-about-plan"
     And clicks on "Next"

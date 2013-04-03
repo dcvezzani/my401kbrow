@@ -90,16 +90,20 @@ ActionController::Base.allow_rescue = false
 #   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 # end
 
-# Before('@no-txn,@selenium,@culerity,@celerity') do
-#   # I added this block and changed to transaction because @javascript was truncating most of my tables
-#   #DatabaseCleaner.strategy = :truncation, {:except => %w[groups]}
-#   DatabaseCleaner.strategy = :truncation
-# end
+Before('@no-txn,@selenium,@culerity,@celerity') do
+  # I added this block and changed to transaction because @javascript was truncating most of my tables
+  #DatabaseCleaner.strategy = :truncation, {:except => %w[groups]}
+  DatabaseCleaner.strategy = :truncation
+end
 
 Before('@javascript') do
-  # I added this block and changed to transaction because @javascript was truncating most of my tables
-  DatabaseCleaner.strategy = :transaction
+  DatabaseCleaner.strategy = :truncation, {:except => %w[groups categories category_types]}
 end
+
+# Before('@javascript') do
+#   # I added this block and changed to transaction because @javascript was truncating most of my tables
+#   DatabaseCleaner.strategy = :transaction
+# end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:

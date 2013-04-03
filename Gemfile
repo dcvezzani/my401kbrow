@@ -61,6 +61,8 @@ group :test do
   gem 'aruba'
 
   gem 'spork'
+  #gem 'spork', :git => 'git://github.com/timcharper/spork.git'
+  gem 'spork-testunit'
   gem 'watchr'
   #gem 'ruby-fsevent'
 end
