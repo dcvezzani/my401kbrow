@@ -1,16 +1,17 @@
 class BcmsMy401k::ArticlesController < Cms::ContentBlockController
-  # def show
-  #   super
-  # end
 
+  # just return json to provide insight of what took place
+  # let JavaScript decide what will be rendered next
   def after_create_on_success
     block = @block.class.versioned? ? @block.draft : @block
     flash[:notice] = "#{content_type.display_name} '#{block.name}' was created"
-    if @block.class.connectable? && @block.connected_page
-      redirect_to @block.connected_page.path
-    else
-      redirect_to_first params[:_redirect_to], block_path(@block)
-    end
+
+    # if @block.class.connectable? && @block.connected_page
+    #   redirect_to @block.connected_page.path
+    # else
+    #   redirect_to_first params[:_redirect_to], block_path(@block)
+    # end
+    render json: @block, status: :accepted, location: @block
   end
 
   def after_create_on_failure
@@ -18,10 +19,13 @@ class BcmsMy401k::ArticlesController < Cms::ContentBlockController
   end
 
 
+  # just return json to provide insight of what took place
+  # let JavaScript decide what will be rendered next
   def after_update_on_success
     flash[:notice] = "#{content_type_name.demodulize.titleize} '#{@block.name}' was updated"
+
     #redirect_to_first params[:_redirect_to], block_path(@block)
-    render json: @block
+    render json: @block, status: :accepted, location: @block
   end
 
   def after_update_on_failure
