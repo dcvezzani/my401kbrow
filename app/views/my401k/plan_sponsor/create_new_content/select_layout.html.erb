@@ -1,66 +1,85 @@
+<style type="text/css">
+.container.layoutTileRow input[type='radio']{
+  display: none; 
+}
+
+.container.layoutTileRow > .item {
+  border: 1px solid #afafaf;
+  height: 365px;
+  background-color: #efefef;
+}
+.container.layoutTileRow > .item .description {
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
+}
+.container.layoutTileRow > .item .description h3 {
+  font-size: 20pt;
+}
+
+.layoutTileRow .item{
+  cursor: pointer;
+}
+</style>
+
 <% title("Select Layout", true) %>
 <h2 style=" "><%= yield(:title) if show_title? %></h2>
 
 <div class="wrapper">
+
+<%= form_for @product, url: product_route(@product), html: {id: "product-select-layout"} do |f| %>
+  <%= f.hidden_field :name %>
   
 <p>Select a layout for your main page</p>
 
-<div class="layoutTileRow">
+<div class="container layoutTileRow">
   
-  <a href="#myModal" role="button" data-toggle="modal">
-    <div class="layoutTile">
-    </div><!-- /.layoutTile -->
-  </a>
-     
-     
-     <!-- _______ MODAL ____________ -->
-      
-      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-          <h3 id="myModalLabel">Manage site status</h3>
-        </div><!-- /.modal-header -->
-        <div class="modal-body">
-          <p>Please select your layout from the options below.</p>
+          <p class="span12">Please select your layout from the options below.</p>
           
           <!-- ________ CAROUSEL ______ -->
-          
-          <div id="myCarousel" class="carousel slide">
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-              <div class="active item">
-                <p>LAYOUT 1</p>
-              </div>
-              <div class="item">
-                <p>LAYOUT 2</p>
-              </div>
-              <div class="item">
-                <p>LAYOUT 3</p>
-              </div>
-            </div>
-            <!-- Carousel nav -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-          </div>
 
+              <% default_car_ind_active = ((@product.layout_id.nil?) ? "active" : "") %>
+              <% @product_layouts.each do |layout| %>
+                <% car_ind_active = ((layout.id == @product.layout_id) ? "active" : default_car_ind_active) %>
+               
+                <div id="<%= layout.name.downcase.gsub(/ +/, "-") %>" class="item <%= car_ind_active %> span4">
+                  <div class="description">
+                    <h3><%= layout.name %></h3>
+                    <p><%= layout.description %></p>
+                    <%= f.radio_button :layout_id, layout.id %>
+                  </div>
+                </div>
 
-          
-          
-        </div><!-- /.modal-body -->
-        <div class="modal-footer">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-          <button class="btn btn-primary">Select</button>
-        </div><!-- /.modal-footer -->
-      </div><!-- /#myModal -->
+                <% default_car_ind_active = "" %>
+              <% end %>
   
-</div><!-- /.layoutTileRow -->
+    </div><!-- /.layoutTileRow -->
 
-<a href="#" class="btn pull-left">Previous</a>
-<a href="#"><div class="btn pull-right">Next</div></a>
-  
+<% end %>
+
+<div class="container bottom-nav">
+  <div class="span1 pull-left">
+    <a href="#" class="btn" >Previous</a>
+  </div>
+  <!--<div class="span10"></div>-->
+  <div class="span1 pull-right">
+    <a href="#" class="btn">Next</a>
+  </div>
+</div>
+
 </div><!-- /.wrapper -->
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".layoutTileRow .item").click(function(e){
+    var radio = $("input[type='radio']", this)
+    radio.attr("checked", true)
+    $(".layoutTileRow .drawn-circle").remove();
+    $(".description h3", this).append('<div class="drawn-circle"></div>')
+    return false;
+  });
+
+  $(".layoutTileRow input:checked").closest(".item").find("h3").append('<div class="drawn-circle"></div>')
+});
+</script>

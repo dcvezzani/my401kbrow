@@ -97,7 +97,8 @@ Before('@no-txn,@selenium,@culerity,@celerity') do
 end
 
 Before('@javascript') do
-  DatabaseCleaner.strategy = :truncation, {:except => %w[groups categories category_types content_types content_type_groups]}
+  #DatabaseCleaner.strategy = :truncation, {:except => %w[groups categories category_types content_types content_type_groups bcms_my401k_layouts]}
+  DatabaseCleaner.strategy = :transaction
 end
 
 # Before('@javascript') do

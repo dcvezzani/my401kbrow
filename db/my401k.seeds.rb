@@ -15,4 +15,8 @@ if(Cms::Category.count == 0)
   
   create_content_type(:article, :name => 'BcmsMy401k::Article', :content_type_group => my401k_content_type_group)
   create_content_type(:layout, :name => 'BcmsMy401k::Layout', :content_type_group => my401k_content_type_group)
+
+  BcmsMy401k::Layout.create!(:name => 'Layout 1', description: "blah blah blah", published: true)
+  BcmsMy401k::Layout.create!(:name => 'Layout 2', description: "apple orange grape", published: true)
+  BcmsMy401k::Layout.create!(:name => 'Layout 3', description: "sun moon stars", published: true)
 end

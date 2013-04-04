@@ -5,6 +5,12 @@
 /* ____________________SECTION CSS_____________________ */
 
 
+/* data storage: id for the product currently being edited */
+#current-product-id{
+  /* display: none; */
+}
+
+
 .mainSectionArticle {
   margin-left: 0;
 }
@@ -48,6 +54,10 @@
   z-index: 10;
   left: 0;
   top: 0;
+}
+
+.layoutTileRow .drawn-circle{
+  left: 77px; top: 86px;
 }
 
 /* ____________________BOTTOM NAV BUTTONS CSS_____________________ */

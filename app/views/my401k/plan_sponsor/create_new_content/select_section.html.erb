@@ -3,8 +3,8 @@
 
 <div class="wrapper">
 
-  <%= form_for @product, url: product_route(@product), html: {id: "product"} do |f| %>
-    <%= f.hidden_field :name %>
+<%= form_for @product, url: product_route(@product), html: {id: "product-select-section"} do |f| %>
+  <%= f.hidden_field :name %>
     
 <div class="mainSectionArticle pull-left">
   <div>
@@ -81,6 +81,7 @@
     </div><!-- /.mainSectionTiles -->
   </div>
 </div><!-- /.mainSectionArticle -->
+
 <% end %>
 
 <div class="container bottom-nav">
