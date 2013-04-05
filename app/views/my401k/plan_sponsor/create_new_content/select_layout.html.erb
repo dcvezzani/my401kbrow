@@ -24,25 +24,24 @@
   cursor: pointer;
 }
 
-.layoutTileRow .item{
-  margin-left: 0;
+/* TODO: what's going on with bootstrap?! */
+.layoutTileRow .span4{
+  width: 290px;
 }
-.layoutTileRow .item + .item{
-  margin-left: 22px;
-}
+
 </style>
 
 <% title("Select Layout", true) %>
 <h2 style=" "><%= yield(:title) if show_title? %></h2>
 
-<div class="wrapper container">
+<div class="wrapper">
 
 <%= form_for @product, url: product_route(@product), html: {id: "product-select-layout"} do |f| %>
   <%= f.hidden_field :name %>
   
 <p>Select a layout for your main page</p>
 
-<div class="layoutTileRow">
+<div class="layoutTileRow row">
   
           <!-- ________ CAROUSEL ______ -->
 
@@ -61,7 +60,7 @@
                 <% default_car_ind_active = "" %>
               <% end %>
   
-    </div><!-- /.layoutTileRow -->
+</div><!-- /.layoutTileRow -->
 
 <% end %>
 
