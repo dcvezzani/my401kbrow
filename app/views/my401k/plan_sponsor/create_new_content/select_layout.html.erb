@@ -1,41 +1,49 @@
 <style type="text/css">
-.container.layoutTileRow input[type='radio']{
+.layoutTileRow input[type='radio']{
   display: none; 
 }
 
-.container.layoutTileRow > .item {
+.layoutTileRow > .item {
   border: 1px solid #afafaf;
   height: 365px;
   background-color: #efefef;
 }
-.container.layoutTileRow > .item .description {
+.layoutTileRow > .item .description {
   position: relative;
   text-align: center;
   padding-top: 100px;
 }
-.container.layoutTileRow > .item .description h3 {
+.layoutTileRow > .item .description h3 {
   font-size: 20pt;
 }
 
 .layoutTileRow .item{
+}
+
+.layoutTileRow .item{
   cursor: pointer;
+}
+
+.layoutTileRow .item{
+  margin-left: 0;
+}
+.layoutTileRow .item + .item{
+  margin-left: 22px;
 }
 </style>
 
 <% title("Select Layout", true) %>
 <h2 style=" "><%= yield(:title) if show_title? %></h2>
 
-<div class="wrapper">
+<div class="wrapper container">
 
 <%= form_for @product, url: product_route(@product), html: {id: "product-select-layout"} do |f| %>
   <%= f.hidden_field :name %>
   
 <p>Select a layout for your main page</p>
 
-<div class="container layoutTileRow">
+<div class="layoutTileRow">
   
-          <p class="span12">Please select your layout from the options below.</p>
-          
           <!-- ________ CAROUSEL ______ -->
 
               <% default_car_ind_active = ((@product.layout_id.nil?) ? "active" : "") %>

@@ -39,6 +39,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem "browsercms", :path => "/Users/davidvezzani/rails-app/browsercms"
 gem "bcms_blog"
 # gem "browsercms", "4.0.0.a", git: 'git@github.com:browsermedia/browsercms.git'
 # gem "bcms_blog", git: 'git@github.com:dcvezzani/bcms_blog.git'

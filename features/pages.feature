@@ -68,6 +68,7 @@ Feature: Content Pages
     And I click on "Next" on the active tab
     And I click on item "#layout-2"
     And I click on "Previous" on the active tab
+    And I wait for 1 seconds
     Then there should be a drawn circle around item "#category-special-offers"
     And the radio button associated with "#category-special-offers" should be checked
     And I click on "Next" on the active tab

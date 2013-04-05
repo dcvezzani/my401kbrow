@@ -5,6 +5,24 @@ function extract_product_id(model_type, data){
   return (md = data.match(re)) ? (md[1] || md[2]) : null;
 }
 
+function CKupdate(){
+  if(typeof(CKEDITOR) != "undefined"){
+    for ( instance in CKEDITOR.instances )
+        CKEDITOR.instances[instance].updateElement();
+  }
+}
+
+function unloadCKEditor(){
+  if(typeof(CKEDITOR) != "undefined"){
+    for ( instance in CKEDITOR.instances ){
+      console.log("removing instance: " + instance);
+      //CKEDITOR.instances[instance].updateElement();
+      CKEDITOR.instances[instance].destroy(true);
+      //CKEDITOR.replace(instance);
+    }
+  }
+}
+
 function update_product(form, options){
   if(form == null){
     display_message("no form; no update to be performed");
@@ -13,6 +31,8 @@ function update_product(form, options){
   }
 
   var href = $(form).attr("action");
+
+  CKupdate();
 
   var jqxhr = $.post(href, form.serialize() + "&update_draft=", function(){}, "json")
   .done(function(data, textStatus, jqXHR){
@@ -79,8 +99,9 @@ function register_buttons(){
 // }
 
 var handleOnTabShow = function(tab, navigation, index) {
-  retire_messages(); 
-  display_message("handling onTabShow...");
+    retire_messages(); 
+    display_message("handling onTabShow...");
+    unloadCKEditor();
 
     var $total = navigation.find('li').length;
     var $current = index+1;

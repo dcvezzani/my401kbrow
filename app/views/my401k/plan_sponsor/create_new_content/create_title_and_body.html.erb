@@ -1,67 +1,51 @@
+<% title("Title & Body", true) %>
+<h2 style=" "><%= yield(:title) if show_title? %></h2>
 
 <div class="wrapper">
-  
-  
-  <p>Create New Content</p>
-<ul class="breadcrumb">
-  <li><a href="#">Section</a> <span class="divider">/</span></li>
-  <li><a href="#">Layout</a> <span class="divider">/</span></li>
-  <li class="active">Title/Body <span class="divider">/</span></li>
-  <li><a href="#">Tile</a> <span class="divider">/</span></li>
-  <li><a href="#">Elections</a> <span class="divider">/</span></li>
-  <li><a href="#">Finish</a></li>
-</ul>
 
-<div class="articleDetails">
-  
+<% 
+  #TODO: find a way to include this more conventionally instead of in the view
+  self.class.instance_eval do
+    include Cms::FormTagHelper
+  end
+%>
+
+<%= form_for @product, url: product_route(@product), html: {id: "product-title-body"}, :builder => Cms::FormBuilder do |f| %>
   
   <p>Provide details for your article or posting</p>
-  
-  
-  <form>
-    <fieldset>
-      <input type="text" placeholder="Enter your title here...">
-      <input type="text" placeholder="Enter your optional sub-title here...">
-        <div class="textEditor">
-          <textarea class="input-block-level" rows="7" type="text" placeholder="Your product's contents...">
-        </div><!-- /.textEditor -->
-    </fieldset>
-  </form>
 
-  
-  <div class="addAttachment">
+  <div class="container ">
     
-    <form>
-      <fieldset>
-        <label>Add attachment:</label>
-        <input type="text" placeholder="Location of attachment...">
-      </fieldset>
-    </form>
-    
-    <div>
-      <img class="pull-left" src="<%= asset_path 'demo/icon-cross.png' %>">
-      <p class="pull-left">Attachment Name</p>
-    </div>
-    
-    <div>
-      <img class="pull-left" src="<%= asset_path 'demo/icon-cross.png' %>">
-      <p class="pull-left">Attachment Name</p>
-    </div>
-    
-    <div>
-      <img class="pull-left" src="<%= asset_path 'demo/icon-cross.png' %>">
-      <p class="pull-left">Attachment Name</p>
-    </div>
-    
-  </div><!-- /.addAttachment -->
-  
-  
-  <a href="#"><div class="btn pull-left">Previous</div></a>
-  <a href="#"><div class="btn pull-right">Next</div></a>
-  
-</div><!-- /.articleDetails -->
+  <div class="span12" style="">
+<%= f.cms_text_field :name, label: "Title" %>
+<%= f.cms_text_area :sub_title %>
 
 
+<%= f.cms_richtext_editor :body %>
+<%= f.cms_richtext_editor :summary %>
+<%#= f.cms_text_area :tile_title %>
+<%#= f.cms_text_area :tile_icon %>
+  </div>
 
-  
+
+  </div><!-- /.container -->
+
+<% end %>
+
+<div class="container bottom-nav">
+  <div class="span1 pull-left">
+    <a href="#" class="btn" >Previous</a>
+  </div>
+  <!--<div class="span10"></div>-->
+  <div class="span1 pull-right">
+    <a href="#" class="btn">Next</a>
+  </div>
+</div>
+
 </div><!-- /.wrapper -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    jQuery(document).trigger("partial-load");
+  });
+</script>

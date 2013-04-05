@@ -1,5 +1,6 @@
 class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorController
   include Cms::Acts::ContentPage
+  include Cms::FormTagHelper
 
   layout false
 
@@ -124,7 +125,7 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
     model_class = BcmsMy401k::Article
     @block = model_class.find(params[:id])
     @block = @block.as_of_draft_version if model_class.versioned?
-    #check_permissions
+    check_permissions
     @product = @block
   end
 

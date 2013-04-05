@@ -5,7 +5,35 @@
     <style>
       /* @import url(http://fonts.googleapis.com/css?family=News+Cycle); */
     </style>
+
     <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+<script src="/assets/jquery.cookie.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.selectbox.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.taglist.js?body=1" type="text/javascript"></script>
+<script src="/assets/cms/core_library.js?body=1" type="text/javascript"></script>
+<script src="/assets/cms/attachment_manager.js?body=1" type="text/javascript"></script>
+<script src="/assets/cms/application.js?body=1" type="text/javascript"></script>
+<script src="/assets/bcms/ckeditor_load.js?body=1" type="text/javascript"></script>
+<script src="/assets/ckeditor/basepath.js?body=1" type="text/javascript"></script>
+<script src="/assets/ckeditor/ckeditor.js?body=1" type="text/javascript"></script>
+<script src="/assets/ckeditor/adapters/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/ckeditor-jquery.js?body=1" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    jQuery(function($){
+        $.cms.authenticity_token = $("meta[name='csrf-token']").attr("content");
+    })
+  </script>
+  
+<link href="/assets/cms/selectbox.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/cms/form_layout.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/cms/selectbox.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/cms/form_layout.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+
+    
     <%#
       <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
@@ -23,13 +51,34 @@
       
       <link href='http://fonts.googleapis.com/css?family=Abel|PT+Sans+Narrow|News+Cycle|Antic|Metrophobic|Signika+Negative|Muli' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
-      %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
+    %>
+
+
+
+<link rel="stylesheet" type="text/css" href="/assets/ckeditor/skins/kama/editor.css" />
+
+<!--
+<script type="text/javascript" src="/assets/jquery.js"></script>
+<script type="text/javascript" src="/assets/jquery-ui.js"></script>
+-->
+
+
+<!--
+-->
+
+<script type="text/javascript">
+function asdf(){
+  x=3-1
+}
+</script>
+    
     <style>
       /* NOTE: set to 'display: none; ' if sign_up is disabled */
       a[href='/users/sign_up']{ display: inline; }
     </style>
+
+    /* here i am */
+    <%= yield(:html_head) %>
   </head>
   <body>
     <!-- used when the need for sign in arises during an ajax call -->

@@ -4,6 +4,18 @@ GIT
   specs:
     nifty-generators (0.4.6)
 
+PATH
+  remote: /Users/davidvezzani/rails-app/browsercms
+  specs:
+    browsercms (3.5.5)
+      ancestry (~> 1.2.4)
+      ckeditor_rails (~> 3.6.4)
+      jquery-rails (~> 2.0)
+      paperclip (~> 3.0.3)
+      rails (>= 3.2.5, < 3.3.0)
+      sass-rails
+      term-ansicolor
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,14 +56,6 @@ GEM
       rspec-expectations (>= 2.7.0)
     bcms_blog (1.3.1)
       browsercms (>= 3.5.0, < 3.6.0)
-    browsercms (3.5.5)
-      ancestry (~> 1.2.4)
-      ckeditor_rails (~> 3.6.4)
-      jquery-rails (~> 2.0)
-      paperclip (~> 3.0.3)
-      rails (>= 3.2.5, < 3.3.0)
-      sass-rails
-      term-ansicolor
     builder (3.0.4)
     capybara (2.0.3)
       mime-types (>= 1.16)
@@ -220,6 +224,7 @@ PLATFORMS
 DEPENDENCIES
   aruba
   bcms_blog
+  browsercms!
   capybara
   coffee-rails (~> 3.2.1)
   cucumber
