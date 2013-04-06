@@ -1,22 +1,21 @@
+<% title("Create Tile", true) %>
+<h2 style=" "><%= yield(:title) if show_title? %></h2>
 
 <div class="wrapper">
 
-
-<p>Create New Content</p>
-<ul class="breadcrumb">
-  <li><a href="#">Section</a> <span class="divider">/</span></li>
-  <li><a href="#">Layout</a> <span class="divider">/</span></li>
-  <li><a href="#">Title/Body</a> <span class="divider">/</span></li>
-  <li class="active">Tile <span class="divider">/</span></li>
-  <li><a href="#">Elections</a> <span class="divider">/</span></li>
-  <li><a href="#">Finish</a></li>
-</ul>
-
+<%= form_for @product, url: product_route(@product), html: {id: "product-select-layout"} do |f| %>
+  <%= f.hidden_field :name %>
 
 <p>Preview tile and add content-designating icon</p>
 
 <div class="tilePreview">
-  <img class="tilePreviewTile" src="<%= asset_path 'demo/tile-sample.png' %>">
+  <%#= image_tag asset_path 'demo/tile-sample.png' %>
+
+  <div class="product-tile">
+    <div class="product-icon"></div>
+    <h3 class="product-title"></h3>
+    <div class="product-content"></div>
+  </div>
   
   <a href="#myModal" role="button" data-toggle="modal">
     <div class="btn btn-small">Edit Tile</div>
@@ -84,5 +83,6 @@
     </div><!-- /.modal-footer -->
   </div><!-- /#myModal -->
   
-  
+<% end %>
+
 </div><!-- /.wrapper -->

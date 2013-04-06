@@ -189,5 +189,7 @@ $(document).ready(function() {
     }
 
   }});
+
+  $('#rootwizard').bootstrapWizard("show", 3);
 });
 
