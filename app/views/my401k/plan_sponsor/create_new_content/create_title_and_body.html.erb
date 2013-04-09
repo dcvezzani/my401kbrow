@@ -3,13 +3,6 @@
 
 <div class="wrapper">
 
-<% 
-  #TODO: find a way to include this more conventionally instead of in the view
-  self.class.instance_eval do
-    include Cms::FormTagHelper
-  end
-%>
-
 <%= form_for @product, url: product_route(@product), html: {id: "product-title-body"}, :builder => Cms::FormBuilder do |f| %>
   
   <p>Provide details for your article or posting</p>

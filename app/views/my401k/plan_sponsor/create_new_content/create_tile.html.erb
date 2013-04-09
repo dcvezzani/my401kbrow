@@ -12,14 +12,13 @@
   <%#= image_tag asset_path 'demo/tile-sample.png' %>
 
   <div class="product-tile">
-    <div class="product-icon"></div>
-    <h3 class="product-title"></h3>
-    <div class="product-content"></div>
+    <a href="#change-icon" class="change-icon" title="Change Icon">
+      <div class="product-icon"></div>
+    </a>
+
+    <h3 class="product-title" title="Change Title"></h3>
+    <div class="product-content" title="Change Content"></div>
   </div>
-  
-  <a href="#myModal" role="button" data-toggle="modal">
-    <div class="btn btn-small">Edit Tile</div>
-  </a>
   
   <!-- ________MODAL_________ -->
   
@@ -29,12 +28,8 @@
       <h3 id="myModalLabel">Edit Tile</h3>
     </div><!-- /.modal-header -->
     <div class="modal-body">
-      <p>Title</p>
-        <p>TEXT EDITOR HERE</p>
-      
-      
-      <p>Summary</p>
-        <p>TEXT EDITOR HERE</p>
+      <%= f.cms_richtext_editor :tile_title %>
+      <%= f.cms_richtext_editor :summary %>
         
     </div><!-- /.modal-body -->
     <div class="modal-footer">
@@ -86,3 +81,11 @@
 <% end %>
 
 </div><!-- /.wrapper -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".tilePreview .product-title, .tilePreview .product-content").click(function(e){
+    $("#myModal").modal("show");
+  });
+});
+</script>
