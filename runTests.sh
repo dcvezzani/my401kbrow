@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./bin/cucumber -r features
+./bin/cucumber -r features --drb
