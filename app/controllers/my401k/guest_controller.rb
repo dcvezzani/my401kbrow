@@ -11,5 +11,6 @@ class My401k::GuestController < ApplicationController
   end
 
   def welcome
+    render json: {msg: "hello"}
   end
 end

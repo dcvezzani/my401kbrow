@@ -14,6 +14,8 @@ BrowsercmsDemo::Application.routes.draw do
 
   root :to => 'My401k::Guest#pricing_and_support'
 
+  post "/file/post" => "My401k::Guest#welcome"
+
   ### Guest - top nav
   get "my401k/guest/welcome"
   get "my401k/guest/what_is_it" => "My401k::Guest#guest_what_is_it", as: "guest_what_is_it"

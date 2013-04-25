@@ -63,11 +63,12 @@
         <div class="control-group">
           <label class="control-label" for="uploadIcon">Upload Icon:</label>
           <div class="controls">
-            <input type="text" id="uploadIcon">
+            <input type="text" id="uploadIcon" style="display: none; ">
+            <div class="dropzone" id="my-awesome-dropzone"></div>
           </div>
         </div>
         
-        <div class="btn btn-primary">Browse</div>
+        <div class="btn btn-primary" style="display: none; ">Browse</div>
         
       </form>
       
@@ -80,6 +81,7 @@
   
 <% end %>
 
+
 </div><!-- /.wrapper -->
 
 <script type="text/javascript">
@@ -87,5 +89,8 @@ $(document).ready(function(){
   $(".tilePreview .product-title, .tilePreview .product-content").click(function(e){
     $("#myModal").modal("show");
   });
+
+  var myDropzone = new Dropzone("div#my-awesome-dropzone", { url: "/file/post" });
+  //var myDropzone = new Dropzone("div#my-awesome-dropzone", { url: "/file/post", enqueueForUpload: false});
 });
 </script>
