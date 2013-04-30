@@ -12,21 +12,34 @@
 
 .product-tile{
   position: relative;
-  width: 180px;
-  height: 200px;
-  background-color: silver;
+  width: 181px;
+  height: 216px;
+  background: url('<%= asset_path("buttonBarImgs/red-tile-2.png") %>'); /*'*/
 
   [class*="product"]{
     position: absolute;
+    cursor: pointer;
   }
 
   .product-icon{
+    background: url('<%= asset_path("tile_icons/address-book.png") %>'); /*'*/
+    width: 76px; 
+    height: 76px; 
+    left: -18px;
+    top: 3px;
   }
 
   .product-title{
+    left: 55px; top: 4px; width: 111px; height: 54px;
   }
 
   .product-content{
+    left: 16px; top: 82px; width: 150px; height: 80px;
   }
 }
 
+.modal{
+  button{
+    height: auto; 
+  }
+}

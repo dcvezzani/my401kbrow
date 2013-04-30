@@ -1,3 +1,10 @@
+<% 
+  #TODO: find a way to include this more conventionally instead of in the view
+  self.class.instance_eval do
+    include Cms::FormTagHelper
+  end
+%>
+
 <!DOCTYPE html>
 <html>
   <head>

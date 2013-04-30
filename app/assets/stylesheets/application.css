@@ -14,5 +14,6 @@
  *= require 'stub'
  *= require '../bootstrap/css/bootstrap'
  *= require '../overcast/jquery-ui-1.8.18.custom'
- *= require '../bootstrap-wizard/prettify.css'
+ *= require '../bootstrap-wizard/prettify'
+ *= require '../dropzone/css/dropzone'
 */

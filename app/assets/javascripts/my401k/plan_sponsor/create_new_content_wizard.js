@@ -190,6 +190,9 @@ $(document).ready(function() {
 
   }});
 
-  $('#rootwizard').bootstrapWizard("show", 3);
+  /* provide index to start at a location other than the first; 
+   * this has been useful in development
+  */
+  //$('#rootwizard').bootstrapWizard("show", 3);
 });
 

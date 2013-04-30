@@ -20,6 +20,7 @@
 //= require '../bootstrap/js/bootstrap'
 //= require '../bootstrap-wizard/jquery.bootstrap.wizard'
 //= require '../bootstrap-wizard/prettify'
+//= require '../dropzone/dropzone'
 
 
 
