@@ -11,6 +11,15 @@ class My401k::GuestController < ApplicationController
   end
 
   def welcome
-    render json: {msg: "hello"}
+    begin
+      Cloudinary::Uploader.upload(params[:file], tags: 'my401k')
+      render json: {msg: "file was uploaded!"}
+
+    rescue => e
+      Rails.logger.error(e.message)
+      Rails.logger.error(e.backtrace)
+
+      render json: {msg: "file was not uploaded"}, status: :unprocessable_entity
+    end
   end
 end

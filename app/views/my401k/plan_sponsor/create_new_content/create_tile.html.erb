@@ -20,9 +20,28 @@
     <div class="product-content" title="Change Content"></div>
   </div>
   
+    
+    
+</div><!-- /.tilePreview -->
+
+<a href="#"><div class="btn pull-left">Previous</div></a>
+<a href="#"><div class="btn pull-right">Save</div></a>
+  
+  
+  <a href="#icon" role="button" data-toggle="modal">
+    <div class="btn btn-small">Select Icon</div>
+  </a>
+  
+  
+<% end %>
+
+
+</div><!-- /.wrapper -->
+
   <!-- ________MODAL_________ -->
   
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<%= form_for @product, url: product_route(@product), html: {id: "product-select-layout"} do |f| %>
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
       <h3 id="myModalLabel">Edit Tile</h3>
@@ -36,19 +55,9 @@
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
       <button class="btn btn-primary">Yes</button>
     </div><!-- /.modal-footer -->
+<% end %>
   </div><!-- /#myModal -->
-    
-    
-</div><!-- /.tilePreview -->
 
-<a href="#"><div class="btn pull-left">Previous</div></a>
-<a href="#"><div class="btn pull-right">Save</div></a>
-  
-  
-  <a href="#icon" role="button" data-toggle="modal">
-    <div class="btn btn-small">Select Icon</div>
-  </a>
-  
   <!-- ________ MODAL ___________ -->
   
   <div id="icon" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -58,18 +67,14 @@
     </div><!-- /.modal-header -->
     <div class="modal-body">
       <p>WINDOW FOR BROWSING ICONS</p>
-      
-      <form class="form-horizontal">
-        <div class="control-group">
-          <label class="control-label" for="uploadIcon">Upload Icon:</label>
-          <div class="controls">
-            <input type="text" id="uploadIcon" style="display: none; ">
-            <div class="dropzone" id="my-awesome-dropzone"></div>
-          </div>
+
+      <form id="demo-upload" class="dropzone clickable" action="http://www.torrentplease.com/dropzone.php">
+        <div class="fallback">
+          <input name="file" type="file" multiple />
         </div>
-        
-        <div class="btn btn-primary" style="display: none; ">Browse</div>
-        
+        <div class="default message">
+          <span>Drop files here to upload</span>
+        </div>
       </form>
       
     </div><!-- /.modal-body -->
@@ -78,19 +83,25 @@
       <button class="btn btn-primary">Yes</button>
     </div><!-- /.modal-footer -->
   </div><!-- /#myModal -->
-  
-<% end %>
 
-
-</div><!-- /.wrapper -->
 
 <script type="text/javascript">
+var myDropzone;
 $(document).ready(function(){
   $(".tilePreview .product-title, .tilePreview .product-content").click(function(e){
     $("#myModal").modal("show");
   });
 
-  var myDropzone = new Dropzone("div#my-awesome-dropzone", { url: "/file/post" });
+  myDropzone = new Dropzone("#demo-upload", { url: "/file/post", enqueueForUpload: true });
+
+  // myDropzone.on("addedfile", function(file) {
+  //   console.log(file);
+  // });
+
   //var myDropzone = new Dropzone("div#my-awesome-dropzone", { url: "/file/post", enqueueForUpload: false});
+  myDropzone.on("sending", function(file, xhr, formData){
+    var csrf_token = $("meta[name='csrf-token']").attr("content");
+    formData.append("authenticity_token", csrf_token);
+  });
 });
 </script>

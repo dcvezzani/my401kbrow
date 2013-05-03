@@ -1,0 +1,23 @@
+---
+development:
+  cloud_name: fiduciarypages
+  api_key: '211491852549713'
+  api_secret: ayHWjcZMCi-VMMf2Ypser6ddvY0
+  tags: 'my401k'
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: fiduciarypages
+  api_key: '211491852549713'
+  api_secret: ayHWjcZMCi-VMMf2Ypser6ddvY0
+  tags: 'my401k'
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: fiduciarypages
+  api_key: '211491852549713'
+  api_secret: ayHWjcZMCi-VMMf2Ypser6ddvY0
+  tags: 'my401k'
+  enhance_image_tag: true
+  static_image_support: false
+
