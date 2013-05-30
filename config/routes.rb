@@ -1,5 +1,4 @@
 Cms::Engine.routes.draw do
-
   match '/super_administration', :to=>"sites#index", :as=>'super_administration'
 
   resources :sites do
@@ -11,7 +10,6 @@ Cms::Engine.routes.draw do
 end
 
 BrowsercmsDemo::Application.routes.draw do
-
   root :to => 'My401k::Guest#pricing_and_support'
 
   post "/file/post" => "My401k::Guest#welcome"
@@ -281,13 +279,15 @@ BrowsercmsDemo::Application.routes.draw do
   mount_browsercms
 end
 
-BcmsMy401k::Engine.routes.draw do
-  # TODO: need to figure out why this is getting called twice during start up
-  # check if routes were already drawn before drawing them again
-  if(BcmsMy401k::Engine.routes.named_routes.names.length == 0)
-    content_blocks :layouts
-    content_blocks :articles
+  BcmsMy401k::Engine.routes.draw do
+    # TODO: need to figure out why this is getting called twice during start up
+    # check if routes were already drawn before drawing them again
+    if(BcmsMy401k::Engine.routes.named_routes.names.length == 0)
+      content_blocks :layouts
+      content_blocks :articles
+      content_blocks :plans
+      content_blocks :contacts
+    end
   end
-end
 
 

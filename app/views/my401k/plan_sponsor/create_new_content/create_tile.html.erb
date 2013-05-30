@@ -20,28 +20,9 @@
     <div class="product-content" title="Change Content"></div>
   </div>
   
-    
-    
-</div><!-- /.tilePreview -->
-
-<a href="#"><div class="btn pull-left">Previous</div></a>
-<a href="#"><div class="btn pull-right">Save</div></a>
-  
-  
-  <a href="#icon" role="button" data-toggle="modal">
-    <div class="btn btn-small">Select Icon</div>
-  </a>
-  
-  
-<% end %>
-
-
-</div><!-- /.wrapper -->
-
   <!-- ________MODAL_________ -->
   
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<%= form_for @product, url: product_route(@product), html: {id: "product-select-layout"} do |f| %>
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
       <h3 id="myModalLabel">Edit Tile</h3>
@@ -55,38 +36,82 @@
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
       <button class="btn btn-primary">Yes</button>
     </div><!-- /.modal-footer -->
-<% end %>
   </div><!-- /#myModal -->
+    
+    
+</div><!-- /.tilePreview -->
 
+<a href="#"><div class="btn pull-left">Previous</div></a>
+<a href="#"><div class="btn pull-right">Save</div></a>
+  
+  
+  <a href="#icon" role="button" data-toggle="modal">
+    <div class="btn btn-small">Select Icon</div>
+  </a>
+  
   <!-- ________ MODAL ___________ -->
   
-  <div id="icon" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id="icon" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  style="width: 1000px;">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
       <h3 id="myModalLabel">Select Icon</h3>
     </div><!-- /.modal-header -->
     <div class="modal-body">
+      <div class="canvas">
       <p>WINDOW FOR BROWSING ICONS</p>
+      
+      <!-- <form class="form-horizontal"> -->
+      <!--   <div class="control-group"> -->
+      <!--     <label class="control-label" for="uploadIcon">Upload Icon:</label> -->
+      <!--     <div class="controls"> -->
+      <!--       <input type="text" id="uploadIcon"> -->
+      <!--     </div> -->
+      <!--   </div> -->
 
-      <form id="demo-upload" class="dropzone clickable" action="http://www.torrentplease.com/dropzone.php">
+      <div id="demo-upload" class="dropzone clickable" >
         <div class="fallback">
           <input name="file" type="file" multiple />
         </div>
         <div class="default message">
           <span>Drop files here to upload</span>
         </div>
-      </form>
+
+        <% @cloudinary_resources.each do |resource| %>
+        <% end %>
+
+        <!-- <div class="btn btn-primary">Browse</div> -->
+
+      </div>
+
+      <div id="available-images" class="dropzone clickable" >
+<div class="preview processing image-preview success">
+   <div class="details">
+      <div class="filename"><span>droppedImage-1.tiff</span></div>
+      <div class="size"><strong>25.9</strong> KB</div>
+      <img src="http://res.cloudinary.com/fiduciarypages/image/upload/v1369698279/rprkbe6rujwfm2mjn5p4.png" alt="droppedImage-1.tiff">
+   </div>
+   <div class="progress"><span class="upload" style="width: 100%;"></span></div>
+   <div class="success-mark"><span>✔</span></div>
+   <div class="error-mark"><span>✘</span></div>
+   <div class="error-message"><span></span></div>
+</div>
+      </div>
       
+      </div><!-- /.canvas -->
     </div><!-- /.modal-body -->
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
       <button class="btn btn-primary">Yes</button>
     </div><!-- /.modal-footer -->
   </div><!-- /#myModal -->
+  
+<% end %>
 
+</div><!-- /.wrapper -->
 
 <script type="text/javascript">
 var myDropzone;
+
 $(document).ready(function(){
   $(".tilePreview .product-title, .tilePreview .product-content").click(function(e){
     $("#myModal").modal("show");
@@ -102,6 +127,10 @@ $(document).ready(function(){
   myDropzone.on("sending", function(file, xhr, formData){
     var csrf_token = $("meta[name='csrf-token']").attr("content");
     formData.append("authenticity_token", csrf_token);
+  });
+
+  $("#myModal .btn-primary").click(function(){
+    return false;
   });
 });
 </script>

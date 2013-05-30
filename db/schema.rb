@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402092925) do
+ActiveRecord::Schema.define(:version => 20130508154814) do
 
   create_table "bcms_blog_blog_comment_versions", :force => true do |t|
     t.integer  "original_record_id"
@@ -178,6 +178,41 @@ ActiveRecord::Schema.define(:version => 20130402092925) do
     t.integer  "updated_by_id"
   end
 
+  create_table "bcms_my401k_contact_versions", :force => true do |t|
+    t.integer  "original_record_id"
+    t.integer  "version"
+    t.integer  "plan_id"
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.boolean  "published",          :default => false
+    t.boolean  "deleted",            :default => false
+    t.boolean  "archived",           :default => false
+    t.string   "version_comment"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+  end
+
+  create_table "bcms_my401k_contacts", :force => true do |t|
+    t.integer  "version"
+    t.integer  "lock_version",  :default => 0
+    t.integer  "plan_id"
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "published",     :default => false
+    t.boolean  "deleted",       :default => false
+    t.boolean  "archived",      :default => false
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+  end
+
   create_table "bcms_my401k_layout_versions", :force => true do |t|
     t.integer  "original_record_id"
     t.integer  "version"
@@ -203,6 +238,35 @@ ActiveRecord::Schema.define(:version => 20130402092925) do
     t.boolean  "published",     :default => false
     t.boolean  "deleted",       :default => false
     t.boolean  "archived",      :default => false
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+  end
+
+  create_table "bcms_my401k_plan_versions", :force => true do |t|
+    t.integer  "original_record_id"
+    t.integer  "version"
+    t.integer  "plan_sponsor_id"
+    t.string   "name"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.boolean  "published",          :default => false
+    t.boolean  "deleted",            :default => false
+    t.boolean  "archived",           :default => false
+    t.string   "version_comment"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+  end
+
+  create_table "bcms_my401k_plans", :force => true do |t|
+    t.integer  "version"
+    t.integer  "lock_version",    :default => 0
+    t.integer  "plan_sponsor_id"
+    t.string   "name"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "published",       :default => false
+    t.boolean  "deleted",         :default => false
+    t.boolean  "archived",        :default => false
     t.integer  "created_by_id"
     t.integer  "updated_by_id"
   end
@@ -505,6 +569,7 @@ ActiveRecord::Schema.define(:version => 20130402092925) do
     t.integer  "version"
     t.integer  "section_id_id"
     t.integer  "layout_id_id"
+    t.text     "title"
     t.text     "sub_title"
     t.text     "body"
     t.text     "summary"
