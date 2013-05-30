@@ -94,49 +94,15 @@
     
   <div class="rowOfTiles">
     
-    
+    <% BcmsMy401k::Article.all.each do |article| %>
     <a class="oneTile" title="" data-content="Checking to see if this popover works." data-placement="right" data-toggle="popover" href="#" data-original-title="Options">
       <div class="theTile">
-        Icon
-        Checked
-        Read More
-        Actions
+        <p><%= article.name %></p>
+        <p><%= article.sub_title %></p>
+        <p><%= article.summary %></p>
       </div>
     </a><!-- /.oneTile -->
-    
-    
-    
-    <div class="oneTile margin3">
-      <div class="theTile">
-        <p>Icon</p>
-        <p>Checked?</p>
-        <p>Read More</p>
-        <p>Actions</p>
-      </div><!-- /.theTile -->
-    </div><!-- /.oneTile -->
-    
-    
-    
-    <div class="oneTile margin3">
-      <div class="theTile">
-        <p>Icon</p>
-        <p>Checked?</p>
-        <p>Read More</p>
-        <p>Actions</p>
-      </div><!-- /.theTile -->
-    </div><!-- /.oneTile -->
-    
-    
-    
-    <div class="oneTile margin3">
-      <div class="theTile">
-        <p>Icon</p>
-        <p>Checked?</p>
-        <p>Read More</p>
-        <p>Actions</p>
-      </div><!-- /.theTile -->
-    </div><!-- /.oneTile -->
-    
+    <% end %>
     
   </div><!-- /.rowOfTiles -->
   
@@ -155,36 +121,15 @@
   <div class="rowOfTiles">
     
     
-    <div class="oneTile">
+    <% BcmsMy401k::Article.all.each do |article| %>
+    <a class="oneTile" title="" data-content="Checking to see if this popover works." data-placement="right" data-toggle="popover" href="#" data-original-title="Options">
       <div class="theTile">
-        <p>Icon</p>
-        <p>Checked?</p>
-        <p>Read More</p>
-        <p>Actions</p>
-      </div><!-- /.theTile -->
-    </div><!-- /.oneTile -->
-    
-    
-    
-    <div class="oneTile margin3">
-      <div class="theTile">
-        <p>Icon</p>
-        <p>Checked?</p>
-        <p>Read More</p>
-        <p>Actions</p>
-      </div><!-- /.theTile -->
-    </div><!-- /.oneTile -->
-    
-    
-    
-    <div class="oneTile margin3">
-      <div class="theTile">
-        <p>Icon</p>
-        <p>Checked?</p>
-        <p>Read More</p>
-        <p>Actions</p>
-      </div><!-- /.theTile -->
-    </div><!-- /.oneTile -->
+        <p><%= article.name %></p>
+        <p><%= article.sub_title %></p>
+        <p><%= article.summary %></p>
+      </div>
+    </a><!-- /.oneTile -->
+    <% end %>
     
     
     
