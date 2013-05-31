@@ -22,6 +22,8 @@ class My401k::PlanSponsor::CreateNewContentController < My401k::PlanSponsorContr
   end
 
   def create_tile
+    #@cloudinary_resources = Cloudinary::Api.resources
+    @cloudinary_resources = []
   end
 
   def optional_elections

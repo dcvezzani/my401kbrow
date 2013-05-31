@@ -16,6 +16,17 @@ NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::Layout preview
 ./bin/rails g migration add_name_to_bcms_my401k_articles name:text
 
 
+NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::Plan plan_sponsor_id:integer name:string
+
+NAMESPACE=bcms_my401k ./bin/rails g cms:content_block BcmsMy401k::Contact plan_id:integer name:string address:text email:string phone:string
+
+
+content_type_group = Cms::User.find_by_sql("select id from content_type_groups where name = 'My401k'").first
+ActiveRecord::Base.connection.execute("update content_types set content_type_group_id = #{content_type_group.id} where name = 'BcmsMy401k::Contact'")
+
+ActiveRecord::Base.connection.execute("delete from content_type_groups where name = 'BcmsMy401k::Contact'")
+
+
 require 'browsercms'
 
 module BcmsMy401k
