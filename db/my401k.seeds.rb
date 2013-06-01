@@ -20,3 +20,41 @@ if(Cms::Category.count == 0)
   BcmsMy401k::Layout.create!(:name => 'Layout 2', description: "apple orange grape", published: true)
   BcmsMy401k::Layout.create!(:name => 'Layout 3', description: "sun moon stars", published: true)
 end
+
+
+=begin
+class ContentTypeGroup < ActiveRecord::Base
+end
+ContentTypeGroup.all.map{|rec| "#{rec.id}:#{rec.name}"}
+
+class ContentType < ActiveRecord::Base
+end
+ContentType.all.map{|rec| "#{rec.id}:#{rec.name}:#{rec.content_type_group_id}"}
+
+BcmsMy401k::Layout.all.map{|rec| "#{rec.id}:#{rec.name}:#{rec.description}"}
+BcmsMy401k::Article.all.map{|rec| "#{rec.id}:#{rec.name}:#{rec.subtitle}:#{rec.layout_id}"}
+
+class Category < ActiveRecord::Base
+end
+Category.all.map{|rec| "#{rec.id}:#{rec.name}:#{rec.category_type_id}"}
+
+class CategoryType < ActiveRecord::Base
+end
+CategoryType.all.map{|rec| "#{rec.id}:#{rec.name}"}
+
+
+
+# clean out unwanted records in the category_types and category_type_groups
+puts CategoryType.all.map{|rec| "#{rec.id}:#{rec.name}"}
+puts Category.all.map{|rec| "#{rec.id}:#{rec.name}:#{rec.category_type_id}"}
+puts BcmsMy401k::Layout.all.map{|rec| "#{rec.id}:#{rec.name}:#{rec.description}"}
+puts ContentTypeGroup.all.map{|rec| "#{rec.id}:#{rec.name}"}
+puts ContentType.all.map{|rec| "#{rec.id}:#{rec.name}:#{rec.content_type_group_id}"}
+
+(ContentType.find [13, 14]).each{|x| x.destroy }
+puts ContentType.all.map{|rec| "#{rec.id}:#{rec.name}:#{rec.content_type_group_id}"}
+
+(ContentTypeGroup.find [5]).each{|x| x.destroy }
+puts ContentTypeGroup.all.map{|rec| "#{rec.id}:#{rec.name}"}
+=end
+

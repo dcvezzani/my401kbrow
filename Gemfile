@@ -42,8 +42,8 @@ gem 'carrierwave'
 # To use debugger
 # gem 'debugger'
 
-# gem "browsercms", :path => "/Users/davidvezzani/rails-app/browsercms"
-gem "browsercms", :git => "git@github.com:dcvezzani/browsercms.git", :branch => '3.5.x.1'
+gem "browsercms", :path => "/Users/davidvezzani/rails-app/browsercms"
+#gem "browsercms", :git => "git@github.com:dcvezzani/browsercms.git", :branch => '3.5.x.1'
 gem "bcms_blog"
 # gem "browsercms", "4.0.0.a", git: 'git@github.com:browsermedia/browsercms.git'
 # gem "bcms_blog", git: 'git@github.com:dcvezzani/bcms_blog.git'
