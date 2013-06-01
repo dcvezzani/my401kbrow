@@ -564,6 +564,7 @@ ActiveRecord::Schema.define(:version => 20130508154814) do
     t.integer  "latest_version"
   end
 
+
   create_table "my401k_article_versions", :force => true do |t|
     t.integer  "original_record_id"
     t.integer  "version"
